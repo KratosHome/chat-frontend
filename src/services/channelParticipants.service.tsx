@@ -1,0 +1,27 @@
+import ChannelParticipants from '../dto/ChannelParticipantsDto';
+
+export const channelParticipants: ChannelParticipants[] = [
+    {channelId: 1, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 2, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 3, participantsId: [1,2,3,4,5,6,7,8]},
+    {channelId: 4, participantsId: [1,2,3,4,5,6,7,8]},
+    {channelId: 5, participantsId: [1,2,3,4,5,6,7,8]},
+    {channelId: 6, participantsId: [1,2,3,4,5,6,7,9]},
+    {channelId: 7, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 8, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 9, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 10, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 11, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 12, participantsId: [1,2,3,4,5,6,7]},
+    {channelId: 13, participantsId: [1,2,3]},
+    {channelId: 14, participantsId: [1,2,3,8]},
+    {channelId: 15, participantsId: [1,2,3]},
+    {channelId: 16, participantsId: [1,2,3]},
+    {channelId: 17, participantsId: [1,2,3]},
+    {channelId: 18, participantsId: [1,2,3]},
+    {channelId: 19, participantsId: [1,2,3]},
+    {channelId: 20, participantsId: [1,2,3]},
+    {channelId: 21, participantsId: [1,2,3]},
+    {channelId: 22, participantsId: [1,2,3]},
+    {channelId: 23, participantsId: [1,2,3]},
+];
