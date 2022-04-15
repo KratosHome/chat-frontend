@@ -1,0 +1,131 @@
+.header {
+  background-color: var(--header);
+  min-height: 45px;
+  font-size: 15px;
+}
+
+.header-search-field {
+  user-select: text;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  flex-wrap: nowrap;
+  width: 100%;
+  background-color: var(--searchbar), 0;
+  color: var(--headerWhite);
+  border-radius: 4px;
+  border: inherit;
+  z-index: -1;
+}
+
+.search-container {
+  font-family: Lato serif;
+  min-height: 28px;
+  max-height: 28px;
+  padding: 0 8px;
+  display: flex;
+  flex: 100%;
+  max-width: 48%;
+  background-color: var(--searchbar);
+  color: var(--headerWhite);
+  border-radius: 4px;
+  outline: none;
+  border-radius: 4px;
+  border: none;
+  transform: scale(1) translateX(0%) translateY(0%);
+  transition-duration: .33s;
+  transition-delay: .05s;
+  box-shadow: 0 0 16px 8px rgba(0, 0, 0, .05)
+}
+
+.header-search-field::placeholder {
+}
+
+.search-container:hover {
+  background-color: #ffffff26;
+  cursor: pointer;
+}
+
+.header_button {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: white;
+  padding-left: 16px;
+  padding-right: 20px;
+  cursor: pointer;
+
+  a {
+    display: block;
+    width: 24px;
+    height: 24px;
+  }
+
+  a:hover {
+    background-color: var(--searchbar);
+    border-radius: 25%;
+  }
+
+  a svg {
+    position: relative;
+    stroke-width: 1px;
+    margin-bottom: 4px;
+    margin-left: 4px;
+    color: #d8c8b9;
+  }
+}
+
+.search-flex-container {
+  position: relative;
+  flex: 2;
+  display: flex;
+}
+
+.header-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 16px;
+  padding-left: 32px;
+  position: relative;
+}
+
+.header_avatar {
+  align-self: center;
+  justify-self: center;
+  margin-right: 20px;
+  transform: scale(0.9) translateX(-0%) translateY(0%);
+}
+
+.header_avatar:hover {
+  background-color: var(--searchbar);
+  border-radius: 35%;
+  box-shadow: 0 0 5px 7px var(--searchbar);
+}
+
+.avatar_button {
+  display: block;
+  background-color: var(--header);
+  background-size: cover;
+  cursor: pointer;
+  max-width: 18px;
+}
+
+.avatar_image {
+  border-radius: 25%;
+}
+
+.presence_sign {
+  position: absolute;
+  left: 23px;
+  top: 20px;
+  z-index: 200;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 5px solid var(--header);
+  background-color: var(--nmsg);
+}

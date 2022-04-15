@@ -3,14 +3,16 @@ import activeChatService from '../../services/activeChat.service';
 import { channels } from '../../services/channels.service';
 import { CollapseService } from '../../services/channels.service';
 import { NewMessageWarning } from './NewMessageWarning';
+import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
+import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
+import {faHashtag} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     const [, setCount] = useState(0);
     var channelLists: JSX.Element[] = [];
     var indexLow = 1000;
     var indexUp = 1;
-    const arrowDown: string = "fa-li fa-solid fa-angle-down fa-fw";
-    const arrowRight: string = "fa-li fa-solid fa-angle-right fa-fw";
 
     reDefineFOrRendering();
 
@@ -46,12 +48,12 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     }
 
     function pushRenderingList(projectName: string, channelName: string, level: number, id: number, isCollapsed: boolean) {
-        const arrow: string = isCollapsed ? arrowRight : arrowDown;
-        const prefix: string = id != 0 ? "fa-li fa-solid fa-hashtag fa-fw c-icon2" : arrow;
-        const selector: string = activeChatService.isThisChatActive(id) && id != 0 ? "select" : "";
-        const messageWarning: JSX.Element = selector == "" ? <span><NewMessageWarning projectName={projectName} 
+        const arrow = isCollapsed ? faCaretRight : faCaretDown;
+        const prefix = id != 0 ? faHashtag : arrow;
+        const selector: string = activeChatService.isThisChatActive(id) && id != 0 ? "item select" : "item item";
+        const messageWarning: JSX.Element = selector == "" ? <span className="warning"><NewMessageWarning projectName={projectName}
                     channelName={channelName}
-            isCollapsed={isCollapsed} channelId={id} /></span> : <span></span>;
+            isCollapsed={isCollapsed} channelId={id} />100</span> : <span className="warning">1</span>;
         const callbackFunction = () => {
             setCurrentChannel(channelName)
             change(projectName, channelName);
@@ -61,14 +63,12 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
         
         const element: JSX.Element = 
             <div className={selector}>
-                <ul className="fa-ul">
-                    <li onClick={callbackFunction} key={indexLow++} className={"level level" + level}>
-                        <i className={prefix + " " + selector + "-font"}></i>
-                        <span className={selector + "-font"}>{channelName} </span>
-                        {messageWarning}
-                    </li>
-                </ul>
-            </div>;
+                <ul onClick={callbackFunction} key={indexLow++} className={"level level" + level}>
+                        <li className=""><FontAwesomeIcon icon={prefix} fixedWidth shrink-2 className={selector + "-font + bullet_icon"}/>
+         <span className={selector + "-font"}>{channelName} </span>
+                            <span className="table_warning">{messageWarning}</span></li>
+                    </ul>
+                </div>
 
         channelLists.push(element);
     }
@@ -82,7 +82,7 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     };
 
     const finalRendering = channelLists.map((oneTire) =>
-        <div key={indexUp++}>{oneTire}</div>
+        <div className="element" key={indexUp++}>{oneTire}</div>
     );
 
     return (

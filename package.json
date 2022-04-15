@@ -9,6 +9,9 @@
   "dependencies": {
     "@babel/runtime": "^7.15.4",
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
     "@popperjs/core": "^2.10.2",
     "@react-keycloak/web": "^3.4.0",
     "@stomp/stompjs": "^6.1.2",
@@ -26,12 +29,12 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
     "react-infinite-scroll-component": "^6.1.0",
+    "react-scripts": "^5.0.0",
     "rest": "^1.3.1",
     "sockjs-client": "^1.0.3",
     "stompjs": "^2.3.3",
     "typescript": "^4.5.2",
-    "use-sound": "^4.0.1",
-    "react-scripts": "^5.0.0"
+    "use-sound": "^4.0.1"
   },
   "scripts": {
     "watch": "webpack --watch -d --output-path='./src/resources/static/built'",
@@ -45,7 +48,7 @@
     "@babel/preset-react": "^7.0.0",
     "@webpack-cli/serve": "^1.6.1",
     "babel-loader": "^8.0.2",
-    "bootstrap": "5.1.3",
+    "bootstrap": "^5.1.3",
     "bootstrap-icons": "^1.6.1",
     "css-loader": "2.1.0",
     "mini-css-extract-plugin": "^1.6.2",

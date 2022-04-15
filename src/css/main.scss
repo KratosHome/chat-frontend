@@ -1,0 +1,179 @@
+.head_wrapper {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+.main-content {
+  height: 100vh;
+  background: var(--bg);
+}
+
+.msg {
+position: fixed;
+  right: 0;
+  width: 40%;
+  float: right;
+}
+
+.chat {
+  overflow: auto;
+  flex-basis: 0;
+}
+
+.sidebar {
+  min-width: 280px !important;
+  max-width: 280px;
+  overflow-scrolling: auto;
+}
+
+.red-hr {
+  border:1px solid rgb(255, 0, 0);
+}
+
+.message {
+  align-self: flex-start;
+
+
+  &.my-message {
+    align-self: flex-end;
+
+  }
+}
+
+.message-owner {
+  font-style: italic;
+  font-size: 12px;
+  color: #787878;
+}
+
+.message-body {
+  //  background: #efefef;
+  background: var(--bg);
+  border-radius: 4px;
+  color: #444;
+  white-space: pre-line;
+}
+
+.my-message {
+  .message-body {
+    background: #e8f1f3;
+  }
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  margin: 0 5px;
+  display: block;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.circle {
+  &.inactive {
+    border-color: #eb7e19;
+    background: -webkit-gradient(linear,left top,left bottom,color-stop(50%,hsla(0,0%,100%,0)),color-stop(50%,#eb7e19));
+    background: -webkit-linear-gradient(top,hsla(0,0%,100%,0) 50%,#eb7e19 50%);
+    background: linear-gradient(to bottom,hsla(0,0%,100%,0) 50%,#eb7e19 50%);
+  }
+  &.active {
+    border-color: green;
+    background: green;
+  }
+  &.offline {
+    border-color: white;
+  }
+
+  &.undefined {
+    border-color: rgb(255, 0, 0);
+    background: rgb(255, 0, 0);
+  }
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.animation-pause {
+  animation-play-state: paused;
+}
+
+.animation-play {
+  animation-play-state: running;
+}
+
+.pencil-animation {
+  animation-name: writing-pencil;
+  animation-iteration-count: infinite;
+  animation-duration: 1200ms;
+  animation-direction: initial;
+}
+
+@keyframes writing-pencil {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  20% {
+    transform: translate3d(4px, 0, 0);
+  }
+
+  30% {
+    transform: translate3d(6px, 0, 0);
+  }
+
+  40%{
+    transform: translate3d(8px, 0, 0);
+  }
+  50%{
+    transform: translate3d(6px, 0, 0);
+  }
+  60%{
+    transform: translate3d(4px, 0, 0);
+  }
+  70%{
+    transform: translate3d(2px, 0, 0);
+  }
+
+  80%{
+    transform: translate3d(1px, 0, 0);
+  }
+
+  90%{
+    transform: translate3d(0, 0, 0);
+  }
+
+}
+
+.toltip-list {
+  padding-right: 1rem;
+  background-color: rgba(12, 12, 12, 0.8);
+  color:rgb(4, 247, 8);
+  position:absolute;
+  right: 1rem;
+}
+
+.toltip-list ul {
+  list-style: none;
+}
+
+.visible{
+  display: block;
+}
+.unvisible{
+  display: none;
+}
+.time_stamp {
+  width: 200px;
+  position: absolute;
+  top: -12px;
+  left: 40%;
+  background-color: #FBF2EB;
+}
+.message{
+  width: 100%;
+}

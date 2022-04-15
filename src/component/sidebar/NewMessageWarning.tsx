@@ -26,7 +26,7 @@ export const NewMessageWarning: React.FC <ChannelProps> = ({projectName, channel
     }
 
 return (
-    <span>
+    <span className="message_count">
         {messageCount}
     </span>
 )

@@ -57,13 +57,17 @@ export const Main: React.FC = () => {
     }
 
   return (
-    <div className={"d-flex flex-column main-content " + topic}>
+      <div className={"header d-flex flex-column main-content " + topic}>
+      <div className="head_wrapper">
       <Header />
+      </div>
       <div className="container-fluid flex-grow-1 d-flex">
         <div className="row flex-fill flex-column flex-sm-row">
+          <div className="sidebar">
           <SideBar setCurrentChannel={setCurrentChannelId} />
-          <div className="col-sm-10 col-sm-offset-2 col-md-10 py-2 col-md-offset-2 flex-grow-1 d-flex flex-column px-0 main-content">
-            <div className=" flex-grow-1 d-flex flex-column px-0 px-4">
+          </div>
+          <div className="msg col-sm-10 col-sm-offset-2 col-md-10 py-2 col-md-offset-2 flex-grow-1 d-flex flex-column px-0 main-content">
+            <div className="flex-grow-1 d-flex flex-column px-0 px-4">
               <MessageList key='1' currentChannel={activeChatService.getActiveChatName()} messages={messageArr} 
               currentChannelId={activeChatService.getActiveChatId()}/>
             {/* Temporary */}

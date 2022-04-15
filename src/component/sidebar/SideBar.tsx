@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { channels } from '../../services/channels.service'
 import { ChatList } from './ChatList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons'
 
 interface ISidebarProps{
   setCurrentChannel:any 
@@ -9,9 +11,10 @@ interface ISidebarProps{
 export const  SideBar: React.FC<ISidebarProps> = ({setCurrentChannel}) => {
   const newsChannelIdx = channels.findIndex(el => el.id === 1)
   return (
-    <div className="col-sm-2 col-md-2 sidebar text-white p-0 d-flex flex-column" id="Navbar">
-      <div className="flex-grow-1">
-        <div className='logo_fox'>
+    <section className="col-sm-2 col-md-2 sidebar text-white d-flex flex-column" id="Navbar">
+      <div className="logo_section_wrapper">
+      <div className="logo_section">
+      <div className='logo_fox logo'>
           <svg width="49" height="44" viewBox="0 0 49 44" fill="none" xmlns="http://www.w3.org/2000/svg">
             <line y1="-1.5" x2="26.2699" y2="-1.5" transform="matrix(0.327588 0.944821 0.962088 -0.272739 39.9141 1.13379)" stroke="#7A8594" strokeWidth="3" />
             <line y1="-1.5" x2="44.7902" y2="-1.5" transform="matrix(-0.347829 0.937558 0.956944 0.290274 39.9141 1)" stroke="#7A8594" strokeWidth="3" />
@@ -29,26 +32,22 @@ export const  SideBar: React.FC<ISidebarProps> = ({setCurrentChannel}) => {
             <path d="M10.3614 23.0215L5.31918 17.0988H15.4036L10.3614 23.0215Z" fill="#C4C4C4" />
           </svg>
         </div>
-        <div>
-          <p></p>
-          <ChatList setCurrentChannel={setCurrentChannel} />
+        <div className="chatname">
+        <p>Chat Integrator</p>
         </div>
-
-        <hr />
-        <div className="d-inline-block px-3">
-
-        </div>
-        <div className="users">
-          <div className="sidebar-elem cursor-pointer px-3 py-1 d-flex align-items-center">
-            <div className="d-inline-block px-2">
-
-            </div>
-            <div className="d-inline-block " >
-
-            </div>
-          </div>
+        <div className="edit">
+          <a>
+          <FontAwesomeIcon icon={faPenToSquare} />
+          </a>
         </div>
       </div>
-    </div>
+      </div>
+      <div className="chatList_wrapper">
+        <div className="chatLists">
+          <div className="blank_space"></div>
+          <ChatList setCurrentChannel={setCurrentChannel} />
+        </div>
+      </div>
+    </section>
   )
 }
