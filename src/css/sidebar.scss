@@ -9,7 +9,7 @@
 } 
 
 .accordion-flush .accordion-item .accordion-button {
- height: 1rem !important;
+ height: 3rem !important;
 }
 
 .accordion-button:not(.collapsed) {
@@ -42,100 +42,29 @@
 }
 
 
-.rotate{
-  -moz-transition: all 0.1s linear;
-  -webkit-transition: all 0.1s linear;
-  transition: all 0.1s linear;
-}
-
-.rotate-down{
-  -moz-transform:rotate(90deg);
-  -webkit-transform:rotate(90deg);
-  transform:rotate(90deg);
-}
-
 .active-channel {
   background-color: rgba(255, 255, 255, 0.294);
 }
 .sidebar{
-  //background-color: rgb(63, 14, 64);
+  padding: 0;
+  margin: 0;
   background-color: var(--sidebar);
   transition: background-color 500ms ease-in-out;
 }
 
-.logo_section_wrapper {
-  margin-left: -10px;
-  margin-top: 45px;
-  position: fixed;
-  background-color: var(--sidebar);
-  min-width: 280px;
-  z-index: 500;
+.chatList_wrapper {
+  margin-left: -20px;
+  padding: 0;
 }
 
-.logo_section {
-  height: 70px;
+.chatList {
+}
+
+.line {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: stretch;
   align-items: center;
-  border-bottom: 0.1px solid var(--line);
-  border-top: 0.1px solid var(--line);
-
-  .logo {
-    justify-self: left;
-    transform: scale(0.7) translateX(0%) translateY(0%);
-    transition-duration: .33s;
-    transition-delay: .05s;
-    box-shadow: 0 0 16px 8px rgba(0, 0, 0, .05);
-    user-select:text;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    pointer-events:auto;
-  }
-
-  .chatname {
-    justify-self: flex-start;
-  }
-  p {
-    color: var(--txt);
-    font-size: 20px;
-    font-family: Lato sans-serif;
-    font-weight: normal;
-    letter-spacing: 1px;
-    margin: 0;
-    display:inline-block;
-    -webkit-transform:scale(1,1.3); /* Safari and Chrome */
-    -moz-transform:scale(1,1.3); /* Firefox */
-    -ms-transform:scale(1,1.3); /* IE 9 */
-    -o-transform:scale(1,1.3); /* Opera */
-    transform:scale(1,1.3); /* W3C */
-  }
- .edit {
-   margin-left: 25px;
-   height: 42px;
-   width: 42px;
-   border-radius: 50%;
-   background-color: var(--txt);
-   justify-self: flex-end;
-   font-size: 24px;
-   color: var(--sidebar);
-   stroke-width: 0.1px;
-   transform: scale(0.7) translateX(0%) translateY(0%);
-   transition-duration: .33s;
-   transition-delay: .05s;
-   a {
-     margin-left: 10px;
-     cursor: pointer;
-   }
- }
-}
-
-.logo_section:hover {
-  background-color: var(--header);
-}
-
-.chatList_wrapper {
-  margin-left: -10px;
 }
 
 ul {
@@ -144,25 +73,31 @@ ul {
 
 .level {
   color: var(--txt);
-  white-space: nowrap;
+  white-space: normal;
   cursor: pointer;
+  font-size: 15px;
+  line-height: 15.4px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .level0{
-  font-size: 18px;
-  margin-left: 15px;
+  margin-left: 5px;
 }
 
 .level1{
-  font-size: 16px;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .level2{
-  font-size: 16px;
-  margin-left: 50px;
+  margin-left: 40px;
 }
 
+.item {
+
+}
 .item:hover {
   background-color: var(--header);
 }
@@ -172,35 +107,66 @@ ul {
 }
 
 .item-font, .select-font {
-  height: 100%;
   font-family: monaco, Consolas, Lucida Console, monospace;
   font-style: normal;
-  font-variant: normal;
-  font-weight: 300;
-  line-height: 15.4px;
+  font-variant: historical-ligatures;
+  font-weight: lighter;
+  font-stretch: condensed;
 }
 
 .bullet_icon {
   display: inline;
-  transform: scale(0.5) translateX(0%) translateY(0%);
+  transform: scale(0.9) translateX(-20%) translateY(10%);
 }
 
 .select-font {
   color: var(--white);
 }
 
-
-
 .blank_space{
-  height: 150px;
+  height: 120px;
   background-color: var(--sidebar);
 }
 
-.warning {
-  font-size: 12px;
-  margin-right: 15px;
-  text-shadow: 10px 0 12px #ff0000, -10px 0 12px #ff0000, 0 6px 12px #ff0000, 0 -6px 12px #ff0000;
+.list {
+  min-width: 200px;
 }
 
+.warning_wrapper {
+width: 100%;
+  }
 
+.warning {
+  display: block;
+  float: right;
+  margin-right: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  z-index: 10;
+  //text-shadow: 10px 0 12px #ff0000, -10px 0 12px #ff0000, 0 6px 12px #ff0000, 0 -6px 12px #ff0000;
+}
 
+.warning-round {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 18px;
+  line-height: 18px;
+  width: 28px;
+  background-color: var(--nmsg);
+  z-index: 2;
+  border-radius: 16px;
+  opacity: 1;
+  transition: opacity .1s;
+  user-select: none;
+}
+
+.figure {
+  color: var(--white);
+  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  font-variant-ligatures: common-ligatures;
+  -webkit-font-smoothing: antialiased;
+}

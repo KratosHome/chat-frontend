@@ -3,16 +3,69 @@
   position: fixed;
   z-index: 1000;
 }
-.main-content {
-  height: 100vh;
-  background: var(--bg);
+
+.cont_wrapper {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color:  var(--bg);
 }
 
-.msg {
-position: fixed;
-  right: 0;
-  width: 40%;
-  float: right;
+.cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100vh;
+}
+.box-1 {
+  flex-basis: 100%;
+  min-width: 300px !important;
+  max-width: 300px;
+}
+
+.wider {
+  width: 100%;
+}
+
+.box-2 {
+  height: 80%;
+  flex-basis: 100%;
+}
+
+.message_cont {
+  overflow-y: auto;
+  overflow-x:hidden;
+}
+
+.message_cont::-webkit-scrollbar {
+  width: 10px; /* ширина scrollbar */
+}
+.message_cont::-webkit-scrollbar-track {
+  background: var(--grey);      /* цвет дорожки */
+}
+.message_cont::-webkit-scrollbar-thumb {
+  background-color: var(--searchbar);    /* цвет плашки */
+  border-radius: 15px;       /* закругления плашки */
+  border: 2px solid grey;  /* padding вокруг плашки */
+}
+
+.channels_wrapper {
+  overflow-y: auto;
+  overflow-x:hidden;
+  height: 100vh;
+}
+
+.channels_wrapper::-webkit-scrollbar {
+  width: 10px;               /* ширина scrollbar */
+}
+.channels_wrapper::-webkit-scrollbar-track {
+  background: var(--searchbar);        /* цвет дорожки */
+}
+.channels_wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--header);    /* цвет плашки */
+  border-radius: 15px;       /* закругления плашки */
+  border: 2px solid var(--searchbar);  /* padding вокруг плашки */
 }
 
 .chat {
@@ -21,8 +74,6 @@ position: fixed;
 }
 
 .sidebar {
-  min-width: 280px !important;
-  max-width: 280px;
   overflow-scrolling: auto;
 }
 
@@ -94,71 +145,96 @@ position: fixed;
   cursor: pointer;
 }
 
-.animation-pause {
-  animation-play-state: paused;
+.super_wrapper {
+  position: absolute;
+  margin-top: 20px;
+  height: 72px;
+  width: 80%;
+  overflow: hidden;
+  border-bottom: 0.1px solid var(--grey);
+  border-top: 0.1px solid var(--grey);
+  z-index: 11000;
+  background-color: var(--bgHead);
 }
 
-.animation-play {
-  animation-play-state: running;
+.curr_ch_wrapper {
+  margin-top: 17px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: baseline;
 }
 
-.pencil-animation {
-  animation-name: writing-pencil;
-  animation-iteration-count: infinite;
-  animation-duration: 1200ms;
-  animation-direction: initial;
+.people_wrapper {
+  margin-top: 5px;
+  margin-right: 20px;
+  width: 100%;
 }
 
-@keyframes writing-pencil {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
+.people {
+  float: right;
+  right: 0;
+  margin-right: 30px;
+  transform: scale(1.6) translateX(0%) translateY(0%);
+  color: var(--grey);
+}
 
-  10% {
-    transform: translate3d(2px, 0, 0);
-  }
+.people-round {
+  margin-top: 5px;
+  padding: 3px;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  width: 38px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--grey);
+  transform: scale(0.75) translateX(0%) translateY(0%);
+}
 
-  20% {
-    transform: translate3d(4px, 0, 0);
-  }
+.participants_count{
+  margin-left: 5px;
+  margin-top: 2px;
+  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--grey);
+}
 
-  30% {
-    transform: translate3d(6px, 0, 0);
-  }
+.current_channel:hover {
+  background-color: var(--line);
+}
 
-  40%{
-    transform: translate3d(8px, 0, 0);
-  }
-  50%{
-    transform: translate3d(6px, 0, 0);
-  }
-  60%{
-    transform: translate3d(4px, 0, 0);
-  }
-  70%{
-    transform: translate3d(2px, 0, 0);
-  }
-
-  80%{
-    transform: translate3d(1px, 0, 0);
-  }
-
-  90%{
-    transform: translate3d(0, 0, 0);
-  }
-
+.current_channel {
+  display: block;
+  width: fit-content;
+  border-radius: 9px;
+  margin-top: 1px;
+  padding: 2px 22px 2px 12px;
+  white-space:nowrap;
+  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-size: 18px;
+  line-height: 1.33334;
+  font-weight: 760;
+  -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: common-ligatures;
 }
 
 .toltip-list {
-  padding-right: 1rem;
+  position: absolute;
+  padding-right: 3rem;
   background-color: rgba(12, 12, 12, 0.8);
   color:rgb(4, 247, 8);
-  position:absolute;
   right: 1rem;
+  top: 100px;
+  z-index: 20000;
 }
 
 .toltip-list ul {
   list-style: none;
+  margin-top: 7px;
 }
 
 .visible{
@@ -167,13 +243,73 @@ position: fixed;
 .unvisible{
   display: none;
 }
+
+.main_cont {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background-color:  var(--bg);
+}
+
 .time_stamp {
   width: 200px;
   position: absolute;
-  top: -12px;
+  top: 92px;
   left: 40%;
   background-color: #FBF2EB;
+  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  word-spacing: normal;
+  font-variant-ligatures: common-ligatures;
+  cursor: pointer;
+  background-color: var(--headerWhite);
+  z-index: 100;
 }
-.message{
+
+.main-content {
+  margin-top: 25px;
+  margin-left: 0;
+  background: var(--bg);
   width: 100%;
+  z-index: 100;
+}
+
+.main_border {
+  margin-top: 60px;
+  padding: 45px;
+  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  z-index: 50;
+  h5 {
+    font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-weight: 900;
+  }
+}
+
+.area_wrapper {
+  width: 100%;
+}
+
+.area {
+  width: 76%;
+  position: absolute;
+  bottom: 0;
+  margin: 40px;
+  background-color:  var(--bg);
+}
+
+.button_wrapper {
+  float: right;
+  margin-top: -38px;
+  margin-right: 20px;
+}
+
+.plane {
+  color: var(--grey);
+  transform: rotate(55deg) scale(1.7) translateX(-20%) translateY(0%);
+  z-index: 10000;
 }

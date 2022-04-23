@@ -19,6 +19,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/sockjs-client": "^1.5.1",
     "cors": "^2.8.5",
+    "date-fns": "^2.28.0",
     "express": "^4.17.2",
     "keycloak-connect": "^15.0.2",
     "keycloak-js": "^15.0.2",

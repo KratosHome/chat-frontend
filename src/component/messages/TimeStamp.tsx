@@ -1,6 +1,8 @@
 import React from 'react';
+import { format } from "date-fns";
+
 interface Data {
-	data?: number;
+	data: number;
 }
 
 export const TimeStamp : React.FC<Data> = ({data}) => {
@@ -10,7 +12,7 @@ export const TimeStamp : React.FC<Data> = ({data}) => {
 			<div className='line position-relative'>
 				<hr/>
 				<div className='time_stamp d-flex flex-1 justify-content-center border border-secondary rounded-pill'>
-					{`${new Date(data).getDay().toString()}   ${new Date(data).getFullYear().toString()}`}
+					{`${format(new Date(data), "do MMMM")}`}
 				</div>
 			</div>
 		)

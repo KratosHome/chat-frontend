@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import activeChatService from '../../services/activeChat.service';
-import { channels } from '../../services/channels.service';
-import { CollapseService } from '../../services/channels.service';
-import { NewMessageWarning } from './NewMessageWarning';
+import {channels} from '../../services/channels.service';
+import {CollapseService} from '../../services/channels.service';
+import {NewMessageWarning} from './NewMessageWarning';
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
 import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
 import {faHashtag} from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +18,7 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
 
     function reDefineFOrRendering() {
         pushRenderingList("", channels[0].name, 0, channels[0].id, false); // render news channel
-        var projects: any[] = [...Array.from(new Set(channels.filter(x=>x.projectName.length > 0).map(project => project.projectName)))];
+        var projects: any[] = [...Array.from(new Set(channels.filter(x => x.projectName.length > 0).map(project => project.projectName)))];
         projects.forEach(x => {
             let isCollapsed: boolean = CollapseService.getStatusProject(x);
             pushRenderingList(x, x, 0, 0, isCollapsed);
@@ -50,25 +50,31 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     function pushRenderingList(projectName: string, channelName: string, level: number, id: number, isCollapsed: boolean) {
         const arrow = isCollapsed ? faCaretRight : faCaretDown;
         const prefix = id != 0 ? faHashtag : arrow;
-        const selector: string = activeChatService.isThisChatActive(id) && id != 0 ? "item select" : "item item";
-        const messageWarning: JSX.Element = selector == "" ? <span className="warning"><NewMessageWarning projectName={projectName}
-                    channelName={channelName}
-            isCollapsed={isCollapsed} channelId={id} />100</span> : <span className="warning">1</span>;
+        const selector: string = activeChatService.isThisChatActive(id) && id != 0 ? "item select" : "item";
+        const messageWarning: JSX.Element = <NewMessageWarning projectName={projectName}
+                                                               channelName={channelName} isCollapsed={isCollapsed}
+                                                               channelId={id}/>
         const callbackFunction = () => {
             setCurrentChannel(channelName)
             change(projectName, channelName);
             activeChatService.setActiveChat(id);
             setCount(prevCount => prevCount + 1);
         }
-        
-        const element: JSX.Element = 
+
+        const element: JSX.Element =
             <div className={selector}>
                 <ul onClick={callbackFunction} key={indexLow++} className={"level level" + level}>
-                        <li className=""><FontAwesomeIcon icon={prefix} fixedWidth shrink-2 className={selector + "-font + bullet_icon"}/>
-         <span className={selector + "-font"}>{channelName} </span>
-                            <span className="table_warning">{messageWarning}</span></li>
-                    </ul>
-                </div>
+                    <div className="line">
+                        <li className="list"><FontAwesomeIcon icon={prefix} fixedWidth shrink-2
+                                                              className={selector + "-font + bullet_icon"}/>
+                            <span className={selector + "-font"}>{channelName} </span>
+                        </li>
+                        <div className="warning_wrapper">
+                            {messageWarning}
+                        </div>
+                    </div>
+                </ul>
+            </div>
 
         channelLists.push(element);
     }

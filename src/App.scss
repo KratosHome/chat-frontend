@@ -1,6 +1,7 @@
 @import "../src/css/main.scss";
 @import "../src/css/users.scss";
 @import "../src/css/sidebar.scss";
+@import "../src/css/sidebarheader.scss";
 @import "../src/css/header.scss";
 @import "../src/css/fonts.css";
 
@@ -37,6 +38,7 @@ p {
   --darkPurple: rgb(63, 14, 64);
   --lightPurple: rgb(100, 69, 101);
   --tinyPurple: rgb(251, 242, 235);
+  --tinierPurple: rgb(251, 242, 240);
   --textPurple: #bcabbc;
   --linePurple: rgb(74%, 67%, 74%, 0.2);
   --grey: rgba(86, 96, 109, 0.6);
@@ -47,7 +49,8 @@ p {
   --heavyDarkSapfir: rgb(70, 20, 18);
   --darkSapfir: rgb(106, 27, 27);
   --lightSapfir: rgb(203,147,86);
-  --tinySapfir: #ffffff;
+  --tinySapfir: rgb(250,235,215, 0.5);
+  --tinierSapfir: rgb(250,235,220);
   --textSapfir: rgb(255, 212, 118);
   --lineSapfir: rgb(255, 212, 118, 0.2);
   --black: rgb(217, 68, 34);
@@ -56,6 +59,7 @@ p {
   --darkBrown: rgb(65, 49, 30);
   --lightBrown: rgb(197, 157, 94);
   --tinyBrown: rgb(214, 185, 141);
+  --tinierBrown: rgb(214, 185, 145);
   --textBrown: rgb(198, 211, 220);
   --lineBrown: rgb(198, 211, 220, 0.2);
   --blue: rgb(44, 63, 100);
@@ -66,6 +70,7 @@ p {
   --sidebar: var(--darkPurple);
   --searchbar: var(--lightPurple);
   --bg: var(--tinyPurple);
+  --bgHead: var(--tinierPurplePurple);
   --txt: var(--textPurple);
   --line: var(--linePurple);
   --nmsg: var(--red);
@@ -76,6 +81,7 @@ p {
   --sidebar: var(--darkSapfir);
   --searchbar: var(--lightSapfir);
   --bg: var(--tinySapfir);
+  --bgHead: var(--tinierSapfir);
   --txt: var(--textSapfir);
   --line: var(--lineSapfir);
   --nmsg: var(--black);
@@ -86,6 +92,7 @@ p {
   --sidebar: var(--darkBrown);
   --searchbar: var(--lightBrown);
   --bg: var(--tinyBrown);
+  --bgHead: var(--tinierBrown);
   --txt: var(--textBrown);
   --line: var(--lineBrown);
   --nmsg: var(--blue);

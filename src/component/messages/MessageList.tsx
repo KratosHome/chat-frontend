@@ -38,13 +38,13 @@ export const MessageList: React.FC<MessageListProps> = ({messages, currentChanne
 		)	
 	});
    
-	const tstamp: number = newsMessages[0]? newsMessages[0].timeStamp : 0;
+
 
   return (
-		<div className='flex-fill'>
-			<MessageHeader currentChannel={currentChannel} currentChannelId={currentChannelId}/>
-			<TimeStamp data={tstamp} />
+			<div className="main_border">
+				<div className="msg_cont">
     {mess}
-		</div>
+			</div>
+			</div>
   )
 }

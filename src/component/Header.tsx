@@ -25,7 +25,7 @@ export const Header: React.FC = () => {
 
           <div className="header_avatar">
             <a className="avatar_button">
-              <img src="https://ca.slack-edge.com/T02BQPYG0ES-U030NCARJ2K-g32b9a6cf239-32" alt="user button" className="avatar_image"/>
+              <img src="https://ca.slack-edge.com/T02BQPYG0ES-U030NCARJ2K-g32b9a6cf239-32" alt="user" className="avatar_image"/>
               <div className="presence_sign"></div>
             </a>
           </div>

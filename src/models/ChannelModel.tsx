@@ -1,6 +1,7 @@
 import MessageModel from "./MessageModel";
 import ParticipantModel from "./PartiticiantModel";
 import TimeStampModel from "./TimeStampModel";
+import {messages} from "../services/message.service";
 
 export default class ChannelModel {
     public id: number;
@@ -62,4 +63,5 @@ export default class ChannelModel {
             }
         }
     }
+
 }

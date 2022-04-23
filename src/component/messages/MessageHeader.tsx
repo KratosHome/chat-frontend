@@ -16,14 +16,23 @@ const participantsId = channelParticipantsId?.participantsId
 participantsId?.map(el => {
     participansArr?.push(participants?.find(e => e.id === el)?.name);
 })
-
+const participantsCount = participantsId ? participantsId.length : 0;
   return(
-    <div className='d-flex justify-content-between align-items-center'>
-      <h3>#{currentChannel}</h3>
       <div>
+      <div className="super_wrapper">
+    <div className="curr_ch_wrapper">
+      <h3 className='current_channel'>#{currentChannel}</h3>
+        <div className="people_wrapper">
+        <div className="people">
+            <div className="people-round">
         <BsPeopleFill onMouseOver={() => setShow(true)} onMouseOut={()=> setShow(false)} />
-        <Tooltip users={participansArr} show={show} currentChannelId={currentChannelId}/>
-      </div>
+            <div className="participants_count">{participantsCount}</div>
+            </div>
+            </div>
+        </div>
     </div>
+      </div>
+          <Tooltip users={participansArr} show={show} currentChannelId={currentChannelId}/>
+      </div>
   )
 } 
