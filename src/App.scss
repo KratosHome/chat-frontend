@@ -1,6 +1,7 @@
 @import "../src/css/main.scss";
 @import "../src/css/users.scss";
 @import "../src/css/sidebar.scss";
+@import "../src/css/tooltip.scss";
 @import "../src/css/sidebarheader.scss";
 @import "../src/css/header.scss";
 @import "../src/css/fonts.css";
@@ -26,6 +27,7 @@ $position-values: (
 
 body {
   font-family: Lato, Verdana, Geneva, Tahoma, sans-serif;
+  overflow: hidden;
 }
 
 p {

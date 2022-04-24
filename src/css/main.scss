@@ -34,6 +34,7 @@
 }
 
 .message_cont {
+  margin-top: 80px;
   overflow-y: auto;
   overflow-x:hidden;
 }
@@ -77,9 +78,6 @@
   overflow-scrolling: auto;
 }
 
-.red-hr {
-  border:1px solid rgb(255, 0, 0);
-}
 
 .message {
   align-self: flex-start;
@@ -98,51 +96,10 @@
 }
 
 .message-body {
-  //  background: #efefef;
   background: var(--bg);
   border-radius: 4px;
   color: #444;
   white-space: pre-line;
-}
-
-.my-message {
-  .message-body {
-    background: #e8f1f3;
-  }
-}
-
-.circle {
-  width: 8px;
-  height: 8px;
-  margin: 0 5px;
-  display: block;
-  border: 1px solid;
-  border-radius: 50%;
-}
-
-.circle {
-  &.inactive {
-    border-color: #eb7e19;
-    background: -webkit-gradient(linear,left top,left bottom,color-stop(50%,hsla(0,0%,100%,0)),color-stop(50%,#eb7e19));
-    background: -webkit-linear-gradient(top,hsla(0,0%,100%,0) 50%,#eb7e19 50%);
-    background: linear-gradient(to bottom,hsla(0,0%,100%,0) 50%,#eb7e19 50%);
-  }
-  &.active {
-    border-color: green;
-    background: green;
-  }
-  &.offline {
-    border-color: white;
-  }
-
-  &.undefined {
-    border-color: rgb(255, 0, 0);
-    background: rgb(255, 0, 0);
-  }
-}
-
-.pointer {
-  cursor: pointer;
 }
 
 .super_wrapper {
@@ -222,28 +179,6 @@
   font-variant-ligatures: common-ligatures;
 }
 
-.toltip-list {
-  position: absolute;
-  padding-right: 3rem;
-  background-color: rgba(12, 12, 12, 0.8);
-  color:rgb(4, 247, 8);
-  right: 1rem;
-  top: 100px;
-  z-index: 20000;
-}
-
-.toltip-list ul {
-  list-style: none;
-  margin-top: 7px;
-}
-
-.visible{
-  display: block;
-}
-.unvisible{
-  display: none;
-}
-
 .main_cont {
   height: 80vh;
   display: flex;
@@ -292,14 +227,16 @@
 
 .area_wrapper {
   width: 100%;
+  overflow: hidden;
+  background-color:  var(--bg);
 }
 
 .area {
-  width: 76%;
   position: absolute;
   bottom: 0;
   margin: 40px;
-  background-color:  var(--bg);
+  left: 300px;
+  right: 10px;
 }
 
 .button_wrapper {

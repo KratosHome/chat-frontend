@@ -54,6 +54,7 @@
 
 .chatList_wrapper {
   margin-left: -20px;
+  margin-bottom: 35px;
   padding: 0;
 }
 
@@ -110,8 +111,8 @@ ul {
   font-family: monaco, Consolas, Lucida Console, monospace;
   font-style: normal;
   font-variant: historical-ligatures;
-  font-weight: lighter;
-  font-stretch: condensed;
+  font-weight: 10 !important;
+  font-stretch: extra-condensed;
 }
 
 .bullet_icon {
