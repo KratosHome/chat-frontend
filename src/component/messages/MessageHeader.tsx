@@ -22,6 +22,7 @@ const participantsCount = participantsId ? participantsId.length : 0;
       <div className="super_wrapper">
     <div className="curr_ch_wrapper">
       <h3 className='current_channel'>#{currentChannel}</h3>
+    </div>
         <div className="people_wrapper">
         <div className="people">
             <div className="people-round">
@@ -30,7 +31,7 @@ const participantsCount = participantsId ? participantsId.length : 0;
             </div>
             </div>
         </div>
-    </div>
+
       </div>
           <Tooltip users={participansArr} show={show} currentChannelId={currentChannelId}/>
       </div>

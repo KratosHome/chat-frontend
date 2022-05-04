@@ -47,7 +47,7 @@ export const SideBarHeader: React.FC = () =>  {
             </div>
             <div className="edit">
                 <a>
-                    <FontAwesomeIcon icon={faPenToSquare}/>
+                    <FontAwesomeIcon icon={faPenToSquare} className="pen"/>
                 </a>
             </div>
         </div>

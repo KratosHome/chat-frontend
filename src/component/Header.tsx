@@ -1,21 +1,22 @@
 import React ,{ useState }from 'react';
 import {BsClock} from 'react-icons/bs';
 import {BsQuestionCircle} from 'react-icons/bs';
+import {BsSearch} from "react-icons/bs";
 
 
 export const Header: React.FC = () => {
   return (
-    <header className="header d-flex align-items-center pt-1 pb-1">
-      <div className="container-fluid d-flex align-items-center justify-content-between">
+    <header className="header_page">
+      <div className="head_block">
 
         <div className="header_button">
         <a><BsClock/></a>
         </div>
 
-        <div className="justify-content-start align-items-center search-flex-container search-container">
+        <div className="search_wrapper">
           <input type="search" className="header-search-field" placeholder="Search..." />
           <div className="magnifier">
-            <i className="fa fa-search"></i>
+            <i><BsSearch/></i>
           </div>
         </div>
 

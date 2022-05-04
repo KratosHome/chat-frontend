@@ -11,6 +11,7 @@ import { SideBarHeader } from './sidebar/SideBarHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
+import {BsMailbox} from "react-icons/bs";
 
 export const Main: React.FC = () => {
     const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
@@ -86,7 +87,7 @@ export const Main: React.FC = () => {
                             <MessageHeader currentChannel={activeChatService.getActiveChatName()} currentChannelId={currentChannelId}/>
                             </div>
                             <div className='main_cont'>
-                            <TimeStamp data={tstamp} />
+                            <TimeStamp data={tstamp}/>
                                 <div className='message_cont'>
                             <MessageList key='1' currentChannel={activeChatService.getActiveChatName()}
                                          messages={messageArr}
@@ -109,7 +110,7 @@ export const Main: React.FC = () => {
                                 <div className="button_wrapper">
                                     <a href="#" type="button"
                                        onClick={() => handleSendButton(currentMessage, currentUserId, currentChannelId)}>
-                                        <i className="plane fa fa-paper-plane"></i>
+                                        <i className="plane fa fa-paper-plane"><BsMailbox/></i>
                                     </a>
                                 </div>
                             </div>

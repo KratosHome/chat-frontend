@@ -8,6 +8,11 @@
   z-index: 500;
 }
 
+.pen {
+  margin-top: 7px;
+  margin-right: 8px;
+}
+
 .logo_section {
   height: 70px;
   display: flex;
@@ -63,6 +68,7 @@
     a {
       margin-left: 10px;
       cursor: pointer;
+      transform: scale(1) translateX(-10%) translateY(10%);
     }
   }
 }

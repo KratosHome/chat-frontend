@@ -9,10 +9,11 @@ export const TimeStamp : React.FC<Data> = ({data}) => {
 
 	if(data){
 		return (
-			<div className='line position-relative'>
-				<hr/>
-				<div className='time_stamp d-flex flex-1 justify-content-center border border-secondary rounded-pill'>
+			<div className='timestamp_wrapper'>
+				<div className='time_stamp_round'>
+				<div className='time_stamp'>
 					{`${format(new Date(data), "do MMMM")}`}
+				</div>
 				</div>
 			</div>
 		)
