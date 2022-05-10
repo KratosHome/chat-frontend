@@ -32,7 +32,7 @@ export const MessageList: React.FC<MessageListProps> = ({messages, currentChanne
 		// 	)	
 		// }
 		return (
-			<div className='position-relative'>
+			<div className='message_list'>
 			<Message key={e.id+1} partisipantId={patisipant?.id} partisipant={patisipant?.name} time={e.timeStamp} message={e.text} />
 			</div>
 		)	

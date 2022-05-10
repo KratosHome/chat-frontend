@@ -1,0 +1,99 @@
+.main-content {
+  margin-top: 25px;
+  margin-left: 0;
+  background: var(--bg);
+  width: 100%;
+  z-index: 100;
+}
+
+.main_border {
+  padding: 0 45px;
+  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  z-index: 50;
+  h5 {
+    font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+
+.main_cont {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background-color:  var(--bg);
+}
+
+.message_cont {
+   margin-top: 110px;
+   display: flex;
+   flex-direction: column;
+   overflow-y: auto;
+   overflow-x:hidden;
+}
+
+.message_cont::-webkit-scrollbar {
+  width: 10px; /* ширина scrollbar */
+}
+.message_cont::-webkit-scrollbar-track {
+  background: var(--grey);      /* цвет дорожки */
+}
+.message_cont::-webkit-scrollbar-thumb {
+  background-color: var(--searchbar);    /* цвет плашки */
+  border-radius: 15px;       /* закругления плашки */
+  border: 2px solid grey;  /* padding вокруг плашки */
+}
+
+.message_wrapper {
+ font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+ font-size: 13px;
+ line-height: 1.4;
+ display: flex;
+ flex-direction: column;
+ justify-content: flex-start;
+ align-items:flex-start;
+}
+
+.message {
+  display: block;
+  margin-top: 1px;
+  padding: 0;
+}
+ .my-message {
+    align-self: flex-end;
+    margin-right: 5%;
+  }
+
+
+.participant_wrapper{
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+}
+
+.participant_indicator {
+  font-size: 13px;
+    font-weight: 900;
+      display: block;
+      margin: 0;
+      padding: 0;
+}
+
+.date_indicator {
+    margin-left: 20px;
+    color: var(--grey);
+    display: block;
+    font-size: 11px;
+    font-weight: 400;
+    font-variant-ligatures: common-ligatures;
+
+}
+
+.message-body {
+  background: var(--bg);
+  border-radius: 4px;
+  color: #444;
+}

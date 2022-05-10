@@ -40,24 +40,6 @@
   flex-basis: 100%;
 }
 
-.message_cont {
-  margin-top: 80px;
-  overflow-y: auto;
-  overflow-x:hidden;
-}
-
-.message_cont::-webkit-scrollbar {
-  width: 10px; /* ширина scrollbar */
-}
-.message_cont::-webkit-scrollbar-track {
-  background: var(--grey);      /* цвет дорожки */
-}
-.message_cont::-webkit-scrollbar-thumb {
-  background-color: var(--searchbar);    /* цвет плашки */
-  border-radius: 15px;       /* закругления плашки */
-  border: 2px solid grey;  /* padding вокруг плашки */
-}
-
 .channels_wrapper {
   overflow-y: auto;
   overflow-x:hidden;
@@ -86,34 +68,11 @@
 }
 
 
-.message {
-  align-self: flex-start;
-
-
-  &.my-message {
-    align-self: flex-end;
-
-  }
-}
-
-.message-owner {
-  font-style: italic;
-  font-size: 12px;
-  color: #787878;
-}
-
-.message-body {
-  background: var(--bg);
-  border-radius: 4px;
-  color: #444;
-  white-space: pre-line;
-}
-
 .super_wrapper {
   position: absolute;
-  margin-top: 20px;
+  margin-top: 19px;
   height: 72px;
-  width: 80%;
+  width: 81%;
   overflow: hidden;
   border-bottom: 0.1px solid var(--grey);
   border-top: 0.1px solid var(--grey);
@@ -184,13 +143,6 @@
   font-variant-ligatures: common-ligatures;
 }
 
-.main_cont {
-  height: 80vh;
-  display: flex;
-  flex-direction: column;
-  background-color:  var(--bg);
-}
-
 .timestamp_wrapper {
   position: absolute;
   top:119px;
@@ -215,29 +167,6 @@
   word-spacing: normal;
   font-variant-ligatures: common-ligatures;
   cursor: pointer;
-}
-
-.main-content {
-  margin-top: 25px;
-  margin-left: 0;
-  background: var(--bg);
-  width: 100%;
-  z-index: 100;
-}
-
-.main_border {
-  margin-top: 60px;
-  padding: 45px;
-  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  z-index: 50;
-  h5 {
-    font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-weight: 900;
-  }
 }
 
 .area_wrapper {
@@ -274,7 +203,7 @@ textarea {
   width: 98%;
   max-width: 98%;
   min-width: 98%;
-  max-height: 85px;
+  max-height: 9vh;
   min-height: 42px;
 }
 

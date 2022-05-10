@@ -9,14 +9,16 @@ import {format} from "date-fns";
 }
 
 export const Message : React.FC<Message> = ({partisipant, time, message, partisipantId}) => {
-	const messageLayout = (partisipantId ===1) ? 'justify-content-end': 'justify-content-start'
+	const messageLayout = (partisipantId ===1) ? 'my-message': 'other'
   return(		
-		<div className={`message d-flex flex-column`}>
-			<div className={`d-flex ${messageLayout}`}>
-				<h5>{`${partisipant} `}</h5>
-				<h5 className='ms-3'>{`${format(new Date(time), "HH:mma")}`}</h5>
+		<div className={`message_wrapper`}>
+			<div className={`message ${messageLayout}`}>
+			    <div className={`participant_wrapper`}>
+				<p className='participant_indicator'>{`${partisipant} `}</p>
+				<p className='date_indicator'>{`${format(new Date(time), "HH:mma")}`}</p>
+			    </div>
 			</div>
-			<p className={`d-flex ${messageLayout}`}>{message}</p>
+			<p className={`message ${messageLayout}`}>{message}</p>
 		</div>
 	)  
 }
