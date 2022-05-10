@@ -252,16 +252,29 @@
   margin: 40px;
   left: 300px;
   right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .button_wrapper {
-  float: right;
-  margin-top: -38px;
-  margin-right: 20px;
+ position: fixed;
+ margin-bottom: 16px;
+ right: 88px;
+ transform: rotate(62deg) scale(1.5) translateX(0%) translateY(0%);
 }
 
 .plane {
   color: var(--grey);
-  transform: rotate(55deg) scale(1.7) translateX(-20%) translateY(0%);
   z-index: 10000;
 }
+
+textarea {
+  width: 98%;
+  max-width: 98%;
+  min-width: 98%;
+  max-height: 85px;
+  min-height: 42px;
+}
+

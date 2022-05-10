@@ -11,7 +11,7 @@ import { SideBarHeader } from './sidebar/SideBarHeader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
-import {BsMailbox} from "react-icons/bs";
+import {FaRegPaperPlane} from "react-icons/fa";
 
 export const Main: React.FC = () => {
     const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
@@ -98,19 +98,19 @@ export const Main: React.FC = () => {
                 </div>
 
                         <div className="area-wrapper">
+                             <button onClick={() => changeUser()} className="temporary_button">TEMPORARY:
+                                Change {currentUserName}</button>
                             <div className="area">
-                                <button onClick={() => changeUser()} className="btn btn-outline-secondary btn-sm">TEMPORARY:
-                                    Change {currentUserName}</button>
                                 <textarea className="form-control"
                                           placeholder="Message..."
                                           disabled={visibleMessageField}
                                           value={currentMessage}
                                           onChange={e => setCurrentMessage(e.target.value)}
-                                />
+                                    />
                                 <div className="button_wrapper">
                                     <a href="#" type="button"
                                        onClick={() => handleSendButton(currentMessage, currentUserId, currentChannelId)}>
-                                        <i className="plane fa fa-paper-plane"><BsMailbox/></i>
+                                        <i className="plane"><FaRegPaperPlane/></i>
                                     </a>
                                 </div>
                             </div>
