@@ -25,6 +25,7 @@ export const Main: React.FC = () => {
     const type = isInternal ? "internal-chat" : "external-chat";
     const topic = currentUserId == 1 ? type : "moderator";
     const currentUserName = participants[currentUserId].name;
+    const displaySend = visibleMessageField ? 'displayNone' : '';
 
     useEffect(() => {
         const activeChat = activeChatService.getActiveChatId()
@@ -108,7 +109,7 @@ export const Main: React.FC = () => {
                                           onChange={e => setCurrentMessage(e.target.value)}
                                     />
                                 <div className="button_wrapper">
-                                    <a href="#" type="button"
+                                    <a href="#" type="button" className={displaySend}
                                        onClick={() => handleSendButton(currentMessage, currentUserId, currentChannelId)}>
                                         <i className="plane"><FaRegPaperPlane/></i>
                                     </a>
