@@ -18,11 +18,14 @@ participantsId?.map(el => {
 })
 const participantsCount = participantsId ? participantsId.length : 0;
   return(
-      <div>
+      <div className="msgs_header">
       <div className="super_wrapper">
     <div className="curr_ch_wrapper">
       <h3 className='current_channel'>#{currentChannel}</h3>
     </div>
+          <div className="intermediary">
+          </div>
+
         <div className="people_wrapper">
         <div className="people">
             <div className="people-round">

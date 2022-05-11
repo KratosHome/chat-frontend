@@ -72,32 +72,31 @@
   position: absolute;
   margin-top: 19px;
   height: 72px;
-  width: 81%;
+  width: 100%;
   overflow: hidden;
   border-bottom: 0.1px solid var(--grey);
   border-top: 0.1px solid var(--grey);
   z-index: 11000;
   background-color: var(--bgHead);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 .curr_ch_wrapper {
+  justify-self: flex-start;
   margin-top: 17px;
-  margin-left: 10px;
+  margin-left: 30px;
 }
 
 .people_wrapper {
-  width: 85%;
+  position: fixed;
+  right: 3%;
+  top: 55px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
 .people {
-  transform: scale(1.3) translateX(0%) translateY(-5%);
+  transform: scale(1.3) translateX(0%) translateY(-0%);
   color: var(--grey);
 }
 
@@ -209,4 +208,9 @@ textarea {
 
 .displayNone {
   display: none;
+}
+
+.temporary_button {
+  position: absolute;
+  bottom: 20%;
 }

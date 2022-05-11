@@ -8,7 +8,6 @@ import activeChatService from '../services/activeChat.service';
 import {channels} from '../services/channels.service';
 import {participants} from '../services/participant.service';
 import { SideBarHeader } from './sidebar/SideBarHeader';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
 import {FaRegPaperPlane} from "react-icons/fa";
@@ -26,6 +25,7 @@ export const Main: React.FC = () => {
     const topic = currentUserId == 1 ? type : "moderator";
     const currentUserName = participants[currentUserId].name;
     const displaySend = visibleMessageField ? 'displayNone' : '';
+    const textArea = 'area ' + displaySend;
 
     useEffect(() => {
         const activeChat = activeChatService.getActiveChatId()
@@ -101,8 +101,8 @@ export const Main: React.FC = () => {
                         <div className="area-wrapper">
                              <button onClick={() => changeUser()} className="temporary_button">TEMPORARY:
                                 Change {currentUserName}</button>
-                            <div className="area">
-                                <textarea className="form-control"
+                            <div className={textArea}>
+                                <textarea className="form-control "
                                           placeholder="Message..."
                                           disabled={visibleMessageField}
                                           value={currentMessage}
