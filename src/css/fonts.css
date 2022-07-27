@@ -2,3 +2,19 @@
     font-family: "LatoNew";
     src: url("fonts/Lato-Reg.ttf") format("truetype");
 }
+@font-face {
+    font-family: 'SlaskLatoBlack';
+    src: local('MyFont'), url(./fonts/lato-black-b64f5e4.woff2) format('woff');
+}
+@font-face {
+    font-family: 'SlaskLatoBold';
+    src: local('MyFont'), url(./fonts/lato-bold-4b1dc11.woff2) format('woff');
+}
+@font-face {
+    font-family: 'SlaskLatoRegular';
+    src: local('MyFont'), url(./fonts/lato-regular-d9ce515.woff2) format('woff');
+}
+@font-face {
+    font-family: 'SlaskIcons';
+    src: local('MyFont'), url(./fonts/slack-icons-v2-fe043a5.woff2) format('woff');
+}
