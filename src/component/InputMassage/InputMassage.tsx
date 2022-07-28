@@ -35,7 +35,7 @@ export const InputMassage: FC<InputMassageType> = memo(({
         <div
             className="inputContainer"
         >
-            <div className={emojiActive ? "emojiInputMassage" : "emojiDisabledInputMassage"}>
+            <div className={emojiActive ? "emojiInputMessage" : "emojiDisabledInputMessage"}>
                 <Picker
                     onEmojiClick={onEmojiClick}
                     preload={false}

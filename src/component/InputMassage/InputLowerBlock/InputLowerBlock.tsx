@@ -79,10 +79,10 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                             <span
                                 onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
                                 onClick={() => setEmojiActive(!emojiActive)}
-                                className="svgEmojiInputMassage"
+                                className="svgEmojiInputMessage"
                             >
                                   <svg
-                                      className={isHovering ? "dizSvgEmojiInputMassage" : "activeSvgEmojiInputMassage"}
+                                      className={isHovering ? "dizSvgEmojiInputMessage" : "activeSvgEmojiInputMessage"}
                                       data-ufvi="true" viewBox="0 0 20 20">
                                         <g fill="none">
                                             <circle cx="10" cy="10" r="8.25" stroke="currentColor"
@@ -94,7 +94,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                                       </g>
                                   </svg>
                                   <svg
-                                      className={isHovering ? "activeSvgEmojiInputMassage" : "dizSvgEmojiInputMassage"}
+                                      className={isHovering ? "activeSvgEmojiInputMessage" : "dizSvgEmojiInputMessage"}
                                       style={{transform: "rotate(30deg)"}}
                                       data-ufvi="true" viewBox="0 0 20 20">
                                     <g fill="none">
@@ -153,13 +153,13 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                     disabled={visibleMessageField || currentMessage.length <= 1}
                     onClick={() => handleSendButton(currentMessage, currentUserId, currentChannelId)}
                 >
-                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMassage">
+                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMessage">
                         <path fill="currentColor" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"
                               d="M2.25 2.25 17.75 10l-15.5 7.75v-4.539a1.5 1.5 0 0 1 1.46-1.5l6.54-.171a1.54 1.54 0 0 0 0-3.08l-6.54-.172a1.5 1.5 0 0 1-1.46-1.5V2.25Z"></path>
                     </svg>
                 </button>
                 <button>
-                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMassage">
+                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMessage">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                               stroke-width="1.5" d="M13.75 8 10 11.75 6.25 8"></path>
                     </svg>
