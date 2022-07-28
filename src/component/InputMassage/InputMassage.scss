@@ -13,8 +13,7 @@
     border-radius: 10px;
     padding-left: 15px;
     font-size: 15px;
-    font-family: SlaskLatoBlack;
-    font-size: 15px;
+    font-family: SlackLatoBlack;
   }
 
   input:focus {
@@ -24,7 +23,7 @@
   }
 
 
-  .emojiInputMasseg {
+  .emojiInputMassage {
     position: absolute;
     margin-top: -330px;
 
@@ -41,7 +40,7 @@
     }
   }
 
-  .emojiDisabletInputMasseg {
+  .emojiDisabledInputMassage {
     display: none;
   }
 }

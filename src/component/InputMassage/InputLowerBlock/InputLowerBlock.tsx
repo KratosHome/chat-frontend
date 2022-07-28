@@ -1,20 +1,7 @@
 import React, {FC, memo} from 'react';
 import "./InputLowerBlock.scss"
-import {InputButton} from "../InputButtn";
-
-type InputLowerBlockType = {
-    handleSendButton: any
-    visibleMessageField: any
-    emojiActib: any
-    setEmojiActib: any
-    currentUserId: any
-    currentChannelId: any
-    handleMouseOver: any
-    handleMouseOut: any
-    isHovering: any
-    focusInput: boolean
-    currentMessage: string
-}
+import {InputButton} from "../InputButton";
+import {InputLowerBlockType} from "./InputLowerBlockType";
 
 
 export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
@@ -27,10 +14,11 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                                                                   currentUserId,
                                                                   handleSendButton,
                                                                   visibleMessageField,
-                                                                  setEmojiActib,
-                                                                  emojiActib
+                                                                  setEmojiActive,
+                                                                  emojiActive
                                                               }) => {
     return (
+
         <div className="containerLowerBlock">
             <div className="containerLeftLowerBlock">
                 <InputButton
@@ -47,7 +35,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                     focusInput={focusInput}
                     buttonText={"Don't work"}
                     children={
-                        <svg data-ufvi="true" viewBox="0 0 20 20" className="">
+                        <svg data-ufvi="true" viewBox="0 0 20 20">
                             <path fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"
                                   d="M3.25 3.75a1.5 1.5 0 0 0-1.5 1.5v9.5a1.5 1.5 0 0 0 1.5 1.5h9a1.5 1.5 0 0 0 1.5-1.5v-2.59l3.75 2.159a.5.5 0 0 0 .75-.434v-7.77a.5.5 0 0 0-.75-.433L13.75 7.84V5.25a1.5 1.5 0 0 0-1.5-1.5h-9Z"></path>
                         </svg>
@@ -57,7 +45,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                     focusInput={focusInput}
                     buttonText={"Don't work"}
                     children={
-                        <svg data-ufvi="true" viewBox="0 0 20 20" className="">
+                        <svg data-ufvi="true" viewBox="0 0 20 20">
                             <g fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path d="M7.25 5a2.75 2.75 0 1 1 5.5 0v4a2.75 2.75 0 1 1-5.5 0V5Z"></path>
                                 <path stroke-linecap="round"
@@ -69,9 +57,8 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                 {visibleMessageField
                     ?
                     <svg
-                        data-ufvi="true" viewBox="0 0 20 20" className="dosVisbleSvgEmojiInputMasseg">
+                        data-ufvi="true" viewBox="0 0 20 20" className="dosVisibleSvgEmojiInputMessage">
                         <svg data-ufvi="true" viewBox="0 0 20 20"
-                             className="tsts"
                         >
                             <g fill="none">
                                 <circle cx="10" cy="10" r="8.25" stroke="currentColor"
@@ -87,15 +74,15 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
 
                     <InputButton
                         focusInput={focusInput}
-                        buttonText={"Emodji"}
+                        buttonText={"Emoji"}
                         children={
                             <span
                                 onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}
-                                onClick={() => setEmojiActib(!emojiActib)}
-                                className="svgEmojiInputMasseg"
+                                onClick={() => setEmojiActive(!emojiActive)}
+                                className="svgEmojiInputMassage"
                             >
                                   <svg
-                                      className={isHovering ? "dizSvgEmojiInputMasseg" : "activSvgEmojiInputMasseg"}
+                                      className={isHovering ? "dizSvgEmojiInputMassage" : "activeSvgEmojiInputMassage"}
                                       data-ufvi="true" viewBox="0 0 20 20">
                                         <g fill="none">
                                             <circle cx="10" cy="10" r="8.25" stroke="currentColor"
@@ -107,7 +94,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                                       </g>
                                   </svg>
                                   <svg
-                                      className={isHovering ? "activSvgEmojiInputMasseg" : "dizSvgEmojiInputMasseg"}
+                                      className={isHovering ? "activeSvgEmojiInputMassage" : "dizSvgEmojiInputMassage"}
                                       style={{transform: "rotate(30deg)"}}
                                       data-ufvi="true" viewBox="0 0 20 20">
                                     <g fill="none">
@@ -130,7 +117,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                     focusInput={focusInput}
                     buttonText={"Don't work"}
                     children={
-                        <svg data-ufvi="true" viewBox="0 0 20 20" className="">
+                        <svg data-ufvi="true" viewBox="0 0 20 20">
                             <g fill="none" stroke="currentColor" stroke-width="1.5">
                                 <circle cx="10" cy="10" r="3.75"></circle>
                                 <path stroke-linecap="round"
@@ -144,7 +131,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
                     focusInput={focusInput}
                     buttonText={"Don't work"}
                     children={
-                        <svg data-ufvi="true" viewBox="0 0 20 20" className="">
+                        <svg data-ufvi="true" viewBox="0 0 20 20">
                             <g fill="none" stroke="currentColor" stroke-width="1.5">
                                 <path stroke-linecap="round"
                                       d="M10.5 17 6.23 4.19C6 3.5 5.023 3.507 4.803 4.2L.75 17"></path>
@@ -161,18 +148,18 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(({
 
             </div>
             <div
-                className={currentMessage.length >= 1 ? "buttonsInputMasseg activButtonInputMasseg" : "buttonsInputMasseg"}>
+                className={currentMessage.length >= 1 ? "buttonsInputMessage activeButtonInputMessage" : "buttonsInputMessage"}>
                 <button
                     disabled={visibleMessageField || currentMessage.length <= 1}
                     onClick={() => handleSendButton(currentMessage, currentUserId, currentChannelId)}
                 >
-                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMasseg">
+                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMassage">
                         <path fill="currentColor" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5"
                               d="M2.25 2.25 17.75 10l-15.5 7.75v-4.539a1.5 1.5 0 0 1 1.46-1.5l6.54-.171a1.54 1.54 0 0 0 0-3.08l-6.54-.172a1.5 1.5 0 0 1-1.46-1.5V2.25Z"></path>
                     </svg>
                 </button>
                 <button>
-                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMasseg">
+                    <svg data-uqx="true" viewBox="0 0 20 20" className="imgSvgInputMassage">
                         <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                               stroke-width="1.5" d="M13.75 8 10 11.75 6.25 8"></path>
                     </svg>

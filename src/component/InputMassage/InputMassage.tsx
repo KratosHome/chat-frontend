@@ -3,7 +3,7 @@ import "./InputMassage.scss"
 import {InputMassageType} from "./InputMassageType";
 import Picker from 'emoji-picker-react';
 import {InputUpperBlock} from "./InputUpperBlock";
-import {InputLowerBlock} from "./LowerBlock";
+import {InputLowerBlock} from "./InputLowerBlock";
 
 export const InputMassage: FC<InputMassageType> = memo(({
                                                             placeholderName,
@@ -15,9 +15,9 @@ export const InputMassage: FC<InputMassageType> = memo(({
                                                             setCurrentMessage,
                                                         }) => {
 
-    const [emojiActib, setEmojiActib] = useState<boolean>(false)
+    const [emojiActive, setEmojiActive] = useState<boolean>(false)
     const [focusInput, setFocusInput] = useState<boolean>(false)
-    const onEmojiClick = (event: any, emojiObject: any) => {
+    const onEmojiClick = (emojiObject: any) => {
         setCurrentMessage((prevState: string) => prevState + emojiObject.emoji);
     };
 
@@ -35,7 +35,7 @@ export const InputMassage: FC<InputMassageType> = memo(({
         <div
             className="inputContainer"
         >
-            <div className={emojiActib ? "emojiInputMasseg" : "emojiDisabletInputMasseg"}>
+            <div className={emojiActive ? "emojiInputMassage" : "emojiDisabledInputMassage"}>
                 <Picker
                     onEmojiClick={onEmojiClick}
                     preload={false}
@@ -45,10 +45,10 @@ export const InputMassage: FC<InputMassageType> = memo(({
                 focusInput={focusInput}
             />
             <input
-                onFocus={(e) => {
+                onFocus={() => {
                     setFocusInput(!focusInput);
                 }}
-                onBlur={(e) => {
+                onBlur={() => {
                     setFocusInput(!focusInput);
                 }}
 
@@ -68,8 +68,8 @@ export const InputMassage: FC<InputMassageType> = memo(({
                 currentUserId={currentUserId}
                 handleSendButton={handleSendButton}
                 visibleMessageField={visibleMessageField}
-                setEmojiActib={setEmojiActib}
-                emojiActib={emojiActib}
+                setEmojiActive={setEmojiActive}
+                emojiActive={emojiActive}
             />
         </div>
     );
