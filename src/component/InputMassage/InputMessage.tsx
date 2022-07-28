@@ -1,11 +1,11 @@
 import React, {FC, memo, useState} from 'react';
-import "./InputMassage.scss"
-import {InputMassageType} from "./InputMassageType";
+import "./InputMessage.scss"
+import {InputMessageType} from "./InputMessageType";
 import Picker from 'emoji-picker-react';
 import {InputUpperBlock} from "./InputUpperBlock";
 import {InputLowerBlock} from "./InputLowerBlock";
 
-export const InputMassage: FC<InputMassageType> = memo(({
+export const InputMessage: FC<InputMessageType> = memo(({
                                                             placeholderName,
                                                             currentMessage,
                                                             visibleMessageField,

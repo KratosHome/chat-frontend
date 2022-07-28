@@ -10,7 +10,7 @@ import {participants} from '../services/participant.service';
 import {SideBarHeader} from './sidebar/SideBarHeader';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
-import {InputMassage} from "./InputMassage";
+import {InputMessage} from "./InputMassage";
 import {useHotkeys} from "react-hotkeys-hook";
 
 export const Main: React.FC = () => {
@@ -97,7 +97,7 @@ export const Main: React.FC = () => {
                                 {/* Temporary */}
                             </div>
                         </div>
-                        <InputMassage
+                        <InputMessage
                             placeholderName={channel?.name}
                             currentMessage={currentMessage}
                             visibleMessageField={visibleMessageField}

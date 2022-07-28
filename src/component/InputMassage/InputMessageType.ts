@@ -1,4 +1,4 @@
-export type InputMassageType = {
+export type InputMessageType = {
     placeholderName?: string
     currentMessage: string
     visibleMessageField: boolean
