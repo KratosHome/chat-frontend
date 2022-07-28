@@ -83,7 +83,7 @@ export const Main: React.FC = () => {
 
             <div className="cont_wrapper">
                 <div className="cont">
-                    <SideBarNew/>
+                    <SideBarNew setCurrentChannel={setCurrentChannelId}/>
                     <div
                         className="wider">
                         <div className="main-content box-2">
