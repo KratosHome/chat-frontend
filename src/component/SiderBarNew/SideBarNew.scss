@@ -1,7 +1,9 @@
 .containerSideBar {
-  width: 250px;
-  background-color: var(--sidebar);
-  // transition: background-color 500ms ease-in-out;
+  min-width: 210px;
+  width: 330px;
+  background-color: rgb(63, 14, 64);
+  color: rgb(255, 255, 255, 0.7);
+
   svg {
     width: 18px;
   }
@@ -10,23 +12,59 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 5px 10px 5px;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 3px 5px 3px 5px;
+    border-top: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+    color: white;
 
     svg {
-      width: 40px;
+      width: 18px;
+      color: black;
+    }
+
+    .brandSideBarNew {
+      display: flex;
+      font-weight: 900;
+      font-size: 17px;
+      line-height: 1.33334;
+
+      svg {
+        margin-top: -3px;
+        width: 13px;
+      }
     }
 
     div:last-child {
       background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
 
-      svg {
-        margin: 5px;
-        width: 25px;
+    }
 
+    &:hover {
+      background-color: rgb(53, 12, 54);;
+      cursor: pointer;
+    }
+  }
+
+  .pagesSideBar {
+    margin-top: 10px;
+
+    div {
+      display: flex;
+      margin-top: 3px;
+      margin-bottom: 3px;
+      padding-left: 10px;
+
+      &:hover {
+        background-color: rgb(53, 12, 54);;
+        cursor: pointer;
       }
     }
+
   }
 }
