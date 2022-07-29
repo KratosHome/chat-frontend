@@ -81,8 +81,7 @@ export const Main: React.FC = () => {
                     </div>
                     <div
                         className="wider">
-                        <div className="main-content box-2">
-
+                        <div className=" box-2">
                             <div className='header_cont'>
                                 <MessageHeader currentChannel={activeChatService.getActiveChatName()}
                                                currentChannelId={currentChannelId}/>
