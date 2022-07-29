@@ -12,6 +12,7 @@ import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
 import {InputMessage} from "./InputMassage";
 import {useHotkeys} from "react-hotkeys-hook";
+import {SideBarNew} from "./SiderBarNew/SideBarNew";
 
 export const Main: React.FC = () => {
     const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
@@ -71,15 +72,7 @@ export const Main: React.FC = () => {
 
             <div className="cont_wrapper">
                 <div className="cont">
-                    <div className="sidebar box-1">
-                        <div className="">
-                            <SideBarHeader></SideBarHeader>
-                        </div>
-                        <div className="channels_wrapper">
-                            <SideBar setCurrentChannel={setCurrentChannelId}/>
-                        </div>
-                    </div>
-
+                    <SideBarNew setCurrentChannel={setCurrentChannelId}/>
                     <div
                         className="wider">
                         <div className=" box-2">

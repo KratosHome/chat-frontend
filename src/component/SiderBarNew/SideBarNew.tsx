@@ -13,12 +13,12 @@ export const SideBarNew: FC<SideBarNewType> = memo(({setCurrentChannel}) => {
         <div className="containerSideBar">
             <div className="headSideBar">
                 <Logo/>
-                <div>
+                <div className="brend">
                     <span>Company Name</span>
-                    <svg data-0v2="true" aria-hidden="true" viewBox="0 0 20 20" className="">
-                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                              stroke-width="1.5" d="M13.75 8 10 11.75 6.25 8"></path>
-                    </svg>
+                        <svg data-0v2="true" aria-hidden="true" viewBox="0 0 20 20" className="">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="1.5" d="M13.75 8 10 11.75 6.25 8"></path>
+                        </svg>
                 </div>
                 <div>
                     <svg data-0v2="true" aria-hidden="true" viewBox="0 0 20 20" className="">
