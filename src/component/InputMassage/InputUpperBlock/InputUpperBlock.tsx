@@ -1,7 +1,7 @@
 import React, {FC, memo} from 'react';
 import "./InputUpperBlock.scss"
 import {InputUpperBlockType} from './InputUpperBlockType';
-import {InputButton} from "../InputButtn/";
+import {InputButton} from "../InputButton/";
 
 
 export const InputUpperBlock: FC<InputUpperBlockType> = memo(({focusInput}) => {

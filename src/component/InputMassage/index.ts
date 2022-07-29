@@ -1,1 +1,1 @@
-export * from "./InputMassage"
+export * from "./InputMessage"

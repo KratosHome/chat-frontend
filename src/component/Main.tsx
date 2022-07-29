@@ -10,9 +10,8 @@ import {participants} from '../services/participant.service';
 import {SideBarHeader} from './sidebar/SideBarHeader';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
-import {InputMassage} from "./InputMassage";
+import {InputMessage} from "./InputMassage";
 import {useHotkeys} from "react-hotkeys-hook";
-import {SideBarNew} from "./SiderBarNew/SideBarNew";
 
 export const Main: React.FC = () => {
     const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
@@ -64,17 +63,6 @@ export const Main: React.FC = () => {
 
     useHotkeys('ctrl+k', () => setCurrentUserId(prevCount => prevCount === 1 ? 0 : 1));
 
-
-    /*
-                        <div className="sidebar box-1">
-                        <div className="">
-                            <SideBarHeader></SideBarHeader>
-                        </div>
-                        <div className="channels_wrapper">
-                         <SideBar setCurrentChannel={setCurrentChannelId}/>
-                        </div>
-                    </div>
-     */
     return (
         <div className={topic}>
             <div className="head_wrapper">
@@ -83,11 +71,18 @@ export const Main: React.FC = () => {
 
             <div className="cont_wrapper">
                 <div className="cont">
-                    <SideBarNew setCurrentChannel={setCurrentChannelId}/>
+                    <div className="sidebar box-1">
+                        <div className="">
+                            <SideBarHeader></SideBarHeader>
+                        </div>
+                        <div className="channels_wrapper">
+                            <SideBar setCurrentChannel={setCurrentChannelId}/>
+                        </div>
+                    </div>
+
                     <div
                         className="wider">
-                        <div className="main-content box-2">
-
+                        <div className=" box-2">
                             <div className='header_cont'>
                                 <MessageHeader currentChannel={activeChatService.getActiveChatName()}
                                                currentChannelId={currentChannelId}/>
@@ -102,7 +97,7 @@ export const Main: React.FC = () => {
                                 {/* Temporary */}
                             </div>
                         </div>
-                        <InputMassage
+                        <InputMessage
                             placeholderName={channel?.name}
                             currentMessage={currentMessage}
                             visibleMessageField={visibleMessageField}
