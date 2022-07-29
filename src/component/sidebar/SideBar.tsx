@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {channels} from '../../services/channels.service'
-import {ChatList} from './ChatList';
+import {ChatList} from '../SiderBarNew/ChatList/ChatList';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPenToSquare} from '@fortawesome/free-solid-svg-icons'
 

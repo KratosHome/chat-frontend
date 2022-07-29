@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import activeChatService from '../../services/activeChat.service';
-import {channels} from '../../services/channels.service';
-import {CollapseService} from '../../services/channels.service';
-import {NewMessageWarning} from './NewMessageWarning';
+import activeChatService from '../../../services/activeChat.service';
+import {channels} from '../../../services/channels.service';
+import {CollapseService} from '../../../services/channels.service';
+import {NewMessageWarning} from '../../sidebar/NewMessageWarning';
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
 import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
 import {faHashtag} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import "./ChatList.scss"
 
 export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     const [, setCount] = useState(0);

@@ -1,6 +1,6 @@
 import React, {FC, memo} from 'react';
 import "./SideBarNew.scss"
-import {ChatList} from "../sidebar/ChatList";
+import {ChatList} from "./ChatList/ChatList";
 import {Logo} from "../Logo/Logo";
 
 
