@@ -65,7 +65,7 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
         const element: JSX.Element =
             <div className={selector}>
                 <ul onClick={callbackFunction} key={indexLow++} className={"level level" + level}>
-                    <div className="line">
+                    <div className="lineChatList">
                         <li className="list"><FontAwesomeIcon icon={prefix} fixedWidth shrink-2
                                                               className={selector + "-font + bullet_icon"}/>
                             <span className={selector + "-font"}>{channelName} </span>
