@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { BsPeopleFill } from 'react-icons/bs';
-import { channelParticipants } from '../../services/channelParticipants.service';
-import { participants } from '../../services/participant.service';
-import { Tooltip } from '../shared/Tooltip';
+import React, {useState} from 'react';
+import {BsPeopleFill} from 'react-icons/bs';
+import {channelParticipants} from '../../services/channelParticipants.service';
+import {participants} from '../../services/participant.service';
+import {Tooltip} from '../shared/Tooltip';
 
 interface iMessageHeaderProps {
    currentChannel: string;

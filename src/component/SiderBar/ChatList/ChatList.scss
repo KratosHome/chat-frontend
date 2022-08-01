@@ -1,0 +1,57 @@
+.ChatListItem {
+  white-space: normal;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 15.4px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 5px;
+
+  &:hover {
+    background-color: rgb(53, 12, 54);
+
+    svg {
+      background-color: rgb(53, 12, 54);
+    }
+  }
+
+  .lineChatList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+
+    .iconChatList {
+      width: 14px;
+      height: 14px;
+      border-radius: 5px;
+      padding: 3px;
+      margin-right: 15px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+    }
+
+    .spanChatList {
+      position: absolute;
+      margin-top: 4px;
+    }
+
+  }
+
+}
+
+.selectChatList {
+  background: #1164A3;
+}
+
+
+.chatList {
+  height: 53vh;
+  overflow: auto;
+}
+
+

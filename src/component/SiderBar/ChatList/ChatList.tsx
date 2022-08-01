@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
-import activeChatService from '../../services/activeChat.service';
-import {channels} from '../../services/channels.service';
-import {CollapseService} from '../../services/channels.service';
-import {NewMessageWarning} from './NewMessageWarning';
+import activeChatService from '../../../services/activeChat.service';
+import {channels} from '../../../services/channels.service';
+import {CollapseService} from '../../../services/channels.service';
+import {MessageWarning} from '../MessageWarning/MessageWarning';
 import {faCaretDown} from "@fortawesome/free-solid-svg-icons";
 import {faCaretRight} from "@fortawesome/free-solid-svg-icons";
 import {faHashtag} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import "./ChatList.scss"
 
 export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     const [, setCount] = useState(0);
@@ -50,31 +51,43 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     function pushRenderingList(projectName: string, channelName: string, level: number, id: number, isCollapsed: boolean) {
         const arrow = isCollapsed ? faCaretRight : faCaretDown;
         const prefix = id != 0 ? faHashtag : arrow;
-        const selector: string = activeChatService.isThisChatActive(id) && id != 0 ? "item select" : "item";
-        const messageWarning: JSX.Element = <NewMessageWarning projectName={projectName}
-                                                               channelName={channelName} isCollapsed={isCollapsed}
-                                                               channelId={id}/>
+        const selector: string = activeChatService.isThisChatActive(id) && id != 0 ? "ChatListItem selectChatList" : "ChatListItem";
+        const messageWarning: JSX.Element = <MessageWarning projectName={projectName}
+                                                            channelName={channelName} isCollapsed={isCollapsed}
+                                                            channelId={id}/>
         const callbackFunction = () => {
             setCurrentChannel(channelName)
             change(projectName, channelName);
             activeChatService.setActiveChat(id);
             setCount(prevCount => prevCount + 1);
         }
-
         const element: JSX.Element =
-            <div className={selector}>
-                <ul onClick={callbackFunction} key={indexLow++} className={"level level" + level}>
-                    <div className="line">
-                        <li className="list"><FontAwesomeIcon icon={prefix} fixedWidth shrink-2
-                                                              className={selector + "-font + bullet_icon"}/>
-                            <span className={selector + "-font"}>{channelName} </span>
-                        </li>
-                        <div className="warning_wrapper">
-                            {messageWarning}
+            <>
+                <div
+                    className={prefix.iconName === "caret-right" ? selector + " groupChatList" : selector + " "}
+                >
+                    <ul onClick={callbackFunction} key={indexLow++}>
+                        <div
+                            className="lineChatList">
+                            <li>
+                                <FontAwesomeIcon
+                                    icon={prefix}
+                                    fixedWidth shrink-2
+                                    className={prefix.iconName === "caret-right" ? selector + " iconChatList" : selector + " iconChatList"}
+                                />
+                                <span
+                                    className={prefix.iconName === "caret-right" ? selector + "-font spanChatList" : selector + "-font spanChatList"}
+                                >
+                                {channelName}
+                            </span>
+                            </li>
+                            <div>
+                                {messageWarning}
+                            </div>
                         </div>
-                    </div>
-                </ul>
-            </div>
+                    </ul>
+                </div>
+            </>
 
         channelLists.push(element);
     }
@@ -92,7 +105,7 @@ export const ChatList: React.FC<any> = ({setCurrentChannel}) => {
     );
 
     return (
-        <div id="Chatlist" className='chatlist'>
+        <div className="chatList">
             {finalRendering}
         </div>
     )

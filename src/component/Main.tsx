@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from './Header';
 import { MessageList } from './messages/MessageList';
-import { SideBar } from './sidebar/SideBar';
-import { messages } from '../services/message.service';
+import {  messages } from '../services/message.service';
 import MessageModel from '../dto/MessageModel';
 import activeChatService from '../services/activeChat.service';
-import { channels } from '../services/channels.service';
-import { participants } from '../services/participant.service';
-import { SideBarHeader } from './sidebar/SideBarHeader';
-import { MessageHeader } from './messages/MessageHeader';
-import { TimeStamp } from './messages/TimeStamp';
-import { InputMessage } from './InputMessage';
-import { useHotkeys } from 'react-hotkeys-hook'
+import {channels} from '../services/channels.service';
+import {participants} from '../services/participant.service';
+import {MessageHeader} from "./messages/MessageHeader";
+import {TimeStamp} from "./messages/TimeStamp";
+import {InputMessage} from "./InputMassage";
+import {useHotkeys} from "react-hotkeys-hook";
+import {SideBar} from "./SiderBar/";
 
 export const Main: React.FC = () => {
    const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
@@ -79,14 +78,7 @@ export const Main: React.FC = () => {
 
             <div className="cont_wrapper">
                 <div className="cont">
-                    <div className="sidebar box-1">
-                        <div className="">
-                            <SideBarHeader></SideBarHeader>
-                        </div>
-                        <div className="channels_wrapper">
-                            <SideBar setCurrentChannel={setCurrentChannelId}/>
-                        </div>
-                    </div>
+                    <SideBar setCurrentChannel={setCurrentChannelId}/>
                     <div
                         className="wider">
                         <div className="box-2">
