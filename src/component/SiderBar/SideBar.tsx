@@ -9,7 +9,7 @@ export const SideBar: FC<SideBarType> = memo(({setCurrentChannel}) => {
     console.log(setCurrentChannel)
     return (
         <div className="containerSideBar">
-            <div className="container2SideBar">
+            <div className="upAndDownSideBar">
                 <div className="headSideBar">
                     <Logo/>
                     <div className="brandSideBar">
@@ -93,7 +93,7 @@ export const SideBar: FC<SideBarType> = memo(({setCurrentChannel}) => {
                 </div>
             </div>
             <div className="footerSideBar">
-                <div className="infoFooterSideBa">
+                <div className="infoFooterSideBar">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" data-qa="huddle_antenna_icon">
                         <path
                             className="p-huddle_antenna_icon__outer_wave p-huddle_antenna_icon__outer_wave--text_color_opacity_50"
