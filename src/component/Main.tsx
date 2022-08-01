@@ -10,7 +10,7 @@ import { MessageHeader } from './messages/MessageHeader';
 import { TimeStamp } from './messages/TimeStamp';
 import { InputMessage } from './InputMessage';
 import { useHotkeys } from 'react-hotkeys-hook'
-import { SideBar } from './SiderBar';
+import { SideBar } from './SideBar';
 
 
 export const Main: React.FC = () => {
