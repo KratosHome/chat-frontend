@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
-import { channels } from '../../services/channels.service';
-import { messages } from '../../services/message.service';
+import {channels} from '../../../services/channels.service';
+import {messages} from '../../../services/message.service';
+import "./MessageWarning.scss"
 
 type ChannelProps = { projectName: string, channelName: string, isCollapsed: boolean, channelId: number };
 
-export const NewMessageWarning: React.FC<ChannelProps> = ({
+export const MessageWarning: React.FC<ChannelProps> = ({
                                                               projectName,
                                                               channelName,
                                                               isCollapsed,
@@ -13,10 +14,8 @@ export const NewMessageWarning: React.FC<ChannelProps> = ({
 
     var qty: number = isCollapsed || channelId != 0 ? getNumberOfUnread() : 0;
     let fullCount: JSX.Element =
-        <div className="warning">
-                <div className="warning-round">
-                    <div className="figure"><span>{qty}</span></div>
-            </div>
+        <div className="warning-round">
+            <span>{qty}</span>
         </div>
 
     let messageCount: JSX.Element = qty != 0 ? fullCount : <div></div>;
@@ -37,8 +36,8 @@ export const NewMessageWarning: React.FC<ChannelProps> = ({
     }
 
     return (
-        <span className="">
-        {messageCount}
-    </span>
+        <span>
+            {messageCount}
+        </span>
     )
 }
