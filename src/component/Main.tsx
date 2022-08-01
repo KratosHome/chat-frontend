@@ -8,9 +8,9 @@ import {channels} from '../services/channels.service';
 import {participants} from '../services/participant.service';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
-import {InputMessage} from "./InputMassage";
 import {useHotkeys} from "react-hotkeys-hook";
 import {SideBar} from "./SiderBar/";
+import { InputMessage } from './InputMessage';
 
 export const Main: React.FC = () => {
    const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
