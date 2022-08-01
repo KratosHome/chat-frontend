@@ -85,5 +85,5 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
             currentChannelId={currentChannelId}
          />
       </div>
-   );
-};
+  )
+} 

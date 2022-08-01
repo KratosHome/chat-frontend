@@ -4,13 +4,14 @@ import { MessageList } from './messages/MessageList';
 import {  messages } from '../services/message.service';
 import MessageModel from '../dto/MessageModel';
 import activeChatService from '../services/activeChat.service';
-import {channels} from '../services/channels.service';
-import {participants} from '../services/participant.service';
-import {MessageHeader} from "./messages/MessageHeader";
-import {TimeStamp} from "./messages/TimeStamp";
-import {useHotkeys} from "react-hotkeys-hook";
-import {SideBar} from "./SiderBar/";
+import { channels } from '../services/channels.service';
+import { participants } from '../services/participant.service';
+import { MessageHeader } from './messages/MessageHeader';
+import { TimeStamp } from './messages/TimeStamp';
 import { InputMessage } from './InputMessage';
+import { useHotkeys } from 'react-hotkeys-hook'
+import { SideBar } from './SiderBar';
+
 
 export const Main: React.FC = () => {
    const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
