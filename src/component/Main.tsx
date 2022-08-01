@@ -8,7 +8,7 @@ import {channels} from '../services/channels.service';
 import {participants} from '../services/participant.service';
 import {MessageHeader} from "./messages/MessageHeader";
 import {TimeStamp} from "./messages/TimeStamp";
-import {InputMessage} from "./InputMassage";
+import {InputMessage} from "./InputMessage";
 import {useHotkeys} from "react-hotkeys-hook";
 import {SideBar} from "./SiderBar/";
 
@@ -73,7 +73,7 @@ export const Main: React.FC = () => {
                     <SideBar setCurrentChannel={setCurrentChannelId}/>
                     <div
                         className="wider">
-                        <div className=" box-2">
+                        <div className="box-2">
                             <div className='header_cont'>
                                 <MessageHeader currentChannel={activeChatService.getActiveChatName()}
                                                currentChannelId={currentChannelId}/>
