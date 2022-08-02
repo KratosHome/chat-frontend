@@ -7,7 +7,7 @@ import activeChatService from '../services/activeChat.service';
 import {channels} from '../services/channels.service';
 import {participants} from '../services/participant.service';
 import {MessageHeader} from "./messages/MessageHeader";
-import {TimeStamp} from "./messages/TimeStamp";
+import {TimeStamp} from "./messages/TimeStamp/TimeStamp";
 import {InputMessage} from "./InputMessage";
 import {useHotkeys} from "react-hotkeys-hook";
 import {SideBar} from "./SiderBar/";
@@ -74,19 +74,20 @@ export const Main: React.FC = () => {
                     <div
                         className="wider">
                         <div className="box-2">
-                            <div className='header_cont'>
+                            <div className=''>
                                 <MessageHeader currentChannel={activeChatService.getActiveChatName()}
                                                currentChannelId={currentChannelId}/>
                             </div>
                             <div className='main_cont'>
-                                <TimeStamp data={tstamp}/>
                                 <div className='message_cont'>
                                     <MessageList key='1' currentChannel={activeChatService.getActiveChatName()}
                                                  messages={messageArr}
-                                                 currentChannelId={activeChatService.getActiveChatId()}/>
+                                                 currentChannelId={activeChatService.getActiveChatId()}
+                                    />
                                 </div>
-                                {/* Temporary */}
+                                <TimeStamp data={tstamp}/>
                             </div>
+
                         </div>
                         <InputMessage
                             placeholderName={channel?.name}

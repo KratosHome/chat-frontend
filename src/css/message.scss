@@ -23,13 +23,13 @@
   height: 75vh;
   display: flex;
   flex-direction: column;
-  background-color:  var(--bg);
+  align-items: center;
 }
 
 .message_cont {
    margin-top: 110px;
    display: flex;
-   flex-direction: column;
+   flex-directґґion: column;
    overflow-y: auto;
    overflow-x:hidden;
 }

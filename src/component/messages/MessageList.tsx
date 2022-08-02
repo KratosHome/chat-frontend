@@ -3,7 +3,7 @@ import { messages } from '../../services/message.service';
 import {participants} from '../../services/participant.service'
 import MessageModel from '../../dto/MessageModel';
 import { Message } from './Message';
-import { TimeStamp } from './TimeStamp';
+import { TimeStamp } from './TimeStamp/TimeStamp';
 import activeChatService from '../../services/activeChat.service';
 import { MessageHeader } from './MessageHeader';
 
