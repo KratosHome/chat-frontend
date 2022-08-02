@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsSearch } from 'react-icons/bs';
+import './Header.scss';
 
 export const Header: React.FC = () => {
    return (
@@ -20,13 +20,9 @@ export const Header: React.FC = () => {
             </div>
 
             <div className='header__search'>
-               <input
-                  type='search'
-                  className='header__search-field'
-                  placeholder='Search...'
-               />
+               <span className='header__search-field'>Search Company Name</span>
                <div className='header__box-filter'>
-                  <a href='#' className='header__button-filter'>
+                  <a className='header__button-filter'>
                      <svg
                         data-0v2='true'
                         aria-hidden='true'
@@ -44,13 +40,22 @@ export const Header: React.FC = () => {
                </div>
                <div className='header__magnifier'>
                   <i>
-                     <BsSearch />
+                     <svg
+                        data-som='true'
+                        aria-hidden='true'
+                        viewBox='0 0 20 20'
+                     >
+                        <path
+                           fill='currentColor'
+                           d='M 17.22 18.28 a 0.75 0.75 0 1 0 1.06 -1.06 l -1.06 1.06 Z M 15 9 a 6 6 0 0 1 -6 6 v 1.5 A 7.5 7.5 0 0 0 16.5 9 H 15 Z m -6 6 a 6 6 0 0 1 -6 -6 H 1.5 A 7.5 7.5 0 0 0 9 16.5 V 15 Z M 3 9 a 6 6 0 0 1 6 -6 V 1.5 A 7.5 7.5 0 0 0 1.5 9 H 3 Z m 6 -6 a 6 6 0 0 1 6 6 h 1.5 A 7.5 7.5 0 0 0 9 1.5 V 3 Z m 4.47 11.53 l 3.75 3.75 l 1.06 -1.06 l -3.75 -3.75 l -1.06 1.06 Z'
+                        ></path>
+                     </svg>
                   </i>
                </div>
             </div>
 
             <div className='header__item header__item_right'>
-               <a className='header__button'>
+               <a className='header__button header__button-right'>
                   <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                      <g fill='none'>
                         <circle
@@ -73,17 +78,16 @@ export const Header: React.FC = () => {
                      </g>
                   </svg>
                </a>
-            </div>
-
-            <div className='header__avatar'>
-               <a className='header__avatar-button'>
-                  <img
-                     src='https://ca.slack-edge.com/T02BQPYG0ES-U030NCARJ2K-g32b9a6cf239-32'
-                     alt='user'
-                     className='header__avatar-image'
-                  />
-                  <div className='header__presence-sign'></div>
-               </a>
+               <div className='header__avatar'>
+                  <a className='header__avatar-button'>
+                     <img
+                        src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
+                        alt='user'
+                        className='header__avatar-image'
+                     />
+                     <div className='header__presence-sign'></div>
+                  </a>
+               </div>
             </div>
          </div>
       </header>
