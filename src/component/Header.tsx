@@ -25,6 +25,23 @@ export const Header: React.FC = () => {
                   className='header__search-field'
                   placeholder='Search...'
                />
+               <div className='header__box-filter'>
+                  <a href='#' className='header__button-filter'>
+                     <svg
+                        data-0v2='true'
+                        aria-hidden='true'
+                        viewBox='0 0 20 20'
+                     >
+                        <path
+                           fill='none'
+                           stroke='currentColor'
+                           stroke-linecap='round'
+                           stroke-width='1.5'
+                           d='M 15.25 4.25 a 1.75 1.75 0 1 1 -3.5 0 a 1.75 1.75 0 0 1 3.5 0 Z m 0 0 h 2.5 m -15.5 0 h 9 m 3 11.5 a 1.75 1.75 0 1 1 -3.5 0 a 1.75 1.75 0 0 1 3.5 0 Z m 0 0 h 3.5 m -15.5 0 h 8 m -2 -5.75 a 1.75 1.75 0 1 1 -3.5 0 a 1.75 1.75 0 0 1 3.5 0 Z m 0 0 h 9.5 M 4.5 10 H 2.25'
+                        ></path>
+                     </svg>
+                  </a>
+               </div>
                <div className='header__magnifier'>
                   <i>
                      <BsSearch />
