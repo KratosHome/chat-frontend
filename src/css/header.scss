@@ -13,14 +13,14 @@
       flex: 1;
       justify-content: flex-end;
       align-items: center;
-      width: 20px;
-      height: 20px;
+      min-width: 120px;
       color: white;
-      padding-left: 16px;
       padding-right: 20px;
 
       &_right {
-         padding-right: 12px;
+         min-width: auto;
+         padding-right: 10px;
+         margin-left: 30px;
       }
    }
 
@@ -28,16 +28,22 @@
       display: block;
       min-width: 26px;
       min-height: 26px;
+      max-width: 26px;
+      max-height: 26px;
       cursor: pointer;
 
       &:hover {
          background-color: var(--searchbar);
          border-radius: 4px;
+
+         svg {
+            color: #ffffff;
+         }
       }
 
       svg {
          margin: 3px;
-         color: #d8c8b9;
+         color: #bcabbc;
       }
    }
 
@@ -47,6 +53,7 @@
       display: flex;
       flex: 100%;
       max-width: 732px;
+      min-width: 100px;
       background-color: var(--searchbar);
       color: var(--headerWhite);
       border-radius: 4px;
@@ -69,6 +76,18 @@
       border: inherit;
       outline: none;
       z-index: -1;
+   }
+
+   &__button-filter {
+      display: block;
+      min-width: 16px;
+      min-height: 16px;
+      margin-top: 5px;
+      margin-right: 10px;
+
+      & svg {
+         color: #ffffff;
+      }
    }
 
    &__magnifier {
@@ -113,14 +132,4 @@
    }
 }
 
-.header__button-filter {
-   display: block;
-   min-width: 16px;
-   min-height: 16px;
-   margin-top: 5px;
-   margin-right: 10px;
 
-   & svg {
-      color: #ffffff;
-   }
-}
