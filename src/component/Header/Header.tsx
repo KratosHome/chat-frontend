@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ReactModal } from '../ReactModal';
 import './Header.scss';
 
 export const Header: React.FC = () => {
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
    return (
       <header className='header'>
          <div className='header__container'>
@@ -78,7 +81,10 @@ export const Header: React.FC = () => {
                      </g>
                   </svg>
                </a>
-               <div className='header__avatar'>
+               <div
+                  className='header__avatar'
+                  onClick={() => setIsModalOpen(true)}
+               >
                   <a className='header__avatar-button'>
                      <img
                         src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
@@ -88,6 +94,12 @@ export const Header: React.FC = () => {
                      <div className='header__presence-sign'></div>
                   </a>
                </div>
+               <ReactModal
+                  isModalOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+               >
+                  Modal
+               </ReactModal>
             </div>
          </div>
       </header>

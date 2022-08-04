@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
-import {BsPeopleFill} from 'react-icons/bs';
-import {channelParticipants} from '../../services/channelParticipants.service';
-import {participants} from '../../services/participant.service';
-import {Tooltip} from '../shared/Tooltip';
+import React, { useState } from 'react';
+import { BsPeopleFill } from 'react-icons/bs';
+import { channelParticipants } from '../../services/channelParticipants.service';
+import { participants } from '../../services/participant.service';
+import { Tooltip } from '../shared/Tooltip';
 
 interface iMessageHeaderProps {
    currentChannel: string;
@@ -22,6 +22,7 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
       participantsArray?.push(participants?.find((e) => e.id === el)?.name);
    });
    const participantsCount = participantsId ? participantsId.length : 0;
+
    return (
       <div className='msgs_header'>
          <div className='super_wrapper'>
@@ -85,5 +86,5 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
             currentChannelId={currentChannelId}
          />
       </div>
-  )
-} 
+   );
+};
