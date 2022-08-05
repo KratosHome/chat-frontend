@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import { ReactModal } from '../ReactModal';
+import { AvatarMenu } from './AvatarMenu';
 import './Header.scss';
 
 export const Header: React.FC = () => {
-   const [isModalOpen, setIsModalOpen] = useState(false);
+   const avatarMenuPosition = 'avatar-menu-position';
+
+   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+   const handleClick = () => {
+      setIsModalOpen(true);
+   };
+
+   const handleClose = () => {
+      setIsModalOpen(false);
+   };
 
    return (
       <header className='header'>
@@ -57,7 +68,7 @@ export const Header: React.FC = () => {
                </div>
             </div>
 
-            <div className='header__item header__item_right'>
+            <div className='header__item header__item-right'>
                <a className='header__button header__button-right'>
                   <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                      <g fill='none'>
@@ -81,10 +92,7 @@ export const Header: React.FC = () => {
                      </g>
                   </svg>
                </a>
-               <div
-                  className='header__avatar'
-                  onClick={() => setIsModalOpen(true)}
-               >
+               <div className='header__avatar' onClick={handleClick}>
                   <a className='header__avatar-button'>
                      <img
                         src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
@@ -96,9 +104,10 @@ export const Header: React.FC = () => {
                </div>
                <ReactModal
                   isModalOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
+                  onClose={handleClose}
+                  modalPosition={avatarMenuPosition}
                >
-                  Modal
+                  <AvatarMenu />
                </ReactModal>
             </div>
          </div>

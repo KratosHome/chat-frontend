@@ -1,0 +1,96 @@
+.user {
+   &__container {
+      align-items: center;
+      display: flex;
+      padding: 8px 20px 12px 24px;
+      width: 100%;
+   }
+
+   &__icon-container {
+      display: inline-flex;
+      position: relative;
+   }
+
+   &__icon {
+      height: 36px;
+      width: 36px;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: default;
+      display: inline-block;
+      outline: none;
+      position: relative;
+   }
+
+   &__icon-image {
+      width: 36px;
+      background-repeat: no-repeat;
+      background-size: 100%;
+      display: inline-block;
+
+      background-color: rgba(29, 28, 29, 0.13);
+      border-radius: 4px;
+      color: rgba(29, 28, 29, 1);
+      flex-shrink: 0;
+      position: relative;
+   }
+
+   &__info {
+      flex: 1 1 auto;
+      margin-left: 12px;
+      min-width: 0;
+   }
+
+   &__name {
+      display: block;
+      font-weight: 900;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 15px;
+   }
+
+   &__name-container {
+      align-items: center;
+      background: rgba(248, 248, 248, 1);
+      display: flex;
+      position: relative;
+      z-index: 1;
+   }
+
+   &__presence {
+      color: rgba(29, 28, 29, 0.7);
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      line-height: 1.38463;
+      margin: -4px 0 -4px -6px;
+      padding: 4px 0;
+      position: relative;
+      z-index: 1;
+   }
+
+   &__presence-icon {
+      line-height: inherit;
+      align-items: center;
+      display: inline-flex;
+      height: 20px;
+      justify-content: center;
+      position: relative;
+      width: 20px;
+
+      &::before {
+         content: '';
+         height: 9px;
+         left: 12px;
+         margin-left: -0.5em;
+         margin-top: -0.5em;
+         position: absolute;
+         top: 13px;
+         width: 9px;
+         border-radius: 50%;
+         background: #007a5a;
+         display: inline-block;
+      }
+   }
+}
