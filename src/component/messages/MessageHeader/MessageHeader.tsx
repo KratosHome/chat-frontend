@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import {BsPeopleFill} from 'react-icons/bs';
-import {channelParticipants} from '../../services/channelParticipants.service';
-import {participants} from '../../services/participant.service';
-import {Tooltip} from '../shared/Tooltip';
+import React, { useState } from 'react';
+import { BsPeopleFill } from 'react-icons/bs';
+import { channelParticipants } from '../../../services/channelParticipants.service';
+import { participants } from '../../../services/participant.service';
+import { Tooltip } from '../../shared/Tooltip';
+import './MessageHeader.scss';
 
 interface iMessageHeaderProps {
    currentChannel: string;
@@ -23,8 +24,8 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    });
    const participantsCount = participantsId ? participantsId.length : 0;
    return (
-      <div className='msgs_header'>
-         <div className='super_wrapper'>
+      <div className='message-header'>
+         <div className='message-header__wrapper'>
             <div className='current-channel'>
                <div className='current-channel__wrapper'>
                   <span className='current-channel__grid'>
@@ -63,20 +64,27 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
                   </span>
                </div>
             </div>
-            <div className='intermediary'></div>
 
-            <div className='people_wrapper'>
-               <div className='people'>
-                  <div className='people-round'>
+            <div className='people'>
+               <div className='people__wrapper'>
+                  <div className='people__round'>
                      <BsPeopleFill
                         onMouseOver={() => setShow(true)}
                         onMouseOut={() => setShow(false)}
                      />
-                     <div className='participants_count'>
+                     <div className='people__participants-count'>
                         {participantsCount}
                      </div>
                   </div>
                </div>
+            </div>
+         </div>
+         <div className='bookmark'>
+            <div className='bookmark__container'>
+               <button className='bookmark__button'>
+                  <i />
+                  Add a bookmark
+               </button>
             </div>
          </div>
          <Tooltip
@@ -85,5 +93,5 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
             currentChannelId={currentChannelId}
          />
       </div>
-  )
-} 
+   );
+};
