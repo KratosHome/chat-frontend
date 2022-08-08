@@ -1,24 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {participants} from '../../services/participant.service'
-import MessageModel from '../../dto/MessageModel';
-import {Message} from './Message';
+import {Message} from './Message/Message';
 import activeChatService from '../../services/activeChat.service';
+import {MessageListType} from "./MessageListType";
 
-interface MessageListProps {
-    messages: MessageModel[],
-    currentChannelId: number,
-    currentChannel: string;
-    currentMessage: string;
-    setNewMassaeg: any
-}
 
-export const MessageList: React.FC<MessageListProps> = ({
-                                                            messages,
-                                                            currentChannel,
-                                                            currentChannelId,
-                                                            setNewMassaeg
-                                                        }) => {
-    const [currentTimeStamp, setCurrentTimeStamp] = useState<number>(0)
+export const MessageList: React.FC<MessageListType> = ({
+                                                           messages,
+                                                           currentChannel,
+                                                           setNewMassaeg
+                                                       }) => {
 
     const newsMessages = messages.filter(el => el.chatChannelId === activeChatService.getActiveChatId())
     useEffect(() => {
@@ -28,17 +19,6 @@ export const MessageList: React.FC<MessageListProps> = ({
     // if(newsMessages[0])setCurrentTimeStamp(`${new Date(newsMessages[0].timeStamp).getDay().toString()}   ${new Date(newsMessages[0].timeStamp).getFullYear().toString()}`)
     const mess = newsMessages.map(e => {
         const patisipant = participants.find(elem => elem.id === e.chatParticipantId)
-        // if(newsMessages[0].timeStamp) {
-        // 	setCurrentTimeStamp(newsMessages[0].timeStamp)
-        // }
-        // if(newsMessages[0].timeStamp || e.timeStamp > currentTimeStamp ){
-        // 	return (
-        // 		<div className='position-relative'>
-        // 		<TimeStamp data={e.timeStamp} />
-        // 		<Message key={e.id+1} partisipantId={patisipant?.id} partisipant={patisipant?.name} time={e.timeStamp} message={e.text} />
-        // 		</div>
-        // 	)
-        // }
         return (
             <div className='containerMessageList'>
                 <Message
@@ -46,7 +26,9 @@ export const MessageList: React.FC<MessageListProps> = ({
                     partisipantId={patisipant?.id}
                     partisipant={patisipant?.name}
                     time={e.timeStamp}
-                    message={e.text}/>
+                    message={e.text}
+                    messageTime={e.messageText}
+                />
             </div>
         )
     });

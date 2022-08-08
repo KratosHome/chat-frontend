@@ -43,10 +43,9 @@ export const Main: React.FC = () => {
     const timeMassag = newsMessages.map(item => item.timeStamp)
     let lastElemTime = timeMassag[timeMassag.length - 1];
 
+    let LastEl = messageArr[messageArr.length - 1];
 
-    let lastElemMeassag = messages[messages.length - 1];
-
-
+    console.log(messageArr)
     const handleSendButton = (
         text: string,
         currentUserId: number,
@@ -55,7 +54,13 @@ export const Main: React.FC = () => {
         let nMess: MessageModel
         if (lastElemTime >= Date.now() - 300000) {
             let LastEl = messageArr[messageArr.length - 1];
-            LastEl.text = LastEl.text + " " + currentMessage
+            LastEl.messageText = [
+                ...LastEl.messageText,
+                {
+                    timeStamp: Date.now(),
+                    text: text,
+                }
+            ]
         } else {
             nMess = {
                 id: messageArr[messageArr.length - 1].id + 1,
@@ -68,6 +73,7 @@ export const Main: React.FC = () => {
                 isUnderReview: false,
                 sentTimeStamp: Date.now(),
                 rejectedTimeStamp: Date.now(),
+                messageText: [],
             };
             setMessageArr([...messageArr, nMess]);
         }
@@ -104,7 +110,6 @@ export const Main: React.FC = () => {
                                     key='1'
                                     currentChannel={activeChatService.getActiveChatName()}
                                     messages={messageArr}
-                                    currentChannelId={activeChatService.getActiveChatId()}
                                     currentMessage={currentMessage}
                                     setNewMassaeg={setNewMassaeg}
                                 />

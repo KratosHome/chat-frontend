@@ -90,11 +90,32 @@
   font-weight: 400;
   line-height: 1.46668;
   font-variant-ligatures: common-ligatures;
-
 }
 
 .message-body {
   background: var(--bg);
   border-radius: 4px;
   color: #444;
+}
+
+.containerMiniMess {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+
+  div:first-child {
+    margin-right: 5px;
+    margin-left: -38px;
+    color: rgba(97, 96, 97, 1);
+    opacity: 0;
+    transition: 300ms;
+  }
+
+  &:hover div:first-child {
+    opacity: 1;
+  }
 }

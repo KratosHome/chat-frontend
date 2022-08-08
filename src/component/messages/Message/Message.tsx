@@ -1,14 +1,9 @@
 import React from 'react';
 import {format} from "date-fns";
+import {MessageType} from "./MessageType";
 
-interface Message {
-    partisipant?: string;
-    time: number;
-    message: string;
-    partisipantId?: number;
-}
 
-export const Message: React.FC<Message> = ({partisipant, time, message, partisipantId}) => {
+export const Message: React.FC<MessageType> = ({partisipant, time, message, partisipantId, messageTime}) => {
     const messageLayout = (partisipantId === 1) ? 'my-message' : 'other'
     return (
         <>
@@ -24,6 +19,12 @@ export const Message: React.FC<Message> = ({partisipant, time, message, partisip
                         <span className='date_indicator'>{`${format(new Date(time), "HH:mm a")}`}</span>
                     </div>
                     <div><p className={`message ${messageLayout}`}>{message}</p></div>
+                    {messageTime.map((item: any) =>
+                        <div className="containerMiniMess">
+                            <div>{`${format(new Date(item.timeStamp), "HH:mm")}`}</div>
+                            <div>{item.text}</div>
+                        </div>
+                    )}
                 </div>
             </div>
 
