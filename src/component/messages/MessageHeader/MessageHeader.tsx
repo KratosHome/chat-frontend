@@ -23,6 +23,7 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
       participantsArray?.push(participants?.find((e) => e.id === el)?.name);
    });
    const participantsCount = participantsId ? participantsId.length : 0;
+
    return (
       <div className='message-header'>
          <div className='message-header__wrapper'>

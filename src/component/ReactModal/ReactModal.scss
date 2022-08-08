@@ -1,0 +1,19 @@
+.modal {
+   position: fixed;
+   z-index: 201;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+
+   &__content {
+      position: absolute;
+      outline: none;
+   }
+}
+
+.avatar-menu-position {
+   right: 46px;
+   top: 43px;
+}

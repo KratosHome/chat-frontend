@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ReactModal } from '../ReactModal';
+import { AvatarMenu } from './AvatarMenu';
 import './Header.scss';
 
 export const Header: React.FC = () => {
+   const avatarMenuPosition = 'avatar-menu-position';
+
+   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
+   const handleClick = () => {
+      setIsModalOpen(true);
+   };
+
+   const handleClose = () => {
+      setIsModalOpen(false);
+   };
+
    return (
       <header className='header'>
          <div className='header__container'>
@@ -54,7 +68,7 @@ export const Header: React.FC = () => {
                </div>
             </div>
 
-            <div className='header__item header__item_right'>
+            <div className='header__item header__item-right'>
                <a className='header__button header__button-right'>
                   <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                      <g fill='none'>
@@ -78,7 +92,7 @@ export const Header: React.FC = () => {
                      </g>
                   </svg>
                </a>
-               <div className='header__avatar'>
+               <div className='header__avatar' onClick={handleClick}>
                   <a className='header__avatar-button'>
                      <img
                         src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
@@ -88,6 +102,13 @@ export const Header: React.FC = () => {
                      <div className='header__presence-sign'></div>
                   </a>
                </div>
+               <ReactModal
+                  isModalOpen={isModalOpen}
+                  onClose={handleClose}
+                  modalPosition={avatarMenuPosition}
+               >
+                  <AvatarMenu />
+               </ReactModal>
             </div>
          </div>
       </header>
