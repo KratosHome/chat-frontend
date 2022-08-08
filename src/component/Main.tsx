@@ -74,7 +74,6 @@ export const Main: React.FC = () => {
             <div className='head_wrapper'>
                 <Header/>
             </div>
-
             <div className="cont_wrapper">
                 <div className="cont">
                     <SideBar setCurrentChannel={setCurrentChannelId}/>
@@ -83,16 +82,13 @@ export const Main: React.FC = () => {
                         <div className="box-2">
                             <MessageHeader currentChannel={activeChatService.getActiveChatName()}
                                            currentChannelId={currentChannelId}/>
-                            <div className='main_cont'>
-                                <div className='message_cont'>
-                                    <MessageList key='1' currentChannel={activeChatService.getActiveChatName()}
-                                                 messages={messageArr}
-                                                 currentChannelId={activeChatService.getActiveChatId()}
-                                    />
-                                </div>
+                            <div className='message_cont'>
                                 <TimeStamp data={tstamp}/>
+                                <MessageList key='1' currentChannel={activeChatService.getActiveChatName()}
+                                             messages={messageArr}
+                                             currentChannelId={activeChatService.getActiveChatId()}
+                                />
                             </div>
-
                         </div>
                         <InputMessage
                             placeholderName={channel?.name}

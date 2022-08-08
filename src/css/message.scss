@@ -8,52 +8,51 @@
 
 .main_border {
   padding: 0 45px;
-  font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
   font-size: 13px;
   font-weight: 400;
   z-index: 50;
+
   h5 {
-    font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
+    font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
     font-size: 13px;
     font-weight: 400;
   }
 }
 
-.main_cont {
-  height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.message_cont {
+  height: 75%;
+  margin-top: 10px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
-.message_cont {
-   margin-top: 110px;
-   display: flex;
-   flex-directґґion: column;
-   overflow-y: auto;
-   overflow-x:hidden;
+.avatarMessage {
+  display: inline;
 }
 
 .message_cont::-webkit-scrollbar {
   width: 10px; /* ширина scrollbar */
 }
+
 .message_cont::-webkit-scrollbar-track {
-  background: var(--grey);      /* цвет дорожки */
+  background: var(--grey); /* цвет дорожки */
 }
+
 .message_cont::-webkit-scrollbar-thumb {
-  background-color: var(--searchbar);    /* цвет плашки */
-  border-radius: 15px;       /* закругления плашки */
-  border: 2px solid grey;  /* padding вокруг плашки */
+  background-color: var(--searchbar); /* цвет плашки */
+  border-radius: 15px; /* закругления плашки */
+  border: 2px solid grey; /* padding вокруг плашки */
 }
 
 .message_wrapper {
- font-family: Slack-Lato,Slack-Fractions,appleLogo,sans-serif;
- font-size: 13px;
- line-height: 1.4;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- align-items:flex-start;
+  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-bottom: 5px;
 }
 
 .message {
@@ -61,34 +60,36 @@
   margin-top: 1px;
   padding: 0;
 }
- .my-message {
-    align-self: flex-end;
-    margin-right: 5%;
-  }
 
+.my-message {
+  justify-content: flex-end;
+}
 
-.participant_wrapper{
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-align-items: center;
+.avatarMessage {
+  width: 36px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+.participant_wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .participant_indicator {
-  font-size: 13px;
-    font-weight: 900;
-      display: block;
-      margin: 0;
-      padding: 0;
+  font-size: 15px;
+  font-weight: 900;
 }
 
 .date_indicator {
-    margin-left: 20px;
-    color: var(--grey);
-    display: block;
-    font-size: 11px;
-    font-weight: 400;
-    font-variant-ligatures: common-ligatures;
+  margin-left: 20px;
+  color: rgba(97, 96, 97, 1);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.46668;
+  font-variant-ligatures: common-ligatures;
 
 }
 
