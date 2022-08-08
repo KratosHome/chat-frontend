@@ -19,8 +19,12 @@
 }
 
 .history-menu-position {
-   left: 215px;
+   left: 518px;
    top: 35px;
+
+   @media (max-width: 1650px) {
+      left: 384px;
+   }
 
    @media (max-width: 1080px) {
       left: 175px;
