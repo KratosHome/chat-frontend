@@ -3,11 +3,8 @@ import { channelParticipants } from '../../../services/channelParticipants.servi
 import { participants } from '../../../services/participant.service';
 import { Tooltip } from '../../shared/Tooltip';
 import './MessageHeader.scss';
+import { iMessageHeaderProps } from './MessageHeaderType';
 
-interface iMessageHeaderProps {
-   currentChannel: string;
-   currentChannelId: number;
-}
 export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    currentChannel,
    currentChannelId,
