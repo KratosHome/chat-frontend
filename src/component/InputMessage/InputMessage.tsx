@@ -4,6 +4,8 @@ import {InputMessageType} from "./InputMessageType";
 import Picker from 'emoji-picker-react';
 import {InputUpperBlock} from "./InputUpperBlock";
 import {InputLowerBlock} from "./InputLowerBlock";
+import {messages} from "../../services/message.service";
+import activeChatService from "../../services/activeChat.service";
 
 export const InputMessage: FC<InputMessageType> = memo(({
                                                             placeholderName,

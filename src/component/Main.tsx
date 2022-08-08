@@ -38,27 +38,42 @@ export const Main: React.FC = () => {
         setCurrentChannelId(activeChat);
     }, [currentChannelId]);
 
+
+    const [newsMessages, setNewMassaeg] = useState(messages)
+    const timeMassag = newsMessages.map(item => item.timeStamp)
+    let lastElemTime = timeMassag[timeMassag.length - 1];
+
+
+    let lastElemMeassag = messages[messages.length - 1];
+
+
     const handleSendButton = (
         text: string,
         currentUserId: number,
         id: number
     ) => {
-        const nMess: MessageModel = {
-            id: messageArr[messageArr.length - 1].id + 1,
-            chatParticipantId: currentUserId,
-            text: text,
-            timeStamp: Date.now(),
-            isEdited: false,
-            isRead: false,
-            chatChannelId: id,
-            isUnderReview: false,
-            sentTimeStamp: Date.now(),
-            rejectedTimeStamp: Date.now(),
-        };
-
-        setMessageArr([...messageArr, nMess]);
+        let nMess: MessageModel
+        if (lastElemTime >= Date.now() - 300000) {
+            let LastEl = messageArr[messageArr.length - 1];
+            LastEl.text = LastEl.text + " " + currentMessage
+        } else {
+            nMess = {
+                id: messageArr[messageArr.length - 1].id + 1,
+                chatParticipantId: currentUserId,
+                text: text,
+                timeStamp: Date.now(),
+                isEdited: false,
+                isRead: false,
+                chatChannelId: id,
+                isUnderReview: false,
+                sentTimeStamp: Date.now(),
+                rejectedTimeStamp: Date.now(),
+            };
+            setMessageArr([...messageArr, nMess]);
+        }
         setCurrentMessage('');
     };
+
 
     const changeUser = () => {
         let nextUser = currentUserId == 1 ? 0 : 1;
@@ -68,6 +83,7 @@ export const Main: React.FC = () => {
     const tstamp: number = messages[0] ? messages[0].timeStamp : 0;
 
     useHotkeys('ctrl+k', () => setCurrentUserId(prevCount => prevCount === 1 ? 0 : 1));
+
 
     return (
         <div className={topic}>
@@ -84,9 +100,13 @@ export const Main: React.FC = () => {
                                            currentChannelId={currentChannelId}/>
                             <div className='message_cont'>
                                 <TimeStamp data={tstamp}/>
-                                <MessageList key='1' currentChannel={activeChatService.getActiveChatName()}
-                                             messages={messageArr}
-                                             currentChannelId={activeChatService.getActiveChatId()}
+                                <MessageList
+                                    key='1'
+                                    currentChannel={activeChatService.getActiveChatName()}
+                                    messages={messageArr}
+                                    currentChannelId={activeChatService.getActiveChatId()}
+                                    currentMessage={currentMessage}
+                                    setNewMassaeg={setNewMassaeg}
                                 />
                             </div>
                         </div>
