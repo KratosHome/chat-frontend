@@ -1,26 +1,37 @@
 import React, { useState } from 'react';
 import { ReactModal } from '../ReactModal';
-import { AvatarMenu } from './AvatarMenu';
+import { AvatarMenu } from '../Modal/AvatarMenu';
 import './Header.scss';
+import { HistoryMenu } from '../Modal/HistoryMenu';
 
 export const Header: React.FC = () => {
    const avatarMenuPosition = 'avatar-menu-position';
+   const historyMenuPosition = 'history-menu-position';
 
-   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+   const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
+   const [isModalHistoryOpen, setIsModalHistoryOpen] = useState<boolean>(false);
 
-   const handleClick = () => {
-      setIsModalOpen(true);
+   const handleHistoryClick = () => {
+      setIsModalHistoryOpen(true);
    };
 
-   const handleClose = () => {
-      setIsModalOpen(false);
+   const handleHistoryClose = () => {
+      setIsModalHistoryOpen(false);
+   };
+
+   const handleAvatarClick = () => {
+      setIsModalAvatarOpen(true);
+   };
+
+   const handleAvatarClose = () => {
+      setIsModalAvatarOpen(false);
    };
 
    return (
       <header className='header'>
          <div className='header__container'>
             <div className='header__item'>
-               <a className='header__button'>
+               <a className='header__button' onClick={handleHistoryClick}>
                   <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                      <g fill='none' stroke='currentColor' stroke-width='1.5'>
                         <circle cx='10' cy='10' r='8.25'></circle>
@@ -92,7 +103,7 @@ export const Header: React.FC = () => {
                      </g>
                   </svg>
                </a>
-               <div className='header__avatar' onClick={handleClick}>
+               <div className='header__avatar' onClick={handleAvatarClick}>
                   <a className='header__avatar-button'>
                      <img
                         src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
@@ -103,11 +114,18 @@ export const Header: React.FC = () => {
                   </a>
                </div>
                <ReactModal
-                  isModalOpen={isModalOpen}
-                  onClose={handleClose}
+                  isModalOpen={isModalAvatarOpen}
+                  onClose={handleAvatarClose}
                   modalPosition={avatarMenuPosition}
                >
                   <AvatarMenu />
+               </ReactModal>
+               <ReactModal
+                  isModalOpen={isModalHistoryOpen}
+                  onClose={handleHistoryClose}
+                  modalPosition={historyMenuPosition}
+               >
+                  <HistoryMenu />
                </ReactModal>
             </div>
          </div>

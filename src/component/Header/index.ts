@@ -1,2 +1,2 @@
 export * from './Header';
-export * from './AvatarMenu';
+export * from '../Modal/AvatarMenu';
