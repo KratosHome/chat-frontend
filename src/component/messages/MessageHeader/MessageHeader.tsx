@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { BsPeopleFill } from 'react-icons/bs';
-import { Tooltip } from '../shared/Tooltip';
 import { channelParticipants } from '../../../services/channelParticipants.service';
 import { participants } from '../../../services/participant.service';
 import { Tooltip } from '../../shared/Tooltip';

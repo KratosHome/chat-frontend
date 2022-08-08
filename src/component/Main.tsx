@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Header} from './Header';
-import {MessageList, TimeStamp, MessageHeader} from './messages/';
+import {MessageHeader, MessageList, TimeStamp} from './messages/';
 import {messages} from '../services/message.service';
 import MessageModel from '../dto/MessageModel';
 import activeChatService from '../services/activeChat.service';
