@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { HoverIcon } from '../../HoverIcon';
 import { AvatarMenu } from '../../Modal/AvatarMenu';
 import { ReactModal } from '../../ReactModal';
 import './Help.scss';
+import { HelpPropsType } from './HelpType';
 
-export const Help: React.FC = () => {
+export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
    const avatarMenuPosition = 'avatar-menu-position';
 
    const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
+   const [isHoverHelp, setIsHoverHelp] = useState(false);
+   const [isHoverName, setIsHoverName] = useState(false);
 
    const handleAvatarClick = () => {
       setIsModalAvatarOpen(true);
@@ -16,9 +20,29 @@ export const Help: React.FC = () => {
       setIsModalAvatarOpen(false);
    };
 
+   const handleHelpMouseOver = () => {
+      setIsHoverHelp(!isHoverHelp);
+   };
+
+   const handleHelpMouseOut = () => {
+      setIsHoverHelp(!isHoverHelp);
+   };
+
+   const handleNameMouseOver = () => {
+      setIsHoverName(!isHoverName);
+   };
+
+   const handleNameMouseOut = () => {
+      setIsHoverName(!isHoverName);
+   };
+
    return (
       <div className='header__help'>
-         <a className='header__help-button'>
+         <a
+            className='header__help-button'
+            onMouseOver={handleHelpMouseOver}
+            onMouseOut={handleHelpMouseOut}
+         >
             <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                <g fill='none'>
                   <circle
@@ -36,7 +60,20 @@ export const Help: React.FC = () => {
                </g>
             </svg>
          </a>
-         <div className='header__avatar' onClick={handleAvatarClick}>
+         <HoverIcon
+            isHover={isHoverHelp}
+            marginLeft={'4px'}
+            marginTop={'70px'}
+            marginRight={'27px'}
+         >
+            <div>Help</div>
+         </HoverIcon>
+         <div
+            className='header__avatar'
+            onClick={handleAvatarClick}
+            onMouseOver={handleNameMouseOver}
+            onMouseOut={handleNameMouseOut}
+         >
             <a className='header__avatar-button'>
                <img
                   src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
@@ -46,6 +83,14 @@ export const Help: React.FC = () => {
                <div className='header__presence-sign'></div>
             </a>
          </div>
+         <HoverIcon
+            isHover={isHoverName}
+            marginLeft={'73px'}
+            marginTop={'80px'}
+            marginRight={'-20px'}
+         >
+            <div>{currentUserName}</div>
+         </HoverIcon>
          <ReactModal
             isModalOpen={isModalAvatarOpen}
             onClose={handleAvatarClose}

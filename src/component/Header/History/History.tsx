@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { HoverIcon } from '../../HoverIcon';
 import { HistoryMenu } from '../../Modal/HistoryMenu';
 import { ReactModal } from '../../ReactModal';
 import './History.scss';
@@ -7,6 +8,7 @@ export const History: React.FC = () => {
    const historyMenuPosition = 'history-menu-position';
 
    const [isModalHistoryOpen, setIsModalHistoryOpen] = useState<boolean>(false);
+   const [isHoverHistory, setIsHoverHistory] = useState(false);
 
    const handleHistoryClick = () => {
       setIsModalHistoryOpen(true);
@@ -16,10 +18,23 @@ export const History: React.FC = () => {
       setIsModalHistoryOpen(false);
    };
 
+   const handleHistoryMouseOver = () => {
+      setIsHoverHistory(!isHoverHistory);
+   };
+
+   const handleHistoryMouseOut = () => {
+      setIsHoverHistory(!isHoverHistory);
+   };
+
    return (
       <>
          <div className='header__history'>
-            <a className='header__history-button' onClick={handleHistoryClick}>
+            <a
+               className='header__history-button'
+               onClick={handleHistoryClick}
+               onMouseOver={handleHistoryMouseOver}
+               onMouseOut={handleHistoryMouseOut}
+            >
                <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                   <g fill='none' stroke='currentColor' stroke-width='1.5'>
                      <circle cx='10' cy='10' r='8.25'></circle>
@@ -30,6 +45,14 @@ export const History: React.FC = () => {
                   </g>
                </svg>
             </a>
+            <HoverIcon
+               isHover={isHoverHistory}
+               marginLeft={'-3px'}
+               marginTop={'70px'}
+               marginRight={'-33px'}
+            >
+               <div>History</div>
+            </HoverIcon>
          </div>
          <ReactModal
             isModalOpen={isModalHistoryOpen}
