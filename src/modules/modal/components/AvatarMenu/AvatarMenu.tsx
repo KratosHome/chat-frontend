@@ -1,9 +1,9 @@
 import React from 'react';
 import './AvatarMenu.scss';
-import { MenuItem } from './MenuItem';
-import { MenuSeparatorItem } from './MenuSeparatorItem';
-import { MenuUserItem } from './MenuUserItem';
-import { MenuUserStatusItem } from './MenuUserStatusItem';
+import { MenuItem } from '../MenuItem';
+import { MenuSeparatorItem } from '../MenuSeparatorItem';
+import { MenuUserItem } from '../MenuUserItem';
+import { MenuUserStatusItem } from '../MenuUserStatusItem';
 
 export const AvatarMenu: React.FC = () => {
    return (

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ReactModal } from '../../../../component/ReactModal';
-import { AvatarMenu } from './AvatarMenu';
+import { ReactModal, AvatarMenu } from '../../../modal';
 import './Header.scss';
 
 export const Header: React.FC = () => {
