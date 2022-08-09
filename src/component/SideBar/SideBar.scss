@@ -181,3 +181,25 @@
     }
   }
 }
+
+// Нужно будет сделать нормальный скролл, для sidebar
+
+.channels_wrapper {
+   overflow-y: auto;
+   overflow-x: hidden;
+   height: 100vh;
+}
+
+.channels_wrapper::-webkit-scrollbar {
+   width: 10px; /* ширина scrollbar */
+}
+
+.channels_wrapper::-webkit-scrollbar-track {
+   background: var(--searchbar); /* цвет дорожки */
+}
+
+.channels_wrapper::-webkit-scrollbar-thumb {
+   background-color: var(--header); /* цвет плашки */
+   border-radius: 15px; /* закругления плашки */
+   border: 2px solid var(--searchbar); /* padding вокруг плашки */
+}

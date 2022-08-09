@@ -1,7 +1,7 @@
 export type MessageType = {
-    partisipant?: string;
-    time: number;
-    message: string;
-    partisipantId?: number;
-    messageTime: any;
-}
+   participant?: string;
+   time: number;
+   message: string;
+   participantId?: number;
+   messageTime: any;
+};
