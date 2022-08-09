@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 import {ReactModal} from '../ReactModal';
-import {AvatarMenu} from './AvatarMenu';
 import './Header.scss';
 import {HoverIcon} from "../HoverIcon";
+import { AvatarMenu } from '../Modal/AvatarMenu';
 
 type HeaderType = {
     currentUserName: string
