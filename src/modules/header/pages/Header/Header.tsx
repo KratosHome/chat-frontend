@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactModal } from '../ReactModal';
+import { ReactModal } from '../../../../component/ReactModal';
 import { AvatarMenu } from './AvatarMenu';
 import './Header.scss';
 
