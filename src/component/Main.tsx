@@ -25,7 +25,6 @@ export const Main: React.FC = () => {
     const currentUserName = participants[currentUserId].name;
     const displaySend = visibleMessageField ? 'displayNone' : '';
     const textArea = 'area ' + displaySend;
-
     useEffect(() => {
         const activeChat = activeChatService.getActiveChatId();
 
@@ -94,7 +93,9 @@ export const Main: React.FC = () => {
     return (
         <div className={topic}>
             <div className='head_wrapper'>
-                <Header/>
+                <Header
+                    currentUserName={currentUserName}
+                />
             </div>
             <div className="cont_wrapper">
                 <div className="cont">
