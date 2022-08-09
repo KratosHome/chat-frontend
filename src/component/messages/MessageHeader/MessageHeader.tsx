@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { BsPeopleFill } from 'react-icons/bs';
 import { channelParticipants } from '../../../services/channelParticipants.service';
 import { participants } from '../../../services/participant.service';
 import { Tooltip } from '../../shared/Tooltip';
 import './MessageHeader.scss';
+import { iMessageHeaderProps } from './MessageHeaderType';
 
-interface iMessageHeaderProps {
-   currentChannel: string;
-   currentChannelId: number;
-}
 export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    currentChannel,
    currentChannelId,
 }) => {
+   const [showHint, setShowHint] = useState<boolean>(false);
+
    const participantsArray: any = [];
-   const [show, setShow] = useState(false);
    const channelParticipantsId = channelParticipants.find(
       (el) => el.channelId === currentChannelId
    );
@@ -23,6 +20,14 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
       participantsArray?.push(participants?.find((e) => e.id === el)?.name);
    });
    const participantsCount = participantsId ? participantsId.length : 0;
+
+   const handleMouseOver = () => {
+      setShowHint(true);
+   };
+
+   const handleMouseOut = () => {
+      setShowHint(false);
+   };
 
    return (
       <div className='message-header'>
@@ -66,18 +71,28 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
                </div>
             </div>
 
-            <div className='people'>
-               <div className='people__wrapper'>
+            <div
+               className='people'
+               onMouseOver={handleMouseOver}
+               onMouseOut={handleMouseOut}
+            >
+               <button className='people__wrapper'>
                   <div className='people__round'>
-                     <BsPeopleFill
-                        onMouseOver={() => setShow(true)}
-                        onMouseOut={() => setShow(false)}
-                     />
+                     <span className='people__round-container'>
+                        <img
+                           src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-24'
+                           srcSet='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-48 2x'
+                           alt='icon'
+                           className='people__round-icon'
+                           aria-hidden='true'
+                           role='img'
+                        />
+                     </span>
                      <div className='people__participants-count'>
                         {participantsCount}
                      </div>
                   </div>
-               </div>
+               </button>
             </div>
          </div>
          <div className='bookmark'>
@@ -90,7 +105,7 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
          </div>
          <Tooltip
             users={participantsArray}
-            show={show}
+            show={showHint}
             currentChannelId={currentChannelId}
          />
       </div>
