@@ -6,7 +6,12 @@
   padding: 8px;
   z-index: 9999999;
   font-size: 13px;
-  font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+
+    font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+  font-variant-ligatures: common-ligatures;
+  font-weight: 500;
+  line-height: 1.46668;
+
 
 
   .TopArrowHoverIcon {
