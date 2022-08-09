@@ -15,7 +15,7 @@ export const Header: React.FC<HeaderType> = ({currentUserName}) => {
     const [isHoverHistory, setIsHoverHistory] = useState(false);
     const [isHoverSearch, setIsHoverSearch] = useState(false);
     const [isHoverHelp, setIsHoverHelp] = useState(false);
-    const [isHoverFilter, setIsHoverFilter] = useState(true);
+    const [isHoverFilter, setIsHoverFilter] = useState(false);
     const [isHoverName, setIsHoverName] = useState(false);
 
     const handleClick = () => {
