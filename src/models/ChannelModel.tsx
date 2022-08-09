@@ -1,5 +1,5 @@
 import MessageModel from "./MessageModel";
-import ParticipantModel from "./PartiticiantModel";
+import ParticipantModel from "./ParticipantModel";
 import TimeStampModel from "./TimeStampModel";
 import {messages} from "../services/message.service";
 

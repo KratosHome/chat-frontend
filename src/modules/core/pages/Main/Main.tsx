@@ -12,7 +12,7 @@ import { channels } from '../../../../services/channels.service';
 import { participants } from '../../../../services/participant.service';
 import { InputMessage } from '../../../../component/InputMessage';
 import { useHotkeys } from 'react-hotkeys-hook';
-import { SideBar } from '../../../../component/SideBar';
+import { SideBar } from '../../../sidebar';
 import './Main.scss';
 
 export const Main: React.FC = () => {
@@ -102,11 +102,11 @@ export const Main: React.FC = () => {
 
    return (
       <div className={topic}>
-         <div className='head_wrapper'>
+         <div className='header-wrapper'>
             <Header />
          </div>
-         <div className='cont_wrapper'>
-            <div className='cont'>
+         <div className='content-wrapper'>
+            <div className='content'>
                <SideBar setCurrentChannel={setCurrentChannelId} />
                <div className='wider'>
                   <div className='box-2'>
@@ -114,7 +114,7 @@ export const Main: React.FC = () => {
                         currentChannel={activeChatService.getActiveChatName()}
                         currentChannelId={currentChannelId}
                      />
-                     <div className='message_cont'>
+                     <div className='message-content'>
                         <TimeStamp data={timestamp} />
                         <MessageList
                            key='1'

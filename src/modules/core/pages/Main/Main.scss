@@ -1,4 +1,4 @@
-.head_wrapper {
+.header-wrapper {
    width: 100%;
    background-color: var(--header);
    left: 0;
@@ -10,12 +10,12 @@
    z-index: 100;
 }
 
-.cont_wrapper {
+.content-wrapper {
    overflow: hidden;
    background-color: rgba(248, 248, 248, 1);
 }
 
-.cont {
+.content {
    display: flex;
    flex-direction: row;
    justify-content: flex-start;
@@ -37,22 +37,22 @@
    flex-basis: 100%;
 }
 
-.message_cont {
+.message-content {
    height: 75%;
    margin-top: 10px;
    overflow-y: auto;
    overflow-x: hidden;
 }
 
-.message_cont::-webkit-scrollbar {
+.message-content::-webkit-scrollbar {
    width: 10px; /* ширина scrollbar */
 }
 
-.message_cont::-webkit-scrollbar-track {
+.message-content::-webkit-scrollbar-track {
    background: var(--grey); /* цвет дорожки */
 }
 
-.message_cont::-webkit-scrollbar-thumb {
+.message-content::-webkit-scrollbar-thumb {
    background-color: var(--searchbar); /* цвет плашки */
    border-radius: 15px; /* закругления плашки */
    border: 2px solid grey; /* padding вокруг плашки */
