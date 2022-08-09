@@ -1,0 +1,45 @@
+.inputContainer {
+   margin: -1rem 1rem 1rem 1rem;
+   width: 100%;
+   padding-right: 2rem;
+
+   input {
+      width: 100%;
+      height: 120px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid rgba(132, 132, 132, 0.5);
+      border-radius: 10px;
+      padding-left: 15px;
+      font-size: 15px;
+      font-family: SlackLatoBlack;
+   }
+
+   input:focus {
+      border: 1px solid rgba(132, 132, 132, 1);
+      box-shadow: 1px 1px 2px 0 rgba(132, 132, 132, 1);
+      outline: 0;
+   }
+
+   .emojiInputMessage {
+      position: absolute;
+      margin-top: -330px;
+
+      input {
+         display: none;
+      }
+
+      ul:first-child {
+         display: none;
+      }
+
+      .emoji-picker-react .emoji-group:before {
+         display: none;
+      }
+   }
+
+   .emojiDisabledInputMessage {
+      display: none;
+   }
+}
