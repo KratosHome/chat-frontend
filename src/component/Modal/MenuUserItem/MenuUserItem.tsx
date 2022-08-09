@@ -16,7 +16,7 @@ export const MenuUserItem: React.FC = () => {
             </div>
             <div className='user__info'>
                <div className='user__name-container'>
-                  <span className='user__name'>I beautiful user</span>
+                  <span className='user__name'>Dmitrii Iakovenko</span>
                </div>
                <span className='user__presence'>
                   <i className='user__presence-icon' />

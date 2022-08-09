@@ -1,0 +1,46 @@
+.header {
+   &__history {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      align-items: center;
+      min-width: 564px;
+      padding-right: 20px;
+
+      @media (max-width: 1650px) {
+         min-width: 430px;
+      }
+
+      @media (max-width: 1080px) {
+         min-width: 220px;
+      }
+
+      @media (max-width: 900px) {
+         min-width: auto;
+         padding-left: 20px;
+      }
+   }
+
+   &__history-button {
+      display: block;
+      min-width: 26px;
+      min-height: 26px;
+      max-width: 26px;
+      max-height: 26px;
+      cursor: pointer;
+
+      &:hover {
+         background-color: var(--searchbar);
+         border-radius: 4px;
+
+         svg {
+            color: #ffffff;
+         }
+      }
+
+      svg {
+         margin: 3px;
+         color: #bcabbc;
+      }
+   }
+}

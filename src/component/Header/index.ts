@@ -1,2 +1,4 @@
 export * from './Header';
-export * from './AvatarMenu';
+export * from './History';
+export * from './Help';
+export * from './Search';
