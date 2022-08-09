@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { channelParticipants } from '../../../../services/channelParticipants.service';
 import { participants } from '../../../../services/participant.service';
-import { Tooltip } from '../../../../component/shared/Tooltip';
+import { Tooltip } from '../../../common/Tooltip';
 import './MessageHeader.scss';
 import { iMessageHeaderProps } from './MessageHeaderType';
 
