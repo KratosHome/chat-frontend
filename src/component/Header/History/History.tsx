@@ -47,9 +47,9 @@ export const History: React.FC = () => {
             </a>
             <HoverIcon
                isHover={isHoverHistory}
-               marginLeft={'-3px'}
-               marginTop={'70px'}
-               marginRight={'-33px'}
+               marginArrowLeft={'-3px'}
+               marginBlockTop={'76px'}
+               marginBlockRight={'-34px'}
             >
                <div>History</div>
             </HoverIcon>

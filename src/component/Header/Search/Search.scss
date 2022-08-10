@@ -11,7 +11,6 @@
       border-radius: 4px;
       outline: none;
       border: none;
-      transform: scale(1) translateX(0%) translateY(0%);
       transition-duration: 0.33s;
       transition-delay: 0.05s;
       box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.05);
@@ -32,13 +31,16 @@
       color: #ffffff;
       border: inherit;
       outline: none;
-      z-index: -1;
       font-size: 13px;
       font-weight: 400;
       line-height: 1.38463;
       text-overflow: ellipsis;
       white-space: nowrap;
       margin-top: 4px;
+   }
+
+   &__box-filter {
+      display: flex;
    }
 
    &__button-filter {

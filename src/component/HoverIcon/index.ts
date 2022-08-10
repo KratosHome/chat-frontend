@@ -1,1 +1,1 @@
-export * from "./HoverIcon"
+export * from './HoverIcon';

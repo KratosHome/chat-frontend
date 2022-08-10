@@ -1,7 +1,10 @@
 import React from 'react';
 import './MenuUserItem.scss';
+import { MenuUserItemPropsType } from './MenuUserItemType';
 
-export const MenuUserItem: React.FC = () => {
+export const MenuUserItem: React.FC<MenuUserItemPropsType> = ({
+   currentUserName,
+}) => {
    return (
       <div className='avatar-menu__user user'>
          <div className='user__container'>
@@ -16,7 +19,7 @@ export const MenuUserItem: React.FC = () => {
             </div>
             <div className='user__info'>
                <div className='user__name-container'>
-                  <span className='user__name'>Dmitrii Iakovenko</span>
+                  <span className='user__name'>{currentUserName}</span>
                </div>
                <span className='user__presence'>
                   <i className='user__presence-icon' />

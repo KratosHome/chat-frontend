@@ -62,9 +62,9 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          </a>
          <HoverIcon
             isHover={isHoverHelp}
-            marginLeft={'4px'}
-            marginTop={'70px'}
-            marginRight={'27px'}
+            marginArrowLeft={'4px'}
+            marginBlockTop={'76px'}
+            marginBlockRight={'21px'}
          >
             <div>Help</div>
          </HoverIcon>
@@ -85,9 +85,9 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          </div>
          <HoverIcon
             isHover={isHoverName}
-            marginLeft={'73px'}
-            marginTop={'80px'}
-            marginRight={'-20px'}
+            marginArrowLeft={'73px'}
+            marginBlockTop={'80px'}
+            marginBlockRight={'-18px'}
          >
             <div>{currentUserName}</div>
          </HoverIcon>
@@ -96,7 +96,7 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
             onClose={handleAvatarClose}
             modalPosition={avatarMenuPosition}
          >
-            <AvatarMenu />
+            <AvatarMenu currentUserName={currentUserName} />
          </ReactModal>
       </div>
    );

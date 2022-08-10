@@ -24,28 +24,6 @@ export const Search: React.FC = () => {
 
    return (
       <>
-         <HoverIcon
-            isHover={isHoverSearch}
-            marginLeft={'53px'}
-            marginTop={'90px'}
-            marginRight={'-80px'}
-         >
-            <div className='searchHoverIcon'>
-               Search My company
-               <div>
-                  <span>Ctrl</span>
-                  <span>G</span>
-               </div>
-            </div>
-         </HoverIcon>
-         <HoverIcon
-            isHover={isHoverFilter}
-            marginLeft={'6px'}
-            marginTop={'65px'}
-            marginRight={'-755px'}
-         >
-            Filter
-         </HoverIcon>
          <div className='header__search'>
             <span
                className='header__search-field'
@@ -70,7 +48,16 @@ export const Search: React.FC = () => {
                      ></path>
                   </svg>
                </a>
+               <HoverIcon
+                  isHover={isHoverFilter}
+                  marginArrowLeft={'6px'}
+                  marginBlockTop={'30px'}
+                  marginBlockLeft={'-21px'}
+               >
+                  Filter
+               </HoverIcon>
             </div>
+
             <div className='header__magnifier'>
                <i>
                   <svg data-som='true' aria-hidden='true' viewBox='0 0 20 20'>
@@ -81,6 +68,20 @@ export const Search: React.FC = () => {
                   </svg>
                </i>
             </div>
+            <HoverIcon
+               isHover={isHoverSearch}
+               marginArrowLeft={'53px'}
+               marginBlockTop={'30px'}
+               marginBlockLeft={'18%'}
+            >
+               <div className='searchHoverIcon'>
+                  Search My company
+                  <div>
+                     <span>Ctrl</span>
+                     <span>G</span>
+                  </div>
+               </div>
+            </HoverIcon>
          </div>
       </>
    );
