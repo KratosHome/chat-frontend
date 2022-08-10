@@ -12,8 +12,29 @@
       outline: none;
    }
 }
+.bookmark-menu-position {
+   left: 273px;
+   top: 128px;
+}
 
 .avatar-menu-position {
    right: 46px;
    top: 43px;
+}
+
+.history-menu-position {
+   left: 518px;
+   top: 35px;
+
+   @media (max-width: 1650px) {
+      left: 384px;
+   }
+
+   @media (max-width: 1080px) {
+      left: 175px;
+   }
+
+   @media (max-width: 900px) {
+      left: 20px;
+   }
 }

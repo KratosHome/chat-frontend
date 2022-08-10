@@ -1,0 +1,77 @@
+.header {
+   &__search {
+      height: 26px;
+      padding: 0 8px;
+      display: flex;
+      flex: 100%;
+      max-width: 732px;
+      min-width: 200px;
+      background-color: var(--searchbar);
+      color: var(--headerWhite);
+      border-radius: 4px;
+      outline: none;
+      border: none;
+      transition-duration: 0.33s;
+      transition-delay: 0.05s;
+      box-shadow: 0 0 16px 8px rgba(0, 0, 0, 0.05);
+
+      &:hover {
+         cursor: pointer;
+         background-color: rgb(114, 79, 116);
+      }
+   }
+
+   &__search-field {
+      user-select: text;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      flex-wrap: nowrap;
+      width: 100%;
+      background-color: var(--searchbar), 0;
+      color: #ffffff;
+      border: inherit;
+      outline: none;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.38463;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-top: 4px;
+   }
+
+   &__box-filter {
+      display: flex;
+   }
+
+   &__button-filter {
+      display: block;
+      min-width: 16px;
+      min-height: 16px;
+      margin-top: 5px;
+      margin-right: 10px;
+
+      & svg {
+         color: #ffffff;
+      }
+   }
+
+   &__magnifier {
+      margin-top: 5px;
+      min-width: 15px;
+      min-height: 15px;
+      color: #bcabbc;
+   }
+}
+
+.searchHoverIcon {
+   text-align: center;
+
+   span {
+      font-weight: 400;
+      display: inline-block;
+      background-color: rgb(28, 27, 27);
+      border-radius: 5px;
+      margin: 5px 5px 0px 0;
+      padding: 2px 5px 2px 5px;
+   }
+}

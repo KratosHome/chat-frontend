@@ -1,10 +1,9 @@
 import React from 'react';
-import './MenuItem.scss';
 import { MenuItemType } from './MenuItemType';
 
 export const MenuItem: React.FC<MenuItemType> = ({ isSubmenu, itemText }) => {
    return (
-      <div className='avatar-menu__item item'>
+      <div className='container-menu__item item'>
          <button
             className={`item__button ${
                isSubmenu ? 'item__button-submenu' : ''
