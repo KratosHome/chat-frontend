@@ -3,8 +3,8 @@ import { HoverIcon } from '../../../common/HoverIcon';
 import './Search.scss';
 
 export const Search: React.FC = () => {
-   const [isHoverSearch, setIsHoverSearch] = useState(false);
-   const [isHoverFilter, setIsHoverFilter] = useState(false);
+   const [isHoverSearch, setIsHoverSearch] = useState<boolean>(false);
+   const [isHoverFilter, setIsHoverFilter] = useState<boolean>(false);
 
    const handleSearchMouseOver = () => {
       setIsHoverSearch(!isHoverSearch);

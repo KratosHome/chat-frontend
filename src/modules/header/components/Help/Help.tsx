@@ -9,8 +9,8 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
    const avatarMenuPosition = 'avatar-menu-position';
 
    const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
-   const [isHoverHelp, setIsHoverHelp] = useState(false);
-   const [isHoverName, setIsHoverName] = useState(false);
+   const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
+   const [isHoverName, setIsHoverName] = useState<boolean>(false);
 
    const handleAvatarClick = () => {
       setIsModalAvatarOpen(true);

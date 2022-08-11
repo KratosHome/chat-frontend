@@ -13,15 +13,15 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
          <div className='container-menu__items'>
             <MenuUserItem currentUserName={currentUserName} />
             <MenuUserStatusItem />
-            <MenuItem isSubmenu={false} itemText={'Set yourself as away'} />
+            <MenuItem itemText={'Set yourself as away'} />
             <div className='container-menu__submenu'>
                <MenuItem isSubmenu={true} itemText={'Pause notifications'} />
             </div>
             <MenuSeparatorItem />
-            <MenuItem isSubmenu={false} itemText={'Profile'} />
-            <MenuItem isSubmenu={false} itemText={'Preferences'} />
+            <MenuItem itemText={'Profile'} />
+            <MenuItem itemText={'Preferences'} />
             <MenuSeparatorItem />
-            <MenuItem isSubmenu={false} itemText={'Sign out of Company name'} />
+            <MenuItem itemText={'Sign out of Company Name'} />
          </div>
       </div>
    );

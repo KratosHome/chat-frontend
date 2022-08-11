@@ -8,7 +8,7 @@ export const History: React.FC = () => {
    const historyMenuPosition = 'history-menu-position';
 
    const [isModalHistoryOpen, setIsModalHistoryOpen] = useState<boolean>(false);
-   const [isHoverHistory, setIsHoverHistory] = useState(false);
+   const [isHoverHistory, setIsHoverHistory] = useState<boolean>(false);
 
    const handleHistoryClick = () => {
       setIsModalHistoryOpen(true);

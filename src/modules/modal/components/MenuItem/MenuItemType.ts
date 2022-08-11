@@ -1,4 +1,4 @@
 export interface MenuItemType {
-   isSubmenu: boolean;
+   isSubmenu?: boolean;
    itemText: string;
 }

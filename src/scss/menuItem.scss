@@ -30,9 +30,18 @@
       white-space: nowrap;
       width: 100%;
 
-      &:hover {
+      &:hover div {
          color: #ffffff;
       }
+
+      &:hover .plans__link {
+         color: #ffffff;
+         text-decoration: underline;
+      }
+   }
+
+   &__label {
+      font-size: 15px;
    }
 
    &__button-submenu {

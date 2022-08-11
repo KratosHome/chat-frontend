@@ -1,16 +1,29 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useState } from 'react';
 import './SideBar.scss';
 import { ChatList } from '../../components/ChatList';
 import { Logo } from '../../components/Logo';
 import { SideBarType } from './SideBarType';
+import { ReactModal, RoomMenu } from '../../../modal';
 
 export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
+   const roomMenuPosition = 'room-menu-position';
+
+   const [isModalRoomOpen, setIsModalRoomOpen] = useState<boolean>(false);
+
+   const handleRoomClick = () => {
+      setIsModalRoomOpen(true);
+   };
+
+   const handleRoomClose = () => {
+      setIsModalRoomOpen(false);
+   };
+
    console.log(setCurrentChannel);
 
    return (
       <div className='containerSideBar'>
          <div className='upAndDownSideBar'>
-            <div className='headSideBar'>
+            <div className='headSideBar' onClick={handleRoomClick}>
                <Logo />
                <div className='brandSideBar'>
                   <span>Company Name</span>
@@ -30,7 +43,7 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                      ></path>
                   </svg>
                </div>
-               <div>
+               <div onClick={(e) => e.stopPropagation()}>
                   <svg
                      data-0v2='true'
                      aria-hidden='true'
@@ -200,6 +213,13 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                <div className='iconMicrophoneFooterSideBar'></div>
             </button>
          </div>
+         <ReactModal
+            isModalOpen={isModalRoomOpen}
+            onClose={handleRoomClose}
+            modalPosition={roomMenuPosition}
+         >
+            <RoomMenu />
+         </ReactModal>
       </div>
    );
 });
