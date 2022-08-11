@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.scss';
-import "./scss/nullStyle.scss"
 import { Init } from './modules/core';
 
 export const App: React.FC = () => {
