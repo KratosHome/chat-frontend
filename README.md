@@ -2,9 +2,9 @@
 
 ## Prerequisites
 
-- installed Node.js
-- git (optional, to clone from repository)
-- some text editor for editing configuration files (optional)
+-  installed Node.js
+-  git (optional, to clone from repository)
+-  some text editor for editing configuration files (optional)
 
 ## How to run application locally
 

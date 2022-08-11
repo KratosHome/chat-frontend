@@ -1,4 +1,4 @@
-import Keycloak from "keycloak-js";
+import Keycloak from 'keycloak-js';
 
 const _kc = new Keycloak('/keycloak.json');
 
@@ -8,15 +8,14 @@ const _kc = new Keycloak('/keycloak.json');
  * @param onAuthenticatedCallback
  */
 const initKeycloak = (onAuthenticatedCallback) => {
-  _kc.init({
-    onLoad: 'login-required',
-  })
-    .then((authenticated) => {
+   _kc.init({
+      onLoad: 'login-required',
+   }).then((authenticated) => {
       console.log(authenticated);
       if (authenticated) {
-        onAuthenticatedCallback();
+         onAuthenticatedCallback();
       }
-    })
+   });
 };
 
 const doLogin = _kc.login;
@@ -28,23 +27,21 @@ const getToken = () => _kc.token;
 const isLoggedIn = () => !!_kc.token;
 
 const updateToken = (successCallback) =>
-  _kc.updateToken(5)
-    .then(successCallback)
-    .catch(doLogin);
+   _kc.updateToken(5).then(successCallback).catch(doLogin);
 
 const getUsername = () => _kc.tokenParsed?.preferred_username;
 
 const hasRole = (roles) => roles.some((role) => _kc.hasRealmRole(role));
 
 const UserService = {
-  initKeycloak,
-  doLogin,
-  doLogout,
-  isLoggedIn,
-  getToken,
-  updateToken,
-  getUsername,
-  hasRole,
+   initKeycloak,
+   doLogin,
+   doLogout,
+   isLoggedIn,
+   getToken,
+   updateToken,
+   getUsername,
+   hasRole,
 };
 
 export default UserService;
