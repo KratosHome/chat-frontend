@@ -1,0 +1,19 @@
+.plans {
+   padding-top: 8px;
+   user-select: text;
+
+   &__container {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.38463;
+      margin: 0 16px 8px 0;
+      width: 100%;
+      white-space: normal;
+   }
+
+   &__link {
+      color: rgba(18, 100, 163, 1);
+      font-weight: 700;
+      margin-left: 3px;
+   }
+}
