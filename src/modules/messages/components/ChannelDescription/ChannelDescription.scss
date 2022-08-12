@@ -1,0 +1,80 @@
+.description {
+   margin: 48px 20px 16px;
+   font-size: 15px;
+   line-height: 1.46668;
+
+   &__container {
+      display: flex;
+      margin-bottom: 20px;
+   }
+
+   &__image {
+      background-color: #f4ede4;
+      border-radius: 4px;
+      cursor: default;
+      flex: none;
+      height: 36px;
+      margin-right: 8px;
+      margin-top: 4px;
+      width: 36px;
+
+      & svg {
+         border-radius: 4px;
+      }
+   }
+
+   &__header {
+      color: rgba(29, 28, 29, 1);
+      font-weight: 900;
+   }
+
+   &__body {
+      color: rgba(29, 28, 29, 0.7);
+      font-weight: 400;
+   }
+
+   &__body-button {
+      background: none;
+      border: 0;
+      color: rgba(18, 100, 163, 1);
+      cursor: pointer;
+      font: inherit;
+      line-height: inherit;
+      margin: 0;
+      margin-left: 3px;
+      overflow: initial;
+      padding: 0;
+      text-align: initial;
+      text-decoration: none;
+      vertical-align: initial;
+
+      &:hover {
+         text-decoration: underline;
+         color: rgb(14, 77, 125);
+      }
+   }
+
+   &__channel {
+      color: rgba(18, 100, 163, 1);
+   }
+
+   &__channel-container {
+      display: inline;
+      white-space: pre;
+   }
+
+   &__channel-icon {
+      margin-right: 2px;
+
+      & svg {
+         display: inline-block;
+         vertical-align: -0.125em;
+         flex-shrink: 0;
+         font-size: inherit;
+         height: 1em;
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+         width: 1em;
+      }
+   }
+}
