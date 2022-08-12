@@ -1,21 +1,29 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {format} from 'date-fns';
 import './TimeStamp.scss';
-import {DateButton, HistoryMenu, ReactModal} from "../../../modal";
+import {DateButton, ReactModal} from "../../../modal";
+import {DataType} from "./DataType";
 
-interface Data {
-    data: number;
-}
 
-export const TimeStamp: React.FC<Data> = ({data}) => {
+export const TimeStamp: React.FC<DataType> = ({data}) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [topCoords, setTopCoords] = useState<number>(0);
+
+    const onClickModalOpen = (e: any) => {
+        setIsModalOpen(!isModalOpen)
+        setTopCoords(e.target.offsetTop + 30)
+    }
 
     if (data) {
         return (
-            <div className="test">
-                <div className='containerTimeStamp'>
+            <>
+                <div
+                    className='containerTimeStamp'
+                    onClick={onClickModalOpen}
+                    onMouseMove={(e) => e.stopPropagation()}
+                >
                     <div className='containerTime'
-                         onClick={() => setIsModalOpen(!isModalOpen)}
+
                     >
                         <div>
                             {`${format(new Date(data), 'MMMM do')}`}
@@ -37,9 +45,16 @@ export const TimeStamp: React.FC<Data> = ({data}) => {
                     onClose={() => setIsModalOpen(!isModalOpen)}
                     modalPosition={"date-button-position"}
                 >
-                    <DateButton/>
+                    <div style={
+                        {
+                            top: `${topCoords}px`,
+                            position: "absolute"
+                        }
+                    }>
+                        <DateButton/>
+                    </div>
                 </ReactModal>
-            </div>
+            </>
         );
     }
 
