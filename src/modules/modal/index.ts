@@ -10,4 +10,4 @@ export * from './components/RoomMenu';
 export * from './components/MenuPlansItem';
 export * from './components/MenuRoomNameItem';
 export * from './components/MenuOpenAppItem';
-
+export * from './components/DateButton';

@@ -1,45 +1,54 @@
 .modal {
-   position: fixed;
-   z-index: 201;
-   top: 0;
-   left: 0;
-   width: 100vw;
-   height: 100vh;
-   overflow: hidden;
+  position: fixed;
+  z-index: 201;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 
-   &__content {
-      position: absolute;
-      outline: none;
-   }
+  &__content {
+    position: absolute;
+    outline: none;
+  }
 }
+
 .bookmark-menu-position {
-   left: 273px;
-   top: 128px;
+  left: 273px;
+  top: 128px;
 }
 
 .avatar-menu-position {
-   right: 46px;
-   top: 43px;
+  right: 46px;
+  top: 43px;
 }
 
 .history-menu-position {
-   left: 518px;
-   top: 35px;
+  left: 518px;
+  top: 35px;
 
-   @media (max-width: 1650px) {
-      left: 384px;
-   }
+  @media (max-width: 1650px) {
+    left: 384px;
+  }
 
-   @media (max-width: 1080px) {
-      left: 175px;
-   }
+  @media (max-width: 1080px) {
+    left: 175px;
+  }
 
-   @media (max-width: 900px) {
-      left: 20px;
-   }
+  @media (max-width: 900px) {
+    left: 20px;
+  }
 }
 
 .room-menu-position {
-   left: 16px;
-   top: 95px;
+  left: 16px;
+  top: 95px;
 }
+
+.date-button-position {
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-7%, -50%);
+}
+
