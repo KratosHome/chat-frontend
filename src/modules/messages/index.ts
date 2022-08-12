@@ -7,4 +7,5 @@ export * from './components/InputButton';
 export * from './components/InputLowerBlock';
 export * from './components/InputMessage';
 export * from './components/InputUpperBlock';
+export * from './components/ChannelDescription';
 export * from './pages/MessagesContent';

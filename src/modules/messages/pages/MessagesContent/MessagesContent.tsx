@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import MessageModel from '../../../../dto/MessageModel';
 import { messages } from '../../../../services/message.service';
+import { ChannelDescription } from '../../components/ChannelDescription';
 import { InputMessage } from '../../components/InputMessage';
 import { MessageHeader } from '../../components/MessageHeader';
 import { MessageList } from '../../components/MessageList';
@@ -72,6 +73,7 @@ export const MessagesContent: React.FC<MessageContentPropsType> = ({
                currentChannelId={currentChannelId}
             />
             <div className='message-content'>
+               <ChannelDescription currentChannel={currentChannel} />
                <TimeStamp data={timestamp} />
                <MessageList
                   key='1'
