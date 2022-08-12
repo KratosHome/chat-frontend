@@ -7,11 +7,19 @@ import {DataType} from "./DataType";
 
 export const TimeStamp: React.FC<DataType> = ({data}) => {
     const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
     const [topCoords, setTopCoords] = useState<number>(0);
 
     const onClickModalOpen = (e: any) => {
         setIsModalOpen(!isModalOpen)
-        setTopCoords(e.target.offsetTop + 30)
+        let rect = e.target.getBoundingClientRect();
+        let y = e.clientY - rect.top;
+        setTopCoords(e.clientY - y + 30)
+    }
+
+    const onSvgClock = (e: any) => {
+        setIsModalOpen(!isModalOpen)
+        e.stopPropagation()
     }
 
     if (data) {
@@ -19,15 +27,15 @@ export const TimeStamp: React.FC<DataType> = ({data}) => {
             <>
                 <div
                     className='containerTimeStamp'
-                    onClick={onClickModalOpen}
-                    onMouseMove={(e) => e.stopPropagation()}
                 >
                     <div className='containerTime'
-
+                         onClick={onClickModalOpen}
                     >
                         <div>
                             {`${format(new Date(data), 'MMMM do')}`}
-                            <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
+                            <svg
+                                onClick={onSvgClock}
+                                data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                                 <path
                                     fill='none'
                                     stroke='currentColor'
