@@ -3,12 +3,15 @@ import './SideBar.scss';
 import { ChatList } from '../../components/ChatList';
 import { Logo } from '../../components/Logo';
 import { SideBarType } from './SideBarType';
-import { ReactModal, RoomMenu } from '../../../modal';
+import { ReactModal, RoomMenu, SidebarMoreMenu } from '../../../modal';
 
 export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
    const roomMenuPosition = 'room-menu-position';
+   const sidebarMoreMenuPosition = 'sidebar-more-menu-position';
 
    const [isModalRoomOpen, setIsModalRoomOpen] = useState<boolean>(false);
+   const [isModalSidebarMoreOpen, setIsModalSidebarMoreOpen] =
+      useState<boolean>(false);
 
    const handleRoomClick = () => {
       setIsModalRoomOpen(true);
@@ -16,6 +19,14 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
 
    const handleRoomClose = () => {
       setIsModalRoomOpen(false);
+   };
+
+   const handleSidebarMoreClick = () => {
+      setIsModalSidebarMoreOpen(true);
+   };
+
+   const handleSidebarMoreClose = () => {
+      setIsModalSidebarMoreOpen(false);
    };
 
    console.log(setCurrentChannel);
@@ -162,7 +173,7 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                   </svg>
                   <div>Slack Connect</div>
                </div>
-               <div>
+               <div onClick={handleSidebarMoreClick}>
                   <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                      <g fill='currentColor'>
                         <circle
@@ -219,6 +230,13 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
             modalPosition={roomMenuPosition}
          >
             <RoomMenu />
+         </ReactModal>
+         <ReactModal
+            isModalOpen={isModalSidebarMoreOpen}
+            onClose={handleSidebarMoreClose}
+            modalPosition={sidebarMoreMenuPosition}
+         >
+            <SidebarMoreMenu />
          </ReactModal>
       </div>
    );
