@@ -3,6 +3,7 @@ import './ChannelDescription.scss';
 import { ChannelDescriptionPropsType } from './ChannelDescriptionType';
 import { ReactModal } from '../../../modal';
 import { AddPeopleMessage } from '../../../modal/components/AddPeopleMessage/AddPeopleMessage';
+import imgUser from "./add-user.png"
 
 export const ChannelDescription: React.FC<ChannelDescriptionPropsType> = memo(
    ({ currentChannel, placeholderName }) => {
@@ -82,9 +83,10 @@ export const ChannelDescription: React.FC<ChannelDescriptionPropsType> = memo(
                         </button>
                      </div>
                      <button
-                        className='description__body-button'
+                        className='description__body-button iconChannelDescription'
                         onClick={onClickModalOpen}
                      >
+                        <img src={imgUser} alt="icon user"/>
                         Add people
                      </button>
                   </div>

@@ -13,3 +13,4 @@ export * from './components/MenuOpenAppItem';
 export * from './components/SidebarMoreMenu';
 export * from './components//MenuItemWithIcon';
 export * from './components/DateButton';
+export * from  "./components/AddPeopleMessage"
