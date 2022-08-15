@@ -39,32 +39,8 @@
          text-decoration: underline;
       }
 
-      &:hover .item__label-highlight {
+      &:hover .item__label--highlight {
          color: #ffffff;
-      }
-   }
-
-   &__button-more-menu {
-      padding-left: 16px;
-   }
-
-   &__button-submenu {
-      padding-right: 12px;
-
-      &:hover svg {
-         color: #ffffff;
-      }
-   }
-
-   &__submenu-indicator {
-      color: rgba(97, 96, 97, 1);
-      padding-right: 16px;
-      display: flex;
-      align-items: center;
-
-      & svg {
-         width: 15px;
-         height: 15px;
       }
    }
 
@@ -74,14 +50,6 @@
       text-overflow: ellipsis;
       top: -1px;
       font-size: 15px;
-   }
-
-   &__label-highlight {
-      color: rgba(18, 100, 163, 1);
-   }
-
-   &__label-customize {
-      font-size: 13px;
    }
 
    &__icon-container {
@@ -110,11 +78,5 @@
          print-color-adjust: exact;
          width: 1em;
       }
-   }
-
-   &__shortcut {
-      color: rgba(29, 28, 29, 0.7);
-      padding-left: 8px;
-      font-size: 15px;
    }
 }

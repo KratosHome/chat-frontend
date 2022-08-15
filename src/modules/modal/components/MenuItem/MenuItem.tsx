@@ -1,12 +1,13 @@
 import React from 'react';
 import { MenuItemType } from './MenuItemType';
+import './MenuItem.scss';
 
 export const MenuItem: React.FC<MenuItemType> = ({ isSubmenu, itemText }) => {
    return (
       <div className='container-menu__item item'>
          <button
             className={`item__button ${
-               isSubmenu ? 'item__button-submenu' : ''
+               isSubmenu ? 'item__button--submenu' : ''
             }`}
          >
             {itemText === 'Set yourself as away' ? (

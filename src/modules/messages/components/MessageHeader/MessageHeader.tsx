@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { channelParticipants } from '../../../../services/channelParticipants.service';
 import { participants } from '../../../../services/participant.service';
 import { Tooltip } from '../../../common/Tooltip';
+import { ReactModal } from '../../../modal';
+import { BookmarkMenu } from '../../../modal/components/BookmarkMenu';
 import './MessageHeader.scss';
 import { iMessageHeaderProps } from './MessageHeaderType';
 
@@ -9,17 +11,30 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    currentChannel,
    currentChannelId,
 }) => {
+   const bookmarkMenuPosition = 'bookmark-menu-position';
+
+   const [isModalBookmarkOpen, setIsModalBookmarkOpen] =
+      useState<boolean>(false);
+
    const [showHint, setShowHint] = useState<boolean>(false);
 
    const participantsArray: any = [];
    const channelParticipantsId = channelParticipants.find(
-      (el) => el.channelId === currentChannelId
+      (el) => el.channelId === currentChannelId,
    );
    const participantsId = channelParticipantsId?.participantsId;
    participantsId?.map((el) => {
       participantsArray?.push(participants?.find((e) => e.id === el)?.name);
    });
    const participantsCount = participantsId ? participantsId.length : 0;
+
+   const handleBookmarkClick = () => {
+      setIsModalBookmarkOpen(true);
+   };
+
+   const handleBookmarkClose = () => {
+      setIsModalBookmarkOpen(false);
+   };
 
    const handleMouseOver = () => {
       setShowHint(true);
@@ -96,13 +111,20 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
             </div>
          </div>
          <div className='bookmark'>
-            <div className='bookmark__container'>
+            <div className='bookmark__container' onClick={handleBookmarkClick}>
                <button className='bookmark__button'>
                   <i />
                   Add a bookmark
                </button>
             </div>
          </div>
+         <ReactModal
+            isModalOpen={isModalBookmarkOpen}
+            onClose={handleBookmarkClose}
+            modalPosition={bookmarkMenuPosition}
+         >
+            <BookmarkMenu />
+         </ReactModal>
          <Tooltip
             users={participantsArray}
             show={showHint}

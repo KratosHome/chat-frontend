@@ -1,5 +1,6 @@
 import React from 'react';
 import { MenuItemWithIconPropsType } from './MenuItemWithIconType';
+import './MenuItemWithIcon.scss';
 
 export const MenuItemWithIcon: React.FC<MenuItemWithIconPropsType> = ({
    itemText,
