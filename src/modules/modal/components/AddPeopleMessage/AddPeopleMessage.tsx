@@ -3,14 +3,14 @@ import './AddPeopleMessage.scss';
 import { AddPeopleMessageType } from './AddPeopleMessageType';
 
 export const AddPeopleMessage: React.FC<AddPeopleMessageType> = memo(
-   ({ placeholderName }) => {
+   ({ placeholderName, closeModal }) => {
       return (
          <div className='container-menu widthAddPeopleMessage'>
             <div className='container-menu__items'>
                <div className='containerAddPeopleMessage'>
                   <h1>
                      Add people to # {placeholderName}
-                     <button>
+                     <button onClick={() => closeModal(false)}>
                         <svg
                            data-aqc='true'
                            aria-hidden='true'
@@ -28,8 +28,10 @@ export const AddPeopleMessage: React.FC<AddPeopleMessageType> = memo(
                   </h1>
                   <input type='text' placeholder={'Enter a name or email'} />
                   <button>Add</button>
-                  <div className="proConnectAddPeopleMessage">
-                     <div className="headProConnectAddPeopleMessage">Try Slack Connect <span>PRO</span></div>
+                  <div className='proConnectAddPeopleMessage'>
+                     <div className='headProConnectAddPeopleMessage'>
+                        Try Slack Connect <span>PRO</span>
+                     </div>
                      <div>
                         Working with people at other companies? Simply type
                         their email above to get started.

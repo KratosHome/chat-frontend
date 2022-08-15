@@ -54,11 +54,11 @@
 
 
   button {
-    background: rgba(221, 221, 221, 1);
-    color: rgba(29, 28, 29, 0.85);
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: black;
     text-shadow: none;
     transition: all 80ms linear;
-    border: none;
     border-radius: 5px;
     width: 85px;
     height: 35px;
@@ -84,7 +84,7 @@
         display: block;
         margin-left: 10px;
         padding: 4px 4px 0px 4px;
-        background-color: rgb(29, 43, 107);
+        background-color: rgb(22, 37, 105);
         color: white;
         font-size: 11px;
         border-radius: 5px;

@@ -1,3 +1,4 @@
 export type AddPeopleMessageType = {
-    placeholderName: string | undefined;
+    placeholderName: string | undefined
+    closeModal: (value: boolean) => void;
 };
