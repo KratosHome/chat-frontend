@@ -13,6 +13,8 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
 }) => {
    const bookmarkMenuPosition = 'bookmark-menu-position';
 
+   const [coords, setCoords] = useState<number>(0);
+
    const [isModalBookmarkOpen, setIsModalBookmarkOpen] =
       useState<boolean>(false);
 
@@ -28,8 +30,11 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    });
    const participantsCount = participantsId ? participantsId.length : 0;
 
-   const handleBookmarkClick = () => {
+   const handleBookmarkClick = (e: React.MouseEvent<HTMLDivElement>) => {
       setIsModalBookmarkOpen(true);
+      let rect = (e.target as Element).getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      setCoords(e.clientX - x);
    };
 
    const handleBookmarkClose = () => {
@@ -123,7 +128,14 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
             onClose={handleBookmarkClose}
             modalPosition={bookmarkMenuPosition}
          >
-            <BookmarkMenu />
+            <div
+               style={{
+                  left: `${coords}px`,
+                  position: 'absolute',
+               }}
+            >
+               <BookmarkMenu />
+            </div>
          </ReactModal>
          <Tooltip
             users={participantsArray}
