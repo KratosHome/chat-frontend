@@ -38,10 +38,14 @@
          color: #ffffff;
          text-decoration: underline;
       }
+
+      &:hover .item__label-highlight {
+         color: #ffffff;
+      }
    }
 
-   &__label {
-      font-size: 15px;
+   &__button-more-menu {
+      padding-left: 16px;
    }
 
    &__button-submenu {
@@ -69,5 +73,48 @@
       overflow: hidden;
       text-overflow: ellipsis;
       top: -1px;
+      font-size: 15px;
+   }
+
+   &__label-highlight {
+      color: rgba(18, 100, 163, 1);
+   }
+
+   &__label-customize {
+      font-size: 13px;
+   }
+
+   &__icon-container {
+      color: rgba(29, 28, 29, 0.7);
+      height: 28px;
+      margin-right: 4px;
+      max-width: 28px;
+      min-width: 28px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__icon {
+      font-size: 18px;
+      position: relative;
+
+      & svg {
+         display: inline-block;
+         vertical-align: -0.125em;
+         flex-shrink: 0;
+         font-size: inherit;
+         height: 1em;
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+         width: 1em;
+      }
+   }
+
+   &__shortcut {
+      color: rgba(29, 28, 29, 0.7);
+      padding-left: 8px;
+      font-size: 15px;
    }
 }
