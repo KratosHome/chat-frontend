@@ -31,7 +31,7 @@ export const MessagesContent: React.FC<MessageContentPropsType> = ({
    const handleSendButton = (
       text: string,
       currentUserId: number,
-      id: number
+      id: number,
    ) => {
       let nMess: MessageModel;
 
@@ -73,7 +73,10 @@ export const MessagesContent: React.FC<MessageContentPropsType> = ({
                currentChannelId={currentChannelId}
             />
             <div className='message-content'>
-               <ChannelDescription currentChannel={currentChannel} />
+               <ChannelDescription
+                  placeholderName={placeholderName}
+                  currentChannel={currentChannel}
+               />
                <TimeStamp data={timestamp} />
                <MessageList
                   key='1'

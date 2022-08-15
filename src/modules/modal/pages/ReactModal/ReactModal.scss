@@ -1,6 +1,6 @@
 .modal {
   position: fixed;
-  z-index: 201;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100vw;
@@ -11,6 +11,16 @@
     position: absolute;
     outline: none;
   }
+}
+
+.onBlur {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
 .bookmark-menu-position {
@@ -53,6 +63,13 @@
 
 
 .sidebar-more-menu-position {
-   left: 13px;
-   top: 250px;
+  left: 13px;
+  top: 250px;
+}
+
+.add-people-position-position {
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
 }

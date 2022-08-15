@@ -1,0 +1,105 @@
+.widthAddPeopleMessage {
+  max-width: 520px;
+  width: 100%;
+}
+
+.containerAddPeopleMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h1 {
+    margin-left: -250px;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.33334;
+    display: flex;
+
+    button {
+      position: absolute;
+      margin-left: 410px;
+      margin-top: -5px;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+
+      svg {
+        color: rgba(29, 28, 29, 0.7);
+        width: 20px;
+        font-size: 20px;
+        font-weight: 100;
+        flex-shrink: 0;
+        height: 1em;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  }
+
+  input {
+    height: 40px;
+    width: 450px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    padding-left: 10px;
+
+    &:focus {
+      border: 1px solid rgb(35, 28, 28);
+      outline: 5px solid rgba(147, 183, 229, 0.5);
+    }
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+
+  button {
+    background: rgba(221, 221, 221, 1);
+    color: rgba(29, 28, 29, 0.85);
+    text-shadow: none;
+    transition: all 80ms linear;
+    border: none;
+    border-radius: 5px;
+    width: 85px;
+    height: 35px;
+    margin-top: 10px;
+    margin-left: 350px;
+    cursor: pointer;
+  }
+
+  .proConnectAddPeopleMessage {
+    position: relative;
+    background-color: rgba(84, 82, 82, 0.1);
+    margin-bottom: -20px;
+    margin-top: 10px;
+    padding: 25px;
+    font-size: 15px;
+
+    .headProConnectAddPeopleMessage {
+      font-weight: 600;
+      display: flex;
+      margin-bottom: 3px;
+
+      span {
+        display: block;
+        margin-left: 10px;
+        padding: 4px 4px 0px 4px;
+        background-color: rgb(29, 43, 107);
+        color: white;
+        font-size: 11px;
+        border-radius: 5px;
+      }
+
+    }
+
+    a {
+      color: #0e4d7d;
+      margin-left: 5px;
+
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+  }
+}

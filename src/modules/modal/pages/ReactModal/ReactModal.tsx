@@ -10,10 +10,12 @@ export const ReactModal: React.FC<ModalType> = ({
    isModalOpen,
    onClose,
    modalPosition,
+   topCoords,
+   onBlur,
 }) => {
    const element = useMemo<HTMLDivElement>(
       () => document.createElement('div'),
-      []
+      [],
    );
 
    useEffect(() => {
@@ -25,18 +27,22 @@ export const ReactModal: React.FC<ModalType> = ({
          };
       }
    });
-
    if (isModalOpen) {
       return createPortal(
-         <div className='modal' onClick={onClose}>
-            <div
-               className={`modal__content ${modalPosition}`}
-               onClick={(e) => e.stopPropagation()}
-            >
-               {children}
+         <div className={onBlur ? 'onBlur' : ''}>
+            <div className='modal' onClick={onClose}>
+               <div
+                  className={`modal__content ${modalPosition}`}
+                  style={{
+                     top: `${topCoords}px`,
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+               >
+                  {children}
+               </div>
             </div>
          </div>,
-         element
+         element,
       );
    }
 

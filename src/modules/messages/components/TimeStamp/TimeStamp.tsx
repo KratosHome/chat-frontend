@@ -13,37 +13,37 @@ export const TimeStamp: React.FC<DataType> = ({ data }) => {
       setIsModalOpen(!isModalOpen);
       let rect = (e.target as Element).getBoundingClientRect();
       let y = e.clientY - rect.top;
-      setTopCoords(e.clientY - y + 30);
+      setTopCoords(e.clientY - y + 120);
    };
 
-   const onSvgClock = (e: React.MouseEvent<SVGSVGElement>) => {
+   const onSvgClick = (e: React.MouseEvent<SVGSVGElement>) => {
       setIsModalOpen(!isModalOpen);
       e.stopPropagation();
       let rect = (e.target as Element).getBoundingClientRect();
       let y = e.clientY - rect.top;
-      setTopCoords(e.clientY - y + 25);
+      setTopCoords(e.clientY - y + 115);
    };
 
    if (data) {
       return (
          <>
-            <div className="containerTimeStamp">
-               <div className="containerTime" onClick={onClickModalOpen}>
+            <div className='containerTimeStamp'>
+               <div className='containerTime' onClick={onClickModalOpen}>
                   <div>
                      {`${format(new Date(data), 'MMMM do')}`}
                      <svg
-                        onClick={onSvgClock}
-                        data-0v2="true"
-                        aria-hidden="true"
-                        viewBox="0 0 20 20"
+                        onClick={onSvgClick}
+                        data-0v2='true'
+                        aria-hidden='true'
+                        viewBox='0 0 20 20'
                      >
                         <path
-                           fill="none"
-                           stroke="currentColor"
-                           stroke-linecap="round"
-                           stroke-linejoin="round"
-                           stroke-width="1.5"
-                           d="M13.75 8 10 11.75 6.25 8"
+                           fill='none'
+                           stroke='currentColor'
+                           stroke-linecap='round'
+                           stroke-linejoin='round'
+                           stroke-width='1.5'
+                           d='M13.75 8 10 11.75 6.25 8'
                         ></path>
                      </svg>
                   </div>
@@ -53,15 +53,9 @@ export const TimeStamp: React.FC<DataType> = ({ data }) => {
                isModalOpen={isModalOpen}
                onClose={() => setIsModalOpen(!isModalOpen)}
                modalPosition={'date-button-position'}
+               topCoords={topCoords}
             >
-               <div
-                  style={{
-                     top: `${topCoords}px`,
-                     position: 'absolute',
-                  }}
-               >
-                  <DateButton />
-               </div>
+               <DateButton />
             </ReactModal>
          </>
       );
