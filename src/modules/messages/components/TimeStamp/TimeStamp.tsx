@@ -19,6 +19,9 @@ export const TimeStamp: React.FC<DataType> = ({ data }) => {
    const onSvgClock = (e: React.MouseEvent<SVGSVGElement>) => {
       setIsModalOpen(!isModalOpen);
       e.stopPropagation();
+      let rect = (e.target as Element).getBoundingClientRect();
+      let y = e.clientY - rect.top;
+      setTopCoords(e.clientY - y + 25);
    };
 
    if (data) {

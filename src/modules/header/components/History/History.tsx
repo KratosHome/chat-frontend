@@ -28,19 +28,19 @@ export const History: React.FC = () => {
 
    return (
       <>
-         <div className='header__history'>
+         <div className="header__history">
             <a
-               className='header__history-button'
+               className="header__history-button"
                onClick={handleHistoryClick}
                onMouseOver={handleHistoryMouseOver}
                onMouseOut={handleHistoryMouseOut}
             >
-               <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
-                  <g fill='none' stroke='currentColor' stroke-width='1.5'>
-                     <circle cx='10' cy='10' r='8.25'></circle>
+               <svg data-0v2="true" aria-hidden="true" viewBox="0 0 20 20">
+                  <g fill="none" stroke="currentColor" stroke-width="1.5">
+                     <circle cx="10" cy="10" r="8.25"></circle>
                      <path
-                        stroke-linecap='round'
-                        d='M 10 5.75 v 4.75 h 3.75'
+                        stroke-linecap="round"
+                        d="M 10 5.75 v 4.75 h 3.75"
                      ></path>
                   </g>
                </svg>
