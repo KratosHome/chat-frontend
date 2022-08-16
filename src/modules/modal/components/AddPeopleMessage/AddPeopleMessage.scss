@@ -4,34 +4,41 @@
 }
 
 .containerAddPeopleMessage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-left: 30px;
 
   h1 {
-    margin-left: -250px;
+    margin-top: 3px;
     font-size: 18px;
     font-weight: 900;
     line-height: 1.33334;
-    display: flex;
+  }
 
-    button {
-      position: absolute;
-      margin-left: 410px;
-      margin-top: -5px;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
+  h3 {
+    margin-top: -12px;
+    margin-left: 3px;
+    color: rgba(29, 28, 29, 0.7);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.38463;
+    margin-right: 24px;
+  }
 
-      svg {
-        color: rgba(29, 28, 29, 0.7);
-        width: 20px;
-        font-size: 20px;
-        font-weight: 100;
-        flex-shrink: 0;
-        height: 1em;
-        -webkit-print-color-adjust: exact;
-      }
+  .closeAddPeopleMessage {
+    position: absolute;
+    margin-top: -45px;
+    margin-left: 400px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      color: rgba(29, 28, 29, 0.7);
+      width: 20px;
+      font-size: 20px;
+      font-weight: 100;
+      flex-shrink: 0;
+      height: 1em;
+      -webkit-print-color-adjust: exact;
     }
   }
 
@@ -41,6 +48,7 @@
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     padding-left: 10px;
+    margin-top: 10px;
 
     &:focus {
       border: 1px solid rgb(35, 28, 28);
@@ -54,17 +62,18 @@
 
 
   button {
-    background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    color: black;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    margin-left: 364px;
+    border: none;
+    background-color: rgba(29, 28, 29, 0.13);
     text-shadow: none;
     transition: all 80ms linear;
     border-radius: 5px;
     width: 85px;
     height: 35px;
-    margin-top: 10px;
-    margin-left: 350px;
     cursor: pointer;
+    color: rgba(29, 28, 29, 0.8);
   }
 
   .proConnectAddPeopleMessage {
@@ -74,32 +83,5 @@
     margin-top: 10px;
     padding: 25px;
     font-size: 15px;
-
-    .headProConnectAddPeopleMessage {
-      font-weight: 600;
-      display: flex;
-      margin-bottom: 3px;
-
-      span {
-        display: block;
-        margin-left: 10px;
-        padding: 4px 4px 0px 4px;
-        background-color: rgb(22, 37, 105);
-        color: white;
-        font-size: 11px;
-        border-radius: 5px;
-      }
-
-    }
-
-    a {
-      color: #0e4d7d;
-      margin-left: 5px;
-
-      &:hover {
-        cursor: pointer;
-        text-decoration: underline;
-      }
-    }
   }
 }

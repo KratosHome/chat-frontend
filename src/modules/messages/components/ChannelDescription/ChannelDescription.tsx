@@ -94,7 +94,7 @@ export const ChannelDescription: React.FC<ChannelDescriptionPropsType> = memo(
                <ReactModal
                   isModalOpen={isModalOpen}
                   onClose={() => setIsModalOpen(!isModalOpen)}
-                  modalPosition={'add-people-position-position'}
+                  modalPosition={'add-people-position'}
                   onBlur={true}
                >
                   <AddPeopleMessage
