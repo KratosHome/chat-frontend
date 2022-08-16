@@ -1,21 +1,98 @@
 @font-face {
-   font-family: 'LatoNew';
-   src: url('fonts/Lato-Reg.ttf') format('truetype');
-}
-@font-face {
-   font-family: 'SlackLatoBlack';
-   src: local('MyFont'), url(./fonts/lato-black-b64f5e4.woff2) format('woff');
-}
-@font-face {
-   font-family: 'SlackLatoBold';
-   src: local('MyFont'), url(./fonts/lato-bold-4b1dc11.woff2) format('woff');
-}
-@font-face {
-   font-family: 'SlackLatoRegular';
-   src: local('MyFont'), url(./fonts/lato-regular-d9ce515.woff2) format('woff');
-}
-@font-face {
    font-family: 'SlackIcons';
    src: local('MyFont'),
-      url(./fonts/slack-icons-v2-fe043a5.woff2) format('woff');
+      url('./fonts/slack-icons-v2-fe043a5.woff2') format('woff2');
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: normal;
+   font-weight: 300;
+   src: url('./fonts/LatoLight/Lato-Light.eot');
+   src: local('MyFont'), url('./fonts/LatoLight/Lato-Light.woff') format('woff'),
+      url('./fonts/LatoLight/Lato-Light.ttf') format('truetype'),
+      url('./fonts/LatoLight/Lato-Light.svg') format('svg');
+   unicode-range: u+0000-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: normal;
+   font-weight: 400;
+   src: url('./fonts/LatoRegular/Lato-Regular.eot');
+   src: local('MyFont'),
+      url('./fonts/LatoRegular/Lato-Regular.woff') format('woff'),
+      url('./fonts/LatoRegular/Lato-Regular.ttf') format('truetype'),
+      url('./fonts/LatoRegular/Lato-Regular.svg') format('svg');
+   unicode-range: u+0000-2157, u+2159-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: normal;
+   font-weight: 700;
+   src: url('./fonts/LatoBold/Lato-Bold.eot');
+   src: local('MyFont'), url('./fonts/LatoBold/Lato-Bold.woff') format('woff'),
+      url('./fonts/LatoBold/Lato-Bold.ttf') format('truetype'),
+      url('./fonts/LatoBold/Lato-Bold.svg') format('svg');
+   unicode-range: u+0000-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: normal;
+   font-weight: 900;
+   src: url('./fonts/LatoBlack/Lato-Black.eot');
+   src: local('MyFont'), url('./fonts/LatoBlack/Lato-Black.woff') format('woff'),
+      url('./fonts/LatoBlack/Lato-Black.ttf') format('truetype'),
+      url('./fonts/LatoBlack/Lato-Black.svg') format('svg');
+   unicode-range: u+0000-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: italic;
+   font-weight: 300;
+   src: url('./fonts/LatoLightItalic/Lato-LightItalic.eot');
+   src: local('MyFont'),
+      url('./fonts/LatoLightItalic/Lato-LightItalic.woff') format('woff'),
+      url('./fonts/LatoLightItalic/Lato-LightItalic.ttf') format('truetype'),
+      url('./fonts/LatoLightItalic/Lato-LightItalic.svg') format('svg');
+   unicode-range: u+0000-2259, u+2261-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: italic;
+   font-weight: 400;
+   src: url('./fonts/LatoItalic/Lato-Italic.eot');
+   src: local('MyFont'),
+      url('./fonts/LatoItalic/Lato-Italic.woff') format('woff'),
+      url('./fonts/LatoItalic/Lato-Italic.ttf') format('truetype'),
+      url('./fonts/LatoItalic/Lato-Italic.svg') format('svg');
+   unicode-range: u+0000-2259, u+2261-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: italic;
+   font-weight: 700;
+   src: url('./fonts/LatoBoldItalic/Lato-BoldItalic.eot');
+   src: local('MyFont'),
+      url('./fonts/LatoBoldItalic/Lato-BoldItalic.woff') format('woff'),
+      url('./fonts/LatoBoldItalic/Lato-BoldItalic.ttf') format('truetype'),
+      url('./fonts/LatoBoldItalic/Lato-BoldItalic.svg') format('svg');
+   unicode-range: u+0000-2259, u+2261-f8fe, u+f900-ffff;
+}
+
+@font-face {
+   font-family: 'Slack-Lato';
+   font-style: italic;
+   font-weight: 900;
+   src: url('./fonts/LatoBlackItalic/Lato-BlackItalic.eot');
+   src: local('MyFont'),
+      url('./fonts/LatoBlackItalic/Lato-BlackItalic.woff') format('woff'),
+      url('./fonts/LatoBlackItalic/Lato-BlackItalic.ttf') format('truetype'),
+      url('./fonts/LatoBlackItalic/Lato-BlackItalic.svg') format('svg');
+   unicode-range: u+0000-2259, u+2261-f8fe, u+f900-ffff;
 }
