@@ -49,7 +49,10 @@ export const Main: React.FC = () => {
    return (
       <div className={topic}>
          <div className='header-wrapper'>
-            <Header currentUserName={currentUserName} />
+            <Header
+                currentUserName={currentUserName}
+                chanelName={channel?.name}
+            />
          </div>
          <div className='content-wrapper'>
             <div className='content'>

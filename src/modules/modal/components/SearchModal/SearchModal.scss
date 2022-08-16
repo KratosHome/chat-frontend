@@ -1,0 +1,58 @@
+.widthSearchModal {
+  min-width: 80vw;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.containerSearchModal {
+
+  .inputSearchModal {
+    border-bottom: 1px solid rgba(221, 221, 221, 1);
+    padding-left: 30px;
+
+    svg {
+      width: 17px;
+      margin-right: 15px;
+      opacity: 0.5;
+      margin-bottom: -2px;
+    }
+
+    input {
+      width: 80%;
+      margin-bottom: 20px;
+      border: none;
+      background-color: transparent;
+
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+
+      &::placeholder {
+        color: rgba(29, 28, 29, 0.5);
+        line-height: 16px;
+        font-variant-ligatures: common-ligatures;
+        font-weight: 400;
+        cursor: text;
+
+      }
+    }
+
+    svg {
+      width: 17px;
+    }
+  }
+
+
+}
+
+
+.chatSearchModal {
+  div::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f039";
+  }
+}
+
+
