@@ -5,20 +5,17 @@ import { InputButtonType } from './InputButtonType';
 export const InputButton: FC<InputButtonType> = memo(
    ({ children, focusInput, buttonText }) => {
       const [isHover, setIsHover] = useState(false);
-      const handleMouseOver = () => {
-         setIsHover(true);
-      };
 
-      const handleMouseOut = () => {
-         setIsHover(false);
-      };
       return (
-         <button onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+         <button
+            onMouseOver={() => setIsHover(true)}
+            onMouseOut={() => setIsHover(false)}
+         >
             <HoverButton isHover={isHover} focusInput={focusInput}>
                <div>{buttonText}</div>
             </HoverButton>
             {children}
          </button>
       );
-   }
+   },
 );

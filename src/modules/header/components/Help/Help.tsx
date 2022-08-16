@@ -12,36 +12,16 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
    const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
    const [isHoverName, setIsHoverName] = useState<boolean>(false);
 
-   const handleAvatarClick = () => {
-      setIsModalAvatarOpen(true);
-   };
-
    const handleAvatarClose = () => {
-      setIsModalAvatarOpen(false);
-   };
-
-   const handleHelpMouseOver = () => {
-      setIsHoverHelp(!isHoverHelp);
-   };
-
-   const handleHelpMouseOut = () => {
-      setIsHoverHelp(!isHoverHelp);
-   };
-
-   const handleNameMouseOver = () => {
-      setIsHoverName(!isHoverName);
-   };
-
-   const handleNameMouseOut = () => {
-      setIsHoverName(!isHoverName);
+      setIsModalAvatarOpen(!isModalAvatarOpen);
    };
 
    return (
       <div className='header__help'>
          <a
             className='header__help-button'
-            onMouseOver={handleHelpMouseOver}
-            onMouseOut={handleHelpMouseOut}
+            onMouseOver={() => setIsHoverHelp(!isHoverHelp)}
+            onMouseOut={() => setIsHoverHelp(!isHoverHelp)}
          >
             <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                <g fill='none'>
@@ -70,9 +50,9 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          </HoverIcon>
          <div
             className='header__avatar'
-            onClick={handleAvatarClick}
-            onMouseOver={handleNameMouseOver}
-            onMouseOut={handleNameMouseOut}
+            onClick={() => setIsModalAvatarOpen(!isModalAvatarOpen)}
+            onMouseOver={() => setIsHoverName(!isHoverName)}
+            onMouseOut={() => setIsHoverName(!isHoverName)}
          >
             <a className='header__avatar-button'>
                <img

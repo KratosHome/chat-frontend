@@ -1,6 +1,7 @@
 import React from 'react';
 import { MenuItemWithIcon } from '../MenuItemWithIcon';
 import { MenuSeparatorItem } from '../MenuSeparatorItem';
+import './SidebarMoreMenu.scss';
 
 export const SidebarMoreMenu: React.FC = () => {
    return (
@@ -9,7 +10,7 @@ export const SidebarMoreMenu: React.FC = () => {
             <MenuItemWithIcon
                itemText={'Direct messages'}
                shortcutText={'Ctrl+Shift+K'}
-               itemPaddingClass={'item__button-more-menu'}
+               itemPaddingClass={'item__button--more-menu'}
             >
                <span className='item__icon' data-qa='dm'>
                   <svg data-aqc='true' aria-hidden='true' viewBox='0 0 20 20'>
@@ -32,7 +33,7 @@ export const SidebarMoreMenu: React.FC = () => {
             <MenuItemWithIcon
                itemText={'All channels'}
                shortcutText={'Ctrl+Shift+L'}
-               itemPaddingClass={'item__button-more-menu'}
+               itemPaddingClass={'item__button--more-menu'}
             >
                <span className='item__icon' data-qa='share-other-alt'>
                   <svg data-aqc='true' aria-hidden='true' viewBox='0 0 20 20'>
@@ -53,7 +54,7 @@ export const SidebarMoreMenu: React.FC = () => {
             </MenuItemWithIcon>
             <MenuItemWithIcon
                itemText={'Files'}
-               itemPaddingClass={'item__button-more-menu'}
+               itemPaddingClass={'item__button--more-menu'}
             >
                <span className='item__icon' data-qa='all-files-alt'>
                   <svg data-aqc='true' aria-hidden='true' viewBox='0 0 20 20'>
@@ -79,7 +80,7 @@ export const SidebarMoreMenu: React.FC = () => {
             <MenuItemWithIcon
                itemText={'People & user groups'}
                shortcutText={'Ctrl+Shift+E'}
-               itemPaddingClass={'item__button-more-menu'}
+               itemPaddingClass={'item__button--more-menu'}
             >
                <span className='item__icon' data-qa='team-directory'>
                   <svg data-aqc='true' aria-hidden='true' viewBox='0 0 20 20'>
@@ -100,7 +101,7 @@ export const SidebarMoreMenu: React.FC = () => {
             </MenuItemWithIcon>
             <MenuItemWithIcon
                itemText={'Apps'}
-               itemPaddingClass={'item__button-more-menu'}
+               itemPaddingClass={'item__button--more-menu'}
             >
                <span className='item__icon' data-qa='gn-menu'>
                   <svg data-aqc='true' aria-hidden='true' viewBox='0 0 20 20'>
@@ -121,9 +122,9 @@ export const SidebarMoreMenu: React.FC = () => {
             <MenuSeparatorItem />
             <div className='container-menu__item item'>
                <button className='item__button'>
-                  <div className='item__label item__label-customize'>
+                  <div className='item__label item__label--customize'>
                      Customize this list in your{' '}
-                     <strong className='item__label-highlight'>
+                     <strong className='item__label--highlight'>
                         preferences
                      </strong>
                      .

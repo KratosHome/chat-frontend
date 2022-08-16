@@ -1,0 +1,21 @@
+.item {
+   &__button--submenu {
+      padding-right: 12px;
+
+      &:hover svg {
+         color: #ffffff;
+      }
+   }
+
+   &__submenu-indicator {
+      color: rgba(97, 96, 97, 1);
+      padding-right: 16px;
+      display: flex;
+      align-items: center;
+
+      & svg {
+         width: 15px;
+         height: 15px;
+      }
+   }
+}

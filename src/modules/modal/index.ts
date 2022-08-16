@@ -11,6 +11,8 @@ export * from './components/MenuPlansItem';
 export * from './components/MenuRoomNameItem';
 export * from './components/MenuOpenAppItem';
 export * from './components/SidebarMoreMenu';
-export * from './components//MenuItemWithIcon';
 export * from './components/DateButton';
-export * from  "./components/AddPeopleMessage"
+export * from './components/AddPeopleMessage';
+export * from './components/MenuItemWithIcon';
+export * from './components/BookmarkMenu';
+export * from './components/MenuBookmarkItem';

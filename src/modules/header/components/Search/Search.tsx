@@ -6,37 +6,21 @@ export const Search: React.FC = () => {
    const [isHoverSearch, setIsHoverSearch] = useState<boolean>(false);
    const [isHoverFilter, setIsHoverFilter] = useState<boolean>(false);
 
-   const handleSearchMouseOver = () => {
-      setIsHoverSearch(!isHoverSearch);
-   };
-
-   const handleSearchMouseOut = () => {
-      setIsHoverSearch(!isHoverSearch);
-   };
-
-   const handleFilterMouseOver = () => {
-      setIsHoverFilter(!isHoverFilter);
-   };
-
-   const handleFilterMouseOut = () => {
-      setIsHoverFilter(!isHoverFilter);
-   };
-
    return (
       <>
          <div className='header__search'>
             <span
                className='header__search-field'
-               onMouseOver={handleSearchMouseOver}
-               onMouseOut={handleSearchMouseOut}
+               onMouseOver={() => setIsHoverSearch(!isHoverSearch)}
+               onMouseOut={() => setIsHoverSearch(!isHoverSearch)}
             >
                Search Company Name
             </span>
             <div className='header__box-filter'>
                <a
                   className='header__button-filter'
-                  onMouseOver={handleFilterMouseOver}
-                  onMouseOut={handleFilterMouseOut}
+                  onMouseOver={() => setIsHoverFilter(!isHoverFilter)}
+                  onMouseOut={() => setIsHoverFilter(!isHoverFilter)}
                >
                   <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                      <path

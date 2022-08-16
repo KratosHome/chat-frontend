@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { channelParticipants } from '../../../../services/channelParticipants.service';
 import { participants } from '../../../../services/participant.service';
 import { Tooltip } from '../../../common/Tooltip';
+import { ReactModal } from '../../../modal';
+import { BookmarkMenu } from '../../../modal/components/BookmarkMenu';
 import './MessageHeader.scss';
 import { iMessageHeaderProps } from './MessageHeaderType';
 
@@ -9,11 +11,18 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    currentChannel,
    currentChannelId,
 }) => {
+   const bookmarkMenuPosition = 'bookmark-menu-position';
+
+   const [coords, setCoords] = useState<number>(0);
+
+   const [isModalBookmarkOpen, setIsModalBookmarkOpen] =
+      useState<boolean>(false);
+
    const [showHint, setShowHint] = useState<boolean>(false);
 
    const participantsArray: any = [];
    const channelParticipantsId = channelParticipants.find(
-      (el) => el.channelId === currentChannelId
+      (el) => el.channelId === currentChannelId,
    );
    const participantsId = channelParticipantsId?.participantsId;
    participantsId?.map((el) => {
@@ -21,12 +30,15 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
    });
    const participantsCount = participantsId ? participantsId.length : 0;
 
-   const handleMouseOver = () => {
-      setShowHint(true);
+   const handleBookmarkClick = (e: React.MouseEvent<HTMLDivElement>) => {
+      setIsModalBookmarkOpen(true);
+      let rect = (e.target as Element).getBoundingClientRect();
+      let x = e.clientX - rect.left;
+      setCoords(e.clientX - x);
    };
 
-   const handleMouseOut = () => {
-      setShowHint(false);
+   const handleBookmarkClose = () => {
+      setIsModalBookmarkOpen(false);
    };
 
    return (
@@ -73,8 +85,8 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
 
             <div
                className='people'
-               onMouseOver={handleMouseOver}
-               onMouseOut={handleMouseOut}
+               onMouseOver={() => setShowHint(!showHint)}
+               onMouseOut={() => setShowHint(!showHint)}
             >
                <button className='people__wrapper'>
                   <div className='people__round'>
@@ -96,13 +108,27 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = ({
             </div>
          </div>
          <div className='bookmark'>
-            <div className='bookmark__container'>
+            <div className='bookmark__container' onClick={handleBookmarkClick}>
                <button className='bookmark__button'>
                   <i />
                   Add a bookmark
                </button>
             </div>
          </div>
+         <ReactModal
+            isModalOpen={isModalBookmarkOpen}
+            onClose={handleBookmarkClose}
+            modalPosition={bookmarkMenuPosition}
+         >
+            <div
+               style={{
+                  left: `${coords}px`,
+                  position: 'absolute',
+               }}
+            >
+               <BookmarkMenu />
+            </div>
+         </ReactModal>
          <Tooltip
             users={participantsArray}
             show={showHint}

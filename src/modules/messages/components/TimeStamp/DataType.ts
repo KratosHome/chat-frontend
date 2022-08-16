@@ -1,3 +1,3 @@
 export type DataType = {
-    data: number;
-}
+   data: number;
+};
