@@ -1,8 +1,17 @@
-import React, {FC} from 'react';
+import React, {FC, useState} from 'react';
 import "./SearchModal.scss"
 import {SearchModalType} from "./SearchModalType";
 
-export const SearchModal: FC<SearchModalType> = ({chanelName}) => {
+export const SearchModal: FC<SearchModalType> = ({chanelName, onClose}) => {
+
+    const [inputValue, setInputValue] = useState("")
+
+    const changeValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setInputValue(e.currentTarget.value)
+    }
+    const clearInputButton = () => {
+        setInputValue("")
+    }
     return (
         <div className="container-menu widthSearchModal">
             <div className="container-menu__items">
@@ -13,28 +22,47 @@ export const SearchModal: FC<SearchModalType> = ({chanelName}) => {
                                   d="M17.22 18.28a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM15 9a6 6 0 0 1-6 6v1.5A7.5 7.5 0 0 0 16.5 9H15Zm-6 6a6 6 0 0 1-6-6H1.5A7.5 7.5 0 0 0 9 16.5V15ZM3 9a6 6 0 0 1 6-6V1.5A7.5 7.5 0 0 0 1.5 9H3Zm6-6a6 6 0 0 1 6 6h1.5A7.5 7.5 0 0 0 9 1.5V3Zm4.47 11.53 3.75 3.75 1.06-1.06-3.75-3.75-1.06 1.06Z"></path>
                         </svg>
                         <input
+                            onChange={(e) => changeValue(e)}
+                            value={inputValue}
                             placeholder="Search messages, files, around corners, under rugs, etc."
                             type="text"
                         />
+                        {
+                            inputValue.length >= 1
+                            &&
+                            <button
+                                className="clearInputSearchModal"
+                                onClick={clearInputButton}
+                            >
+                                Clear
+                            </button>
+                        }
                         <button>
                             <svg data-aqc="true" aria-hidden="true" viewBox="0 0 20 20">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
                                       d="M15.25 4.25a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm0 0h2.5m-15.5 0h9m3 11.5a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm0 0h3.5m-15.5 0h8m-2-5.75a1.75 1.75 0 1 1-3.5 0 1.75 1.75 0 0 1 3.5 0Zm0 0h9.5M4.5 10H2.25"></path>
                             </svg>
                         </button>
-                        <button>
+                        <button
+                            className="onCloseSearchModal"
+                            onClick={() => onClose(false)}
+                        >
                             <svg data-aqc="true" aria-hidden="true" viewBox="0 0 20 20">
                                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
                                       d="m5.227 5.227 9.546 9.546m0-9.546-9.546 9.546"></path>
                             </svg>
                         </button>
                     </div>
-
                     <div className="chatSearchModal">
-                        <div>Find in # {chanelName}</div>
+                        <div>Find in <svg data-aqc="true" aria-hidden="true" viewBox="0 0 20 20" className="is-inline">
+                            <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
+                                  d="m9 3.75-2.5 14.5m7.25-14.5-2.5 14.5m-7.5-10.5h13.5m-14.5 7h13.5"></path>
+                        </svg>
+                            {chanelName}
+                        </div>
                     </div>
+                    <p className="lookForSearchModal">I'm looking for…</p>
                     <div className="categorySearchModal">
-                        <span>I'm looking for…</span>
                         <button>
                             <svg data-aqc="true" aria-hidden="true" viewBox="0 0 20 20">
                                 <g fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="1.5">
@@ -77,8 +105,13 @@ export const SearchModal: FC<SearchModalType> = ({chanelName}) => {
                             <span>People</span>
                         </button>
                     </div>
+                    <div className="footerSearchModal">
+                        <span>Not the results you expected?</span>
+                        <a>Give feedback</a>
+                        <span>or</span>
+                        <a>learn more</a>
+                    </div>
                 </div>
-                <div className="footerSearchModal">Not the results you expected? Give feedback or learn more</div>
             </div>
         </div>
     );

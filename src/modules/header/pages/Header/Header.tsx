@@ -7,13 +7,13 @@ import {HeaderType} from './HeaderType';
 import {ReactModal, SearchModal, SidebarMoreMenu} from "../../../modal";
 
 export const Header: React.FC<HeaderType> = memo(({currentUserName, chanelName}) => {
-    const [isModalSidebarMoreOpen, setIsModalSidebarMoreOpen] = useState<boolean>(true);
+    const [isModalSidebarMoreOpen, setIsModalSidebarMoreOpen] = useState<boolean>(false);
     return (
         <>
             <header className='header'>
                 <div className='header__container'>
                     <History/>
-                    <Search oenModal={setIsModalSidebarMoreOpen} />
+                    <Search oenModal={setIsModalSidebarMoreOpen}/>
                     <Help currentUserName={currentUserName}/>
                 </div>
             </header>
@@ -22,7 +22,10 @@ export const Header: React.FC<HeaderType> = memo(({currentUserName, chanelName})
                 onClose={() => setIsModalSidebarMoreOpen(!isModalSidebarMoreOpen)}
                 modalPosition={"search-header-position"}
             >
-                <SearchModal chanelName={chanelName}/>
+                <SearchModal
+                    chanelName={chanelName}
+                    onClose={setIsModalSidebarMoreOpen}
+                />
             </ReactModal>
         </>
     );
