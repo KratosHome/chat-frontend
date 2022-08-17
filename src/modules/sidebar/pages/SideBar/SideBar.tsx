@@ -29,8 +29,6 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
       setIsModalSidebarMoreOpen(false);
    };
 
-   console.log(setCurrentChannel);
-
    return (
       <div className='containerSideBar'>
          <div className='upAndDownSideBar'>

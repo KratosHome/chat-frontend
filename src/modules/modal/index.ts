@@ -16,3 +16,4 @@ export * from './components/AddPeopleMessage';
 export * from './components/MenuItemWithIcon';
 export * from './components/BookmarkMenu';
 export * from './components/MenuBookmarkItem';
+export * from "./components/SearchModal"
