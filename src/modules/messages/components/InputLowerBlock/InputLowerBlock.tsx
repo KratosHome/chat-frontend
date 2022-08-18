@@ -16,7 +16,6 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(
          setEmojiActive,
          emojiActive,
      }) => {
-
         const [isHoverAttachments, setIsHoverAttachments] = useState<boolean>(false);
         const [isHoverVide, setIsHoverVideo] = useState<boolean>(false);
         const [isHoverAudio, setIsHoverAudio] = useState<boolean>(false);
@@ -24,7 +23,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(
         const [isHoverMentionSomeone, setIsHoverMentionSomeone] = useState<boolean>(false);
         const [isHoverHideFormatting, setIsHoverHideFormatting] = useState<boolean>(false);
         const [isHoverSendMessage, setIsHoverSendMessage] = useState<boolean>(false);
-        const [isHoverscheduleForLater, setIsHoverscheduleForLater] = useState<boolean>(false);
+        const [isHoverScheduleForLater, setIsHoverScheduleForLater] = useState<boolean>(false);
 
         return (
             <div className='containerLowerBlock'>
@@ -235,8 +234,8 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(
                         </HoverIcon>
                     }
                     <button
-                        onMouseOver={() => setIsHoverscheduleForLater(!isHoverscheduleForLater)}
-                        onMouseOut={() => setIsHoverscheduleForLater(!isHoverscheduleForLater)}
+                        onMouseOver={() => setIsHoverScheduleForLater(!isHoverScheduleForLater)}
+                        onMouseOut={() => setIsHoverScheduleForLater(!isHoverScheduleForLater)}
                     >
                         <svg data-uqx='true' viewBox='0 0 20 20' className='imgSvgInputMessage'>
                             <path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'
@@ -247,7 +246,7 @@ export const InputLowerBlock: FC<InputLowerBlockType> = memo(
                         currentMessage.length >= 1
                         &&
                         <HoverIcon
-                            isHover={isHoverscheduleForLater}
+                            isHover={isHoverScheduleForLater}
                             marginBlockTop={'-75px'}
                             marginBlockLeft={'-60px'}
                             marginButtonArrowLeft={"75px"}
