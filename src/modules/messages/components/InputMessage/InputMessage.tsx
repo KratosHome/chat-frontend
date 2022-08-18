@@ -19,6 +19,7 @@ export const InputMessage: FC<InputMessageType> = memo(
    }) => {
       const [emojiActive, setEmojiActive] = useState<boolean>(false);
       const [focusInput, setFocusInput] = useState<boolean>(false);
+
       const onEmojiClick = (emojiObject: any) => {
          setCurrentMessage(
             (prevState: string) => prevState + emojiObject.emoji

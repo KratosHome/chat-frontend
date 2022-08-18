@@ -2,8 +2,6 @@ export * from './components/Message';
 export * from './components/MessageHeader';
 export * from './components/MessageList';
 export * from './components/TimeStamp';
-export * from './components/HoverButton';
-export * from './components/InputButton';
 export * from './components/InputLowerBlock';
 export * from './components/InputMessage';
 export * from './components/InputUpperBlock';
