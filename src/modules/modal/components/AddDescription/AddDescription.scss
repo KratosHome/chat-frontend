@@ -23,6 +23,14 @@
       background-color: transparent;
       border: navajowhite;
       cursor: pointer;
+      border-radius: 5px;
+      padding-top: 4px;
+      width: 33px;
+      height: 33px;
+
+      &:hover {
+        background-color: rgba(166, 164, 164, 0.1);
+      }
 
       svg {
         width: 20px;
@@ -70,6 +78,7 @@
       font-weight: 700;
       box-shadow: none;
       cursor: pointer;
+
     }
 
     button:first-child {

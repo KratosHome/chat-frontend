@@ -8,6 +8,7 @@ export const AddDescription: FC<AddDescriptionType> = ({
                                                            descriptionChannel,
                                                            setDescriptionChannel
                                                        }) => {
+    const [focusInput, setFocusInput] = useState<boolean>(false)
     const [value, setValue] = useState<string>(descriptionChannel)
 
     const changeText = (e: any) => {
@@ -22,7 +23,11 @@ export const AddDescription: FC<AddDescriptionType> = ({
         <div className="container-menu widthAddDescription">
             <div className="containerAddDescription">
                 <div className="headerAddDescription">
-                    <h1>Edit description</h1>
+                    <h1
+                        style={{
+                            textShadow: focusInput ? "0px 0px 1px rgba(0,0,0,0.5)" : ""
+                        }}
+                    >Edit description</h1>
                     <button onClick={() => setIsModalOpenDescription(false)}>
                         <svg data-aqc="true" aria-hidden="true" viewBox="0 0 20 20">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"
@@ -31,10 +36,21 @@ export const AddDescription: FC<AddDescriptionType> = ({
                     </button>
                 </div>
                 <textarea
+                    onFocus={() => {
+                        setFocusInput(!focusInput);
+                    }}
+                    onBlur={() => {
+                        setFocusInput(!focusInput);
+                    }}
                     onChange={(e) => changeText(e)}
                     value={value}
                 />
-                <div className="textAddDescription">Let people know what this channel is for.</div>
+                <div className="textAddDescription"
+                     style={{
+                         textShadow: focusInput ? "0px 0px 1px rgba(0,0,0,0.1)" : ""
+                     }}
+                >Let people know what this channel is for.
+                </div>
                 <div className="buttonAddDescription">
                     <button onClick={() => setIsModalOpenDescription(false)}>Cancel</button>
                     <button onClick={() => SaveText()}>Save</button>

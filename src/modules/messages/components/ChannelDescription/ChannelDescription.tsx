@@ -8,7 +8,7 @@ import imgUser from "./add-user.png"
 export const ChannelDescription: React.FC<ChannelDescriptionPropsType> = memo(
     ({currentChannel, placeholderName}) => {
         const [isModalOpenAddPeople, setIsModalOpenAddPeople] = useState<boolean>(false);
-        const [isModalOpenDescription, setIsModalOpenDescription] = useState<boolean>(false);
+        const [isModalOpenDescription, setIsModalOpenDescription] = useState<boolean>(true);
         const [descriptionChannel, setDescriptionChannel] = useState<string>("This channel is for workspace-wide communication and announcements. All members are in this channel.")
 
         return (
