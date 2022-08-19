@@ -17,3 +17,4 @@ export * from './components/MenuItemWithIcon';
 export * from './components/BookmarkMenu';
 export * from './components/MenuBookmarkItem';
 export * from "./components/SearchModal"
+export * from "./components/AddDescription"
