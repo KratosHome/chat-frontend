@@ -1,0 +1,40 @@
+.containerCurrentChannel {
+
+  .headerCurrentChannel {
+    display: flex;
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  .buttonCurrentChannel {
+    .selectedCurrentChannel::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f005";
+    }
+
+    .notificationsCurrentChannel::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f0f3";
+    }
+
+    .callCurrentChannel::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f879";
+    }
+  }
+
+  .tabsNameCurrentChannel {
+    display: flex;
+
+    div {
+      margin: 10px;
+      cursor: pointer;
+    }
+  }
+
+}
