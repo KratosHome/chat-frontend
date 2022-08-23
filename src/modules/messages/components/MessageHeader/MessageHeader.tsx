@@ -37,7 +37,6 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(({
     };
 
     const [isModalChanelName, setIsModalChanelName] = useState<boolean>(false);
-
     return (
         <>
             <div className='message-header'>
@@ -139,11 +138,12 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(({
             <ReactModal
                 isModalOpen={isModalChanelName}
                 onClose={() => setIsModalChanelName(false)}
-                modalPosition={"add-people-position"}
+                modalPosition={"add-chanel-position"}
                 onBlur={true}
             >
                 <CurrentChannel
                     currentChannel={currentChannel}
+                    setIsModalChanelName={setIsModalChanelName}
                 />
             </ReactModal>
         </>

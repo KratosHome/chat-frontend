@@ -16,6 +16,7 @@ export const MessagesContent: React.FC<MessageContentPropsType> = ({
    visibleMessageField,
    currentUserId,
 }) => {
+
    const [messageArr, setMessageArr] = useState<MessageModel[]>(messages);
    const [currentMessage, setCurrentMessage] = useState<string>('');
 
@@ -26,7 +27,6 @@ export const MessagesContent: React.FC<MessageContentPropsType> = ({
 
    let LastEl = messageArr[messageArr.length - 1];
 
-   console.log(messageArr);
 
    const handleSendButton = (
       text: string,
