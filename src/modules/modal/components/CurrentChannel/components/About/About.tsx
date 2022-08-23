@@ -1,11 +1,7 @@
 import React, {FC} from 'react';
 import "./About.scss"
+import {AboutType} from "./AboutType";
 
-type AboutType = {
-    tab: any
-    setTab: any
-    currentChannel: any
-}
 export const About: FC<AboutType> = ({tab, setTab, currentChannel}) => {
     return (
         <>

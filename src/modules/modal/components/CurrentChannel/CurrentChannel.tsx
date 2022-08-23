@@ -2,6 +2,9 @@ import React, {FC, memo, useState} from 'react';
 import "./CurrentChannel.scss"
 import {About} from "./components/About/About";
 import {Members} from "./components/Members/Members";
+import {participants} from '../../../../services/participant.service';
+import {Integrations} from "./components/Integrations/Integrations";
+import {Settings} from "./components/Settings";
 
 type CurrentChannel = {
     currentChannel: any
@@ -9,7 +12,6 @@ type CurrentChannel = {
 }
 
 export const CurrentChannel: FC<CurrentChannel> = memo(({currentChannel, setIsModalChanelName}) => {
-
     const [tab, setTab] = useState(1);
 
     return (
@@ -45,7 +47,7 @@ export const CurrentChannel: FC<CurrentChannel> = memo(({currentChannel, setIsMo
                         className={tab === 2 ? "isTabsNameCurrentChannel" : ""}
                         onClick={() => setTab(2)}
                     >
-                        Members 1
+                        Members {participants.length}
                     </button>
                     <button className={tab === 3 ? "isTabsNameCurrentChannel" : ""}
                             onClick={() => setTab(3)}
@@ -65,6 +67,14 @@ export const CurrentChannel: FC<CurrentChannel> = memo(({currentChannel, setIsMo
                         currentChannel={currentChannel}
                     />
                     <Members
+                        tab={tab}
+                        setTab={setTab}
+                    />
+                    <Integrations
+                        tab={tab}
+                        setTab={setTab}
+                    />
+                    <Settings
                         tab={tab}
                         setTab={setTab}
                     />

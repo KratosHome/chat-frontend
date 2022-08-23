@@ -1,6 +1,6 @@
-.containerAbout {
+.containerSettingsType {
 
-  .chanelNameAbout {
+  .blockSettings {
     border: 1px solid rgba(29, 28, 29, 0.13);
     background: rgba(255, 255, 255, 1);
     border-radius: 12px;
@@ -8,13 +8,16 @@
     padding: 15px;
 
     svg {
-      width: 20px;
+      margin-bottom: -1px;
+      width: 15px;
+      color: rgba(29, 28, 29, 0.7);
     }
 
     &:hover {
       background-color: transparent;
       cursor: pointer;
     }
+
 
     div:first-child {
       display: flex;
@@ -32,6 +35,7 @@
         }
       }
     }
+
 
     h3 {
       align-items: baseline;
@@ -51,14 +55,28 @@
       font-variant-ligatures: common-ligatures;
       font-weight: 400;
       line-height: 1.46668;
+      margin-right: 5px;
     }
 
-    svg {
-      margin-bottom: -1px;
-      width: 15px;
-      color: rgba(29, 28, 29, 0.7);
+    ul {
+      margin-top: 5px;
+    }
+
+    li {
+      list-style-type: disc;
+      margin-left: 20px;
+      margin-bottom: 5px;
+    }
+
+    a {
+      color: rgba(18, 100, 163, 1);
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
   }
+
 
   .borderButtonAbout {
     border-bottom: 1px solid rgba(29, 28, 29, 0.13);
@@ -68,18 +86,8 @@
   }
 
   .borderTopAbout {
-    border-bottom: 1px solid rgba(29, 28, 29, 0.13);
+    border-top: 1px solid transparent;
     border-start-end-radius: 0;
     border-start-start-radius: 0;
   }
-
-  .channelIDAbout {
-    color: rgba(29, 28, 29, 0.7);
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 1.38463;
-    margin: 20px 28px 20px 48px;
-  }
 }
-
-

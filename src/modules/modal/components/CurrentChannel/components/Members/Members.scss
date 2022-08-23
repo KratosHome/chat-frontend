@@ -1,0 +1,80 @@
+.containerMembers {
+
+  .inputMembers {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+
+  .addUserMembers {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    padding: 10px 35px 10px 35px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(187, 187, 187, 0.2);
+    }
+
+    div:first-child {
+      width: 36px;
+      height: 36px;
+      padding: 10px 0 0 12px;
+      background: rgba(209, 224, 239, 0.51);
+      border-radius: 5px;
+    }
+
+    div:first-child::before {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 400;
+      content: "\f007";
+      color: rgb(18, 72, 141);
+    }
+
+    div:last-child {
+      margin-left: 10px;
+      font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+      color: rgba(29, 28, 29, 1);
+      font-size: 15px;
+      font-variant-ligatures: common-ligatures;
+      font-weight: 700;
+      line-height: 1.46668;
+    }
+  }
+
+
+  .listMembers {
+    display: flex;
+    align-items: center;
+    padding: 10px 35px 10px 35px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(187, 187, 187, 0.2);
+    }
+
+    img {
+      width: 36px;
+      margin-right: 10px;
+      border-radius: 5px;
+    }
+
+    .nameListMembers {
+      font-family: Slack-Lato, Slack-Fractions, appleLogo, sans-serif;
+      color: rgba(29, 28, 29, 1);
+      font-size: 15px;
+      font-variant-ligatures: common-ligatures;
+      font-weight: 700;
+      line-height: 1.46668;
+    }
+
+    .onlineListMembers {
+      margin-left: 10px;
+      width: 10px;
+      height: 10px;
+      background-color: #007a5a;
+      border-radius: 50%;
+    }
+  }
+}
+
