@@ -45,9 +45,9 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                      <path
                         fill='none'
                         stroke='currentColor'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='1.5'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='1.5'
                         d='M13.75 8 10 11.75 6.25 8'
                      ></path>
                   </svg>
@@ -66,9 +66,9 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                         ></path>
                         <path
                            stroke='currentColor'
-                           stroke-linecap='round'
-                           stroke-linejoin='round'
-                           stroke-width='1.5'
+                           strokeLinecap='round'
+                           strokeLinejoin='round'
+                           strokeWidth='1.5'
                            d='m8 9.5-.75 3.25L10.5 12l6.763-6.763a1.75 1.75 0 0 0 0-2.474l-.026-.026a1.75 1.75 0 0 0-2.474 0L8 9.5ZM14 4l2 2'
                         ></path>
                      </g>
@@ -78,13 +78,13 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
             <div className='pagesSideBar'>
                <div>
                   <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
-                     <g fill='none' stroke='currentColor' stroke-width='1.5'>
+                     <g fill='none' stroke='currentColor' strokeWidth='1.5'>
                         <path
-                           stroke-linejoin='round'
+                           strokeLinejoin='round'
                            d='M16.78 13.759a7.75 7.75 0 1 0-3.02 3.02l3.99.971-.97-3.991Z'
                         ></path>
                         <path
-                           stroke-linecap='round'
+                           strokeLinecap='round'
                            d='M6.75 8.25h6.5m-6.5 3.5h4.5'
                         ></path>
                      </g>
@@ -93,14 +93,14 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                </div>
                <div>
                   <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
-                     <g fill='none' stroke='currentColor' stroke-width='1.5'>
+                     <g fill='none' stroke='currentColor' strokeWidth='1.5'>
                         <circle cx='10' cy='10' r='3.75'></circle>
                         <path
-                           stroke-linecap='round'
+                           strokeLinecap='round'
                            d='M13.75 6.75v4.605c0 1.047.848 1.895 1.895 1.895v0a2.605 2.605 0 0 0 2.605-2.605V10'
                         ></path>
                         <path
-                           stroke-linecap='round'
+                           strokeLinecap='round'
                            d='M18.25 10a8.25 8.25 0 1 0-3.497 6.744'
                         ></path>
                      </g>
@@ -112,7 +112,7 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                      <path
                         fill='none'
                         stroke='currentColor'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                         d='M3.25 5.25a3 3 0 0 1 3-3h7.5a3 3 0 0 1 3 3v11.642c0 .766-.927 1.15-1.469.607l-5.21-5.218a.1.1 0 0 0-.142 0l-5.21 5.218c-.542.543-1.469.16-1.469-.607V5.25Z'
                      ></path>
                   </svg>
@@ -123,12 +123,12 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                      <g fill='none'>
                         <path
                            stroke='currentColor'
-                           stroke-width='1.5'
+                           strokeWidth='1.5'
                            d='M1.75 4.75a3 3 0 0 1 3-3h5.5a3 3 0 0 1 3 3v13.5H2.75a1 1 0 0 1-1-1V4.75Z'
                         ></path>
                         <path
                            stroke='currentColor'
-                           stroke-width='1.5'
+                           strokeWidth='1.5'
                            d='M13.5 8h1.75a3 3 0 0 1 3 3v6.25a1 1 0 0 1-1 1H13M9.75 18v-2.25a1 1 0 0 0-1-1h-2.5a1 1 0 0 0-1 1V18'
                         ></path>
                         <circle

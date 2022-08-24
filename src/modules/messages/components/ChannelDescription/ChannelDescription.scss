@@ -1,89 +1,89 @@
 .description {
-  margin: 48px 20px 16px;
-  font-size: 15px;
-  line-height: 1.46668;
+   margin: 48px 20px 16px;
+   font-size: 15px;
+   line-height: 1.46668;
 
-  &__container {
-    display: flex;
-    margin-bottom: 20px;
-  }
+   &__container {
+      display: flex;
+      margin-bottom: 20px;
+   }
 
-  &__image {
-    background-color: #f4ede4;
-    border-radius: 4px;
-    cursor: default;
-    flex: none;
-    height: 36px;
-    margin-right: 8px;
-    margin-top: 4px;
-    width: 36px;
-
-    & svg {
+   &__image {
+      background-color: #f4ede4;
       border-radius: 4px;
-    }
-  }
+      cursor: default;
+      flex: none;
+      height: 36px;
+      margin-right: 8px;
+      margin-top: 4px;
+      width: 36px;
 
-  &__header {
-    color: rgba(29, 28, 29, 1);
-    font-weight: 900;
-  }
+      & svg {
+         border-radius: 4px;
+      }
+   }
 
-  &__body {
-    color: rgba(29, 28, 29, 0.7);
-    font-weight: 400;
-  }
+   &__header {
+      color: rgba(29, 28, 29, 1);
+      font-weight: 900;
+   }
 
-  &__body-button {
-    background: none;
-    border: 0;
-    color: rgba(18, 100, 163, 1);
-    cursor: pointer;
-    font: inherit;
-    line-height: inherit;
-    margin: 0;
-    margin-left: 3px;
-    overflow: initial;
-    padding: 0;
-    text-align: initial;
-    text-decoration: none;
-    vertical-align: initial;
+   &__body {
+      color: rgba(29, 28, 29, 0.7);
+      font-weight: 400;
+   }
 
-    &:hover {
-      text-decoration: underline;
-      color: rgb(14, 77, 125);
-    }
-  }
+   &__body-button {
+      background: none;
+      border: 0;
+      color: rgba(18, 100, 163, 1);
+      cursor: pointer;
+      font: inherit;
+      line-height: inherit;
+      margin: 0;
+      margin-left: 3px;
+      overflow: initial;
+      padding: 0;
+      text-align: initial;
+      text-decoration: none;
+      vertical-align: initial;
 
-  &__channel {
-    color: rgba(18, 100, 163, 1);
-  }
+      &:hover {
+         text-decoration: underline;
+         color: rgba(11, 76, 140, 1);
+      }
+   }
 
-  &__channel-container {
-    display: inline;
-    white-space: pre;
-  }
+   &__channel {
+      color: rgba(18, 100, 163, 1);
+   }
 
-  &__channel-icon {
-    margin-right: 2px;
+   &__channel-container {
+      display: inline;
+      white-space: pre;
+   }
 
-    & svg {
-      display: inline-block;
-      vertical-align: -0.125em;
-      flex-shrink: 0;
-      font-size: inherit;
-      height: 1em;
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-      width: 1em;
-    }
-  }
+   &__channel-icon {
+      margin-right: 2px;
+
+      & svg {
+         display: inline-block;
+         vertical-align: -0.125em;
+         flex-shrink: 0;
+         font-size: inherit;
+         height: 1em;
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+         width: 1em;
+      }
+   }
 }
 
 .iconChannelDescription {
-  img {
-    margin-top: 10px;
-    margin-right: 5px;
-    width: 13px;
-    height: 13px;
-  }
+   img {
+      margin-top: 10px;
+      margin-right: 5px;
+      width: 13px;
+      height: 13px;
+   }
 }

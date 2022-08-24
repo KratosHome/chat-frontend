@@ -19,8 +19,8 @@ export const MenuHistoryItem: React.FC<MenuHistoryItemType> = ({
                         <path
                            fill='none'
                            stroke='currentColor'
-                           stroke-linecap='round'
-                           stroke-width='1.5'
+                           strokeLinecap='round'
+                           strokeWidth='1.5'
                            d='m 9 3.75 l -2.5 14.5 m 7.25 -14.5 l -2.5 14.5 m -7.5 -10.5 h 13.5 m -14.5 7 h 13.5'
                         ></path>
                      </svg>

@@ -1,0 +1,198 @@
+.filter {
+   &__header {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 8px 8px 0 0;
+      flex-shrink: 0;
+      min-height: 70px;
+      width: 100%;
+   }
+
+   &__content {
+      background: rgba(255, 255, 255, 1);
+      display: flex;
+      flex-shrink: 1;
+      min-height: 50px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-right: 5px;
+      position: relative;
+
+      &::-webkit-scrollbar {
+         width: 8px; /* ширина scrollbar */
+      }
+
+      &::-webkit-scrollbar-track {
+         background: transparent; /* цвет дорожки */
+         padding-right: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: rgba(29, 28, 29, 0.52); /* цвет плашки */
+         border-radius: 4px; /* закругления плашки */
+      }
+   }
+
+   &__footer {
+      align-items: center;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      flex-shrink: 0;
+      height: 84px;
+      justify-content: flex-end;
+      margin-top: auto;
+      overflow: hidden;
+      padding: 24px 28px;
+      width: 100%;
+   }
+
+   &__button {
+      color: rgba(29, 28, 29, 0.7);
+      height: 36px;
+      width: 36px;
+      align-items: center;
+      border-radius: 4px;
+      display: inline-flex;
+      justify-content: center;
+      position: relative;
+
+      &:hover {
+         background: rgba(29, 28, 29, 0.04);
+         color: rgba(29, 28, 29, 1);
+      }
+
+      & svg {
+         height: 20px;
+         width: 20px;
+         display: block;
+         flex-shrink: 0;
+         font-size: inherit;
+         -webkit-print-color-adjust: exact;
+         print-color-adjust: exact;
+      }
+   }
+
+   &__button-clear {
+      margin-right: 33px;
+   }
+
+   &__button-close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 1;
+   }
+
+   &__title {
+      justify-content: space-between;
+      padding-right: 60px;
+      align-items: center;
+      display: flex;
+      min-height: 70px;
+      padding: 20px 28px;
+      width: 100%;
+   }
+
+   &__title-text {
+      & h1 {
+         font-size: 22px;
+         font-weight: 700;
+         line-height: 1.36365;
+         margin: 0;
+      }
+   }
+
+   &__content-container {
+      width: 100%;
+      padding: 0 28px;
+   }
+
+   &__button-help {
+      font-size: 15px;
+      color: rgba(18, 100, 163, 1);
+      text-decoration: none;
+
+      &:hover {
+         color: rgba(11, 76, 140, 1);
+         text-decoration: underline;
+      }
+   }
+
+   &__icon {
+      width: 1em;
+      font-family: inherit;
+      font-size: inherit;
+      height: auto;
+      line-height: inherit;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      position: relative;
+
+      & svg {
+         font-size: inherit;
+         height: 1em;
+         left: 50%;
+         margin-left: -0.7em;
+         margin-top: -0.9em;
+         position: absolute;
+         top: 50%;
+         width: 1em;
+         display: inline-block;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 1;
+      }
+   }
+
+   &__footer-actions {
+      margin-left: 38px;
+   }
+
+   &__footer-cancel {
+      margin-right: 12px;
+      font-size: 15px;
+      height: 36px;
+      min-width: 80px;
+      padding: 0 12px 1px;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+         background: rgba(248, 248, 248, 1);
+         box-shadow: 0 1px 3px 0 #00000014;
+      }
+   }
+
+   &__footer-search {
+      font-size: 15px;
+      height: 36px;
+      min-width: 80px;
+      padding: 0 12px 1px;
+      background: #007a5a;
+      box-shadow: none;
+      color: #fff;
+      font-weight: 700;
+      transition: all 80ms linear;
+      text-decoration: none;
+      border: none;
+
+      &:hover {
+         background: #148567;
+         box-shadow: 0 1px 4px #0000004d;
+         color: #fff;
+      }
+   }
+}
+
+.button--disabled {
+   background: rgba(221, 221, 221, 1);
+   background-clip: initial;
+   border-color: rgba(221, 221, 221, 1);
+   box-shadow: none;
+   color: rgba(29, 28, 29, 0.75);
+   cursor: default;
+   pointer-events: none;
+   text-shadow: none;
+   transition: all 80ms linear;
+}

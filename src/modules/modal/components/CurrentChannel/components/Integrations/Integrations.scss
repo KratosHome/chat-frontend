@@ -1,84 +1,79 @@
 .containerIntegrations {
-
-
-  .blockIntegrations {
-    display: flex;
-    align-items: center;
-    border: 1px solid rgba(29, 28, 29, 0.13);
-    background: rgba(255, 255, 255, 1);
-    border-radius: 12px;
-    margin: 15px 35px 15px 35px;
-
-    img {
-      width: 150px;
-      border-top-right-radius: 10px;
-      border-bottom-right-radius: 10px;
-    }
-
-    .headBlockIntegrations {
+   .blockIntegrations {
       display: flex;
-      padding-top: 20px;
-      padding-left: 20px;
-
-      h3 {
-        align-items: baseline;
-        display: flex;
-        font-size: 15px;
-        font-weight: 700;
-        justify-content: space-between;
-        line-height: 1.46668;
-      }
-
-      .proIntegrations {
-        margin-left: 10px;
-        background-color: #4a154b;
-        color: #fff;
-        border-radius: 4px;
-        cursor: default;
-        font-size: 10px;
-        font-weight: 700;
-        height: min-content;
-        line-height: 14px;
-        padding: 1px 3px;
-        text-align: center;
-        white-space: nowrap;
-      }
-    }
-
-    span {
-      display: block;
-      padding-left: 20px;
-      margin-top: 10px;
-      color: rgba(29, 28, 29, 1);
-      font-size: 15px;
-      font-variant-ligatures: common-ligatures;
-      font-weight: 400;
-      line-height: 1.46668;
-    }
-
-    button {
-      margin-top: 12px;
-      margin-left: 20px;
-      margin-bottom: 15px;
+      align-items: center;
+      border: 1px solid rgba(29, 28, 29, 0.13);
       background: rgba(255, 255, 255, 1);
-      background-clip: padding-box;
-      border: 1px solid rgba(29, 28, 29, 0.3);
-      color: rgba(29, 28, 29, 1);
-      font-weight: 700;
-      font-size: 13px;
-      height: 28px;
-      min-width: 56px;
-      padding: 0 12px 1px;
-      border-radius: 4px;
-      cursor: pointer;
+      border-radius: 12px;
+      margin: 15px 35px 15px 35px;
 
-      &:hover {
-        cursor: pointer;
-        background: rgba(234, 233, 233, 0.5);
+      img {
+         width: 150px;
+         border-top-right-radius: 10px;
+         border-bottom-right-radius: 10px;
       }
-    }
 
-  }
+      .headBlockIntegrations {
+         display: flex;
+         padding-top: 20px;
+         padding-left: 20px;
 
+         h3 {
+            align-items: baseline;
+            display: flex;
+            font-size: 15px;
+            font-weight: 700;
+            justify-content: space-between;
+            line-height: 1.46668;
+         }
 
+         .proIntegrations {
+            margin-left: 10px;
+            background-color: #4a154b;
+            color: #fff;
+            border-radius: 4px;
+            cursor: default;
+            font-size: 10px;
+            font-weight: 700;
+            height: min-content;
+            line-height: 14px;
+            padding: 1px 3px;
+            text-align: center;
+            white-space: nowrap;
+         }
+      }
+
+      span {
+         display: block;
+         padding-left: 20px;
+         margin-top: 10px;
+         color: rgba(29, 28, 29, 1);
+         font-size: 15px;
+         font-variant-ligatures: common-ligatures;
+         font-weight: 400;
+         line-height: 1.46668;
+      }
+
+      button {
+         margin-top: 12px;
+         margin-left: 20px;
+         margin-bottom: 15px;
+         background: rgba(255, 255, 255, 1);
+         background-clip: padding-box;
+         border: 1px solid rgba(29, 28, 29, 0.3);
+         color: rgba(29, 28, 29, 1);
+         font-weight: 700;
+         font-size: 13px;
+         height: 28px;
+         min-width: 56px;
+         padding: 0 12px 1px;
+         border-radius: 4px;
+         cursor: pointer;
+
+         &:hover {
+            cursor: pointer;
+            background: rgba(234, 233, 233, 0.5);
+         }
+      }
+   }
 }

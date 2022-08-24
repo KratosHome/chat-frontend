@@ -23,9 +23,9 @@ export const MenuItem: React.FC<MenuItemType> = ({ isSubmenu, itemText }) => {
                      <path
                         fill='none'
                         stroke='currentColor'
-                        stroke-linecap='round'
-                        stroke-linejoin='round'
-                        stroke-width='1.5'
+                        strokeLinecap='round'
+                        strokeLinejoin='round'
+                        strokeWidth='1.5'
                         d='M 8.25 6.25 L 12 10 l -3.75 3.75'
                      ></path>
                   </svg>

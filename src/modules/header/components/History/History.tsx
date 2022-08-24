@@ -20,14 +20,14 @@ export const History: React.FC = () => {
             <a
                className='header__history-button'
                onClick={() => setIsModalHistoryOpen(!isModalHistoryOpen)}
-               onMouseOver={() => setIsHoverHistory(!isHoverHistory)}
-               onMouseOut={() => setIsHoverHistory(!isHoverHistory)}
+               onMouseOver={() => setIsHoverHistory(true)}
+               onMouseOut={() => setIsHoverHistory(false)}
             >
                <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
-                  <g fill='none' stroke='currentColor' stroke-width='1.5'>
+                  <g fill='none' stroke='currentColor' strokeWidth='1.5'>
                      <circle cx='10' cy='10' r='8.25'></circle>
                      <path
-                        stroke-linecap='round'
+                        strokeLinecap='round'
                         d='M 10 5.75 v 4.75 h 3.75'
                      ></path>
                   </g>
