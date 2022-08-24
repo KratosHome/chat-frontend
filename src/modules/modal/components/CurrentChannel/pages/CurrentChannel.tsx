@@ -1,17 +1,14 @@
 import React, {FC, memo, useState} from 'react';
 import "./CurrentChannel.scss"
-import {About} from "./components/About/About";
-import {Members} from "./components/Members/Members";
-import {participants} from '../../../../services/participant.service';
-import {Integrations} from "./components/Integrations/Integrations";
-import {Settings} from "./components/Settings";
+import {About} from "../components/About/About";
+import {Members} from "../components/Members/Members";
+import {participants} from '../../../../../services/participant.service';
+import {Integrations} from "../components/Integrations/Integrations";
+import {Settings} from "../components/Settings";
+import {CurrentChannelType} from "./CurrentChannelType";
+import ChannelState from "../../../../../store/channel";
 
-type CurrentChannel = {
-    currentChannel: any
-    setIsModalChanelName: any
-}
-
-export const CurrentChannel: FC<CurrentChannel> = memo(({currentChannel, setIsModalChanelName}) => {
+export const CurrentChannel: FC<CurrentChannelType> = memo(({setIsModalChanelName}) => {
     const [tab, setTab] = useState(1);
 
     return (
@@ -23,7 +20,7 @@ export const CurrentChannel: FC<CurrentChannel> = memo(({currentChannel, setIsMo
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
                                   d="M9 4 6.5 18m7.25-14-2.5 14M4 8h13M3 14.5h13"></path>
                         </svg>
-                        {currentChannel}
+                        {ChannelState.initialState.name}
                     </h1>
                     <button onClick={() => setIsModalChanelName(false)}>
                         <svg data-aqc="true" aria-hidden="true" viewBox="0 0 20 20">
@@ -64,7 +61,6 @@ export const CurrentChannel: FC<CurrentChannel> = memo(({currentChannel, setIsMo
                     <About
                         tab={tab}
                         setTab={setTab}
-                        currentChannel={currentChannel}
                     />
                     <Members
                         tab={tab}

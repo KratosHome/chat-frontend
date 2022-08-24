@@ -25,6 +25,8 @@
       "express": "^4.17.2",
       "keycloak-connect": "^15.0.2",
       "keycloak-js": "^15.0.2",
+      "mobx": "^6.6.1",
+      "mobx-react-lite": "^3.4.0",
       "react": "^17.0.2",
       "react-bootstrap": "^2.0.2",
       "react-bootstrap-icons": "^1.6.1",

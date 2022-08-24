@@ -4,9 +4,9 @@ import {participants} from '../../../../services/participant.service';
 import {Tooltip} from '../../../common/Tooltip';
 import {ReactModal} from '../../../modal';
 import {BookmarkMenu} from '../../../modal/components/BookmarkMenu';
+import {CurrentChannel} from '../../../modal/components/CurrentChannel/pages';
 import './MessageHeader.scss';
 import {iMessageHeaderProps} from './MessageHeaderType';
-import {CurrentChannel} from "../../../modal/components/CurrentChannel/CurrentChannel";
 
 export const MessageHeader: React.FC<iMessageHeaderProps> = memo(({
                                                                       currentChannel,
@@ -142,7 +142,6 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(({
                 onBlur={true}
             >
                 <CurrentChannel
-                    currentChannel={currentChannel}
                     setIsModalChanelName={setIsModalChanelName}
                 />
             </ReactModal>

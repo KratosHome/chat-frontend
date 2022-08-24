@@ -1,8 +1,9 @@
 import React, {FC} from 'react';
 import "./About.scss"
 import {AboutType} from "./AboutType";
+import ChannelState from "../../../../../../store/channel";
 
-export const About: FC<AboutType> = ({tab, setTab, currentChannel}) => {
+export const About: FC<AboutType> = ({tab, setTab}) => {
     return (
         <>
             <div className={tab === 1 ? "visibleTabs" : "nowVisible"} onClick={() => setTab(1)}>
@@ -16,7 +17,7 @@ export const About: FC<AboutType> = ({tab, setTab, currentChannel}) => {
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"
                                   d="M9 4 6.5 18m7.25-14-2.5 14M4 8h13M3 14.5h13"></path>
                         </svg>
-                        <span>{currentChannel}</span>
+                        <span>{ChannelState.initialState.name}</span>
                     </div>
 
                     <div className="chanelNameAbout borderButtonAbout">
@@ -49,7 +50,7 @@ export const About: FC<AboutType> = ({tab, setTab, currentChannel}) => {
                         <span>There aren’t any files to see here right now. But there could be — drag and drop any file into the message pane to add it to this conversation.</span>
                     </div>
                     <div className="channelIDAbout">
-                        Channel ID: CL7BX15MM
+                        Channel ID: {ChannelState.initialState.id}
                     </div>
                 </div>
             </div>

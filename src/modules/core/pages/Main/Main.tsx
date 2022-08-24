@@ -7,8 +7,10 @@ import {participants} from '../../../../services/participant.service';
 import {useHotkeys} from 'react-hotkeys-hook';
 import {SideBar} from '../../../sidebar';
 import './Main.scss';
+import ChannelState from "../../../../store/channel"
+import {observer} from "mobx-react-lite";
 
-export const Main: React.FC = () => {
+export const Main: React.FC = observer(() => {
     const [visibleMessageField, setVisibleMessageField] = useState(true);
 
     const [currentChannelId, setCurrentChannelId] = useState<number>(1);
@@ -16,6 +18,12 @@ export const Main: React.FC = () => {
 
     let active = activeChatService.getActiveChatId();
     let channel = channels.find((x) => x.id === active);
+
+    useEffect(() => {
+        ChannelState.chanel(channel)
+    }, [channel])
+
+
     let isInternal = channel ? channel.isInternal : true;
 
     const type = isInternal ? 'internal-chat' : 'external-chat';
@@ -24,6 +32,7 @@ export const Main: React.FC = () => {
     const currentUserName = participants[currentUserId].name;
     const displaySend = visibleMessageField ? 'displayNone' : '';
     const textArea = 'area ' + displaySend;
+
 
     useEffect(() => {
         const activeChat = activeChatService.getActiveChatId();
@@ -68,4 +77,4 @@ export const Main: React.FC = () => {
             </div>
         </div>
     );
-};
+});
