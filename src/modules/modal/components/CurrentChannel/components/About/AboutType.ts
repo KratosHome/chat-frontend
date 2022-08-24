@@ -1,4 +1,4 @@
 export type AboutType = {
-    tab: number
-    setTab: (value: number) => void
-}
+   tab: number;
+   setTab: (value: number) => void;
+};

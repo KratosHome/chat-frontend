@@ -1,85 +1,93 @@
 .modal {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+   position: fixed;
+   z-index: 3;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
 
-  &__content {
-    position: absolute;
-    outline: none;
-  }
+   &__content {
+      position: absolute;
+      outline: none;
+   }
 }
 
 .onBlur {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 2;
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   background-color: #0009;
+   z-index: 2;
 }
 
 .avatar-menu-position {
-  right: 46px;
-  top: 43px;
+   right: 46px;
+   top: 43px;
 }
 
 .history-menu-position {
-  left: 518px;
-  top: 35px;
+   left: 518px;
+   top: 35px;
 
-  @media (max-width: 1650px) {
-    left: 384px;
-  }
+   @media (max-width: 1650px) {
+      left: 384px;
+   }
 
-  @media (max-width: 1080px) {
-    left: 175px;
-  }
+   @media (max-width: 1080px) {
+      left: 175px;
+   }
 
-  @media (max-width: 900px) {
-    left: 20px;
-  }
+   @media (max-width: 900px) {
+      left: 20px;
+   }
 }
 
 .room-menu-position {
-  left: 16px;
-  top: 95px;
+   left: 16px;
+   top: 95px;
 }
 
 .date-button-position {
-  left: 55%;
-  margin-right: -50%;
-  transform: translate(-7%, -50%);
+   left: 55%;
+   margin-right: -50%;
+   transform: translate(-7%, -50%);
 }
 
 .sidebar-more-menu-position {
-  left: 13px;
-  top: 250px;
+   left: 13px;
+   top: 250px;
 }
 
 .add-center-position {
-  top: 40%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+   top: 40%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
 }
 .add-chanel-position {
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+   top: 50%;
+   left: 50%;
+   margin-right: -50%;
+   transform: translate(-50%, -50%);
 }
 
 .bookmark-menu-position {
-  top: 130px;
+   top: 130px;
+}
+
+.filter-popup-position {
+   height: 100%;
+   padding: 28px 0;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
 }
 
 .search-header-position {
-  left: 50%;
-  top: 3px;
-  transform: translate(-50%, 0);
+   left: 50%;
+   top: 3px;
+   transform: translate(-50%, 0);
 }

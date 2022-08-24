@@ -1,3 +1,3 @@
 export type CurrentChannelType = {
-    setIsModalChanelName: (value: boolean) => void
-}
+   setIsModalChanelName: (value: boolean) => void;
+};

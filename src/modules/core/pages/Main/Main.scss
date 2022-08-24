@@ -27,33 +27,3 @@
    min-width: 300px !important;
    max-width: 300px;
 }
-
-.wider {
-   width: 100%;
-}
-
-.box-2 {
-   height: calc(100vh - 180px);
-   flex-basis: 100%;
-}
-
-.message-content {
-   height: 75%;
-   margin-top: 10px;
-   overflow-y: auto;
-   overflow-x: hidden;
-}
-
-.message-content::-webkit-scrollbar {
-   width: 10px; /* ширина scrollbar */
-}
-
-.message-content::-webkit-scrollbar-track {
-   background: var(--grey); /* цвет дорожки */
-}
-
-.message-content::-webkit-scrollbar-thumb {
-   background-color: var(--searchbar); /* цвет плашки */
-   border-radius: 15px; /* закругления плашки */
-   border: 2px solid grey; /* padding вокруг плашки */
-}

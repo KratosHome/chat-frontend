@@ -10,20 +10,21 @@
 .message-content {
    height: 75%;
    margin-top: 10px;
+   margin-right: 5px;
    overflow-y: auto;
    overflow-x: hidden;
 }
 
 .message-content::-webkit-scrollbar {
-   width: 10px; /* ширина scrollbar */
+   width: 8px; /* ширина scrollbar */
 }
 
 .message-content::-webkit-scrollbar-track {
-   background: var(--grey); /* цвет дорожки */
+   background: transparent; /* цвет дорожки */
+   padding-right: 5px;
 }
 
 .message-content::-webkit-scrollbar-thumb {
-   background-color: var(--searchbar); /* цвет плашки */
-   border-radius: 15px; /* закругления плашки */
-   border: 2px solid grey; /* padding вокруг плашки */
+   background-color: rgba(29, 28, 29, 0.52); /* цвет плашки */
+   border-radius: 4px; /* закругления плашки */
 }

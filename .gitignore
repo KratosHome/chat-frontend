@@ -34,6 +34,7 @@
 /node_modules
 **/built/
 package-lock.json
+yarn.lock
 #\------------------------------------------/
 
 # Gradle

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { format } from 'date-fns';
 import './TimeStamp.scss';
 import { DateButton, ReactModal } from '../../../modal';
@@ -40,9 +40,9 @@ export const TimeStamp: React.FC<DataType> = ({ data }) => {
                         <path
                            fill='none'
                            stroke='currentColor'
-                           stroke-linecap='round'
-                           stroke-linejoin='round'
-                           stroke-width='1.5'
+                           strokeLinecap='round'
+                           strokeLinejoin='round'
+                           strokeWidth='1.5'
                            d='M13.75 8 10 11.75 6.25 8'
                         ></path>
                      </svg>

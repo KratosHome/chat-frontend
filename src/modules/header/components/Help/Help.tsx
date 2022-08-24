@@ -20,8 +20,8 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
       <div className='header__help'>
          <a
             className='header__help-button'
-            onMouseOver={() => setIsHoverHelp(!isHoverHelp)}
-            onMouseOut={() => setIsHoverHelp(!isHoverHelp)}
+            onMouseOver={() => setIsHoverHelp(true)}
+            onMouseOut={() => setIsHoverHelp(false)}
          >
             <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                <g fill='none'>
@@ -30,7 +30,7 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
                      cy='10'
                      r='8.25'
                      stroke='currentColor'
-                     stroke-width='1.5'
+                     strokeWidth='1.5'
                   ></circle>
                   <path
                      fill='currentColor'
@@ -51,8 +51,8 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          <div
             className='header__avatar'
             onClick={() => setIsModalAvatarOpen(!isModalAvatarOpen)}
-            onMouseOver={() => setIsHoverName(!isHoverName)}
-            onMouseOut={() => setIsHoverName(!isHoverName)}
+            onMouseOver={() => setIsHoverName(true)}
+            onMouseOut={() => setIsHoverName(false)}
          >
             <a className='header__avatar-button'>
                <img

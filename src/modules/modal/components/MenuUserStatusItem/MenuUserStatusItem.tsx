@@ -33,7 +33,7 @@ export const MenuUserStatusItem: React.FC = () => {
                         cy='10'
                         r='8.25'
                         stroke='currentColor'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                      ></circle>
                      <circle
                         cx='7.5'
@@ -49,8 +49,8 @@ export const MenuUserStatusItem: React.FC = () => {
                      ></circle>
                      <path
                         stroke='currentColor'
-                        stroke-linecap='round'
-                        stroke-width='1.5'
+                        strokeLinecap='round'
+                        strokeWidth='1.5'
                         d='M6.902 12c.494 1.5 1.81 2.25 3.125 2.25 1.316 0 2.632-.75 3.125-2.25'
                      ></path>
                   </g>
@@ -68,7 +68,7 @@ export const MenuUserStatusItem: React.FC = () => {
                         cy='10'
                         r='8.25'
                         stroke='currentColor'
-                        stroke-width='1.5'
+                        strokeWidth='1.5'
                      ></circle>
                      <circle
                         cx='7.5'
