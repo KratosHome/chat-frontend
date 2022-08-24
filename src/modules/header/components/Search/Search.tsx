@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 import { FilterMenu, ReactModal } from '../../../modal';
 import './Search.scss';
 import { SearchType } from './SearchType';
