@@ -42,42 +42,21 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(({
             <div className='message-header'>
                 <div className='message-header__wrapper'>
                     <div className='current-channel'>
-                        <div className='current-channel__wrapper'>
+                        <div className='current-channel__wrapper'
+                             onClick={() => setIsModalChanelName(!isModalChanelName)}
+                        >
                   <span className='current-channel__grid'>
-                     <svg
-                         data-0v2='true'
-                         aria-hidden='true'
-                         viewBox='0 0 20 20'
-                     >
-                        <path
-                            fill='none'
-                            stroke='currentColor'
-                            stroke-linecap='round'
-                            stroke-width='2'
-                            d='M 9 4 L 6.5 18 m 7.25 -14 l -2.5 14 M 4 8 h 13 M 3 14.5 h 13'
-                        ></path>
+                     <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'><path fill='none' stroke='currentColor'
+                                                                                       stroke-linecap='round'
+                                                                                       stroke-width='2'
+                                                                                       d='M 9 4 L 6.5 18 m 7.25 -14 l -2.5 14 M 4 8 h 13 M 3 14.5 h 13'></path>
                      </svg>
                   </span>
-                            <span
-                                onClick={() => setIsModalChanelName(!isModalChanelName)}
-                                className='current-channel__name'
-                            >
-                     {currentChannel}
-                             </span>
+                            <span className='current-channel__name'>{currentChannel}</span>
                             <span className='current-channel__arrow'>
-                     <svg
-                         data-0v2='true'
-                         aria-hidden='true'
-                         viewBox='0 0 20 20'
-                     >
-                        <path
-                            fill='none'
-                            stroke='currentColor'
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
-                            stroke-width='1.5'
-                            d='M 13.75 8 L 10 11.75 L 6.25 8'
-                        ></path>
+                     <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
+                        <path fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round'
+                              stroke-width='1.5' d='M 13.75 8 L 10 11.75 L 6.25 8'></path>
                      </svg>
                   </span>
                         </div>

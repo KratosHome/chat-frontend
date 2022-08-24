@@ -8,7 +8,7 @@
   -webkit-user-select: none;
   user-select: none;
   background-color: #f8f8f8;
-
+  overflow: hidden;
 
   .containerCurrentChannel {
     height: 100%;
@@ -121,16 +121,10 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
-        min-width: max-content;
         font-size: 13px;
         line-height: 1.38463;
         font-weight: 700;
-        -webkit-tap-highlight-color: transparent;
-        align-items: center;
-        box-shadow: inset 0 -2px 0 0 #0000;
         color: rgba(97, 96, 97, 1);
-        display: inline-flex;
-        justify-content: center;
         margin: 0 15px;
         padding: 9px 0;
         text-align: center;
@@ -143,7 +137,7 @@
 
       .isTabsNameCurrentChannel {
         padding-bottom: 7px;
-        box-shadow: inset -1px -3px 0 -1px #007a5a;
+        box-shadow: inset -1px -4px 0 -2px #007a5a;
         color: rgba(29, 28, 29, 1);
         outline: 0;
         color: black;
