@@ -1,35 +1,29 @@
 import React, {FC, ReactNode} from 'react';
 import "./HoverModal.scss"
-
-type HoverModalType = {
-    isModalOpen?: boolean;
-    onClose?: () => void;
-    modalPosition?: string;
-    topCoords?: number;
-    leftCoords?: number;
-    onBlur?: boolean;
-    children: ReactNode;
-}
+import {HoverModalType} from "./HoverModalType";
 
 
 export const HoverModal: FC<HoverModalType> = ({
                                                    children,
                                                    isModalOpen,
-                                                   onClose,
-                                                   modalPosition,
                                                    topCoords,
-                                                   onBlur,
-                                                   leftCoords
+                                                   leftCoords,
+                                                   timerOut,
+                                                   timerOver,
                                                }) => {
+
     return (
-        <div className='containerHoverModal' onClick={onClose}>
+        <div
+            onMouseOut={timerOut}
+            onMouseOver={timerOver}
+        >
             <div
-                className={`modal__content ${modalPosition}`}
+                className={isModalOpen ? "openHoverModal" : "closeHoverModal"}
                 style={{
+                    position: "absolute",
                     top: `${topCoords}px`,
                     left: `${leftCoords}px`,
                 }}
-                onClick={(e) => e.stopPropagation()}
             >
                 {children}
             </div>

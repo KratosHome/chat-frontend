@@ -3,6 +3,7 @@ import {format} from 'date-fns';
 import {MessageType} from './MessageType';
 import './Message.scss';
 import {HoverModal} from "../../../UI/HoverModal";
+import {NameModal} from "./component/NameModal/NameModal/NameModal";
 
 export const Message: React.FC<MessageType> = ({
                                                    participant,
@@ -14,44 +15,53 @@ export const Message: React.FC<MessageType> = ({
     const messageLayout = participantId === 1 ? 'my-message' : 'other';
     const [topCoords, setTopCoords] = useState<number>(0);
     const [leftCoords, setLeftCoords] = useState<number>(0);
+    const [timerName, setTimerName] = useState<boolean | null>(null);
     const [isModalName, setIsModalName] = useState<boolean>(false);
 
-    const handlNameClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        setIsModalName(!isModalName);
-        let rect = (e.target as Element).getBoundingClientRect();
-        setTopCoords(rect.top - 10);
-        setLeftCoords(rect.left + 20)
-    };
+    const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
 
-    const out = (e: React.MouseEvent<HTMLDivElement>) => {
-    }
+        setTimerName(true)
+        let rect = (e.target as Element).getBoundingClientRect();
+        if (messageLayout === "my-message") {
+            setTopCoords(rect.top - 230);
+            setLeftCoords(rect.left + -90)
+        } else {
+            setTopCoords(rect.top - 230);
+            setLeftCoords(rect.left + -0)
+        }
+
+    };
 
 
     useEffect(() => {
-        const timerIn = setTimeout(() => {
-            console.log("b")
-        }, 1000);
-
-
+        let timerIn: any
+        if (timerName === false) {
+            timerIn = setTimeout(() => {
+                setIsModalName(false)
+            }, 400);
+        } else if (timerName === true) {
+            timerIn = setTimeout(() => {
+                setIsModalName(true)
+            }, 400);
+        }
         return () => clearTimeout(timerIn);
-    }, []);
-
-
-    // onMouseOver={() => setIsModalName(!isModalName)}
-    //   onMouseOut={() => setIsModalName(!isModalName)}
-
-
+    }, [timerName]);
     return (
         <>
             <div className={`message-wrapper ${messageLayout}`}>
                 <img
+                    onMouseOver={handleClick}
+                    onMouseOut={() => setTimerName(false)}
                     src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-32'
                     alt='user'
                     className='avatar-message'
                 />
                 <div className='message-container'>
                     <div>
-                        <span className='participant-indicator'>{participant}</span>
+                        <span
+                            onMouseOver={handleClick}
+                            onMouseOut={() => setTimerName(false)}
+                            className='participant-indicator'>{participant}</span>
                         <span className='date-indicator'>{`${format(
                             new Date(time),
                             'HH:mm a'
@@ -68,8 +78,17 @@ export const Message: React.FC<MessageType> = ({
                     ))}
                 </div>
             </div>
-            <HoverModal>
-                vfvdf
+            <HoverModal
+                isModalOpen={isModalName}
+                timerOut={() => setTimerName(false)}
+                timerOver={() => setTimerName(true)}
+                topCoords={topCoords}
+                leftCoords={leftCoords}
+            >
+                <NameModal
+                    participant={participant}
+                    time={time}
+                />
             </HoverModal>
         </>
     );

@@ -1,16 +1,8 @@
-.containerHoverModal {
-  position: fixed;
-  z-index: 3;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+.openHoverModal {
+  display: block;
+  z-index: 5;
+}
 
-
-  &__content {
-    position: absolute;
-    outline: none;
-  }
-
+.closeHoverModal {
+  display: none;
 }
