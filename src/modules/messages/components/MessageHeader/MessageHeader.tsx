@@ -1,7 +1,7 @@
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useRef, useState } from 'react';
 import { channelParticipants } from '../../../../services/channelParticipants.service';
 import { participants } from '../../../../services/participant.service';
-import { Tooltip } from '../../../common/Tooltip';
+import { HoverIcon } from '../../../common/HoverIcon';
 import { ReactModal } from '../../../modal';
 import { BookmarkMenu } from '../../../modal/components/BookmarkMenu';
 import { CurrentChannel } from '../../../modal/components/CurrentChannel/pages';
@@ -10,12 +10,19 @@ import { iMessageHeaderProps } from './MessageHeaderType';
 
 export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
    ({ currentChannel, currentChannelId }) => {
+      const currentChannelButtonRef = useRef<HTMLDivElement>(null);
+
       const [coords, setCoords] = useState<number>(0);
+      const [channelHintCoords, setChannelHintCoords] = useState<number>(0);
 
       const [isModalBookmarkOpen, setIsModalBookmarkOpen] =
          useState<boolean>(false);
+      const [isModalChanelNameOpen, setIsModalChanelNameOpen] =
+         useState<boolean>(false);
 
-      const [showHint, setShowHint] = useState<boolean>(false);
+      const [isHoverPeople, setIsHoverPeople] = useState<boolean>(false);
+      const [isHoverChannel, setIsHoverChannel] = useState<boolean>(false);
+      const [isHoverBookmark, setIsHoverBookmark] = useState<boolean>(false);
 
       const participantsArray: any = [];
       const channelParticipantsId = channelParticipants.find(
@@ -27,23 +34,51 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
       });
       const participantsCount = participantsId ? participantsId.length : 0;
 
-      const handleBookmarkClick = (e: React.MouseEvent<HTMLDivElement>) => {
+      const handleBookmarkClick = (e: React.MouseEvent<HTMLButtonElement>) => {
          setIsModalBookmarkOpen(true);
          let rect = (e.target as Element).getBoundingClientRect();
          let x = e.clientX - rect.left;
+
          setCoords(e.clientX - x);
       };
 
-      const [isModalChanelName, setIsModalChanelName] =
-         useState<boolean>(false);
+      const currentChannelButtonSize = () => {
+         let rect = (
+            currentChannelButtonRef.current as Element
+         ).getBoundingClientRect();
+         let width = rect.width;
+         let channelHintPosition = 0;
+
+         if (width > 129) {
+            channelHintPosition = (width - 129) / 2;
+         }
+
+         if (width < 129) {
+            channelHintPosition = -(129 - width) / 2;
+         }
+
+         setChannelHintCoords(channelHintPosition);
+      };
+
+      useEffect(() => {
+         currentChannelButtonSize();
+      }, [currentChannel]);
+
       return (
          <>
             <div className='message-header'>
                <div className='message-header__wrapper'>
-                  <div className='current-channel'>
+                  <div
+                     className='current-channel'
+                     onMouseEnter={() => setIsHoverChannel(true)}
+                     onMouseLeave={() => setIsHoverChannel(false)}
+                     ref={currentChannelButtonRef}
+                  >
                      <div
                         className='current-channel__wrapper'
-                        onClick={() => setIsModalChanelName(!isModalChanelName)}
+                        onClick={() =>
+                           setIsModalChanelNameOpen(!isModalChanelNameOpen)
+                        }
                      >
                         <span className='current-channel__grid'>
                            <svg
@@ -80,13 +115,21 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                            </svg>
                         </span>
                      </div>
+                     <HoverIcon
+                        isHover={isHoverChannel}
+                        marginArrowLeft={'40px'}
+                        marginBlockTop={'38px'}
+                        marginBlockLeft={`${channelHintCoords}px`}
+                     >
+                        <div>Get channel details</div>
+                     </HoverIcon>
                   </div>
-                  <div
-                     className='people'
-                     onMouseOver={() => setShowHint(true)}
-                     onMouseOut={() => setShowHint(false)}
-                  >
-                     <button className='people__wrapper'>
+                  <div className='people'>
+                     <button
+                        className='people__wrapper'
+                        onMouseOver={() => setIsHoverPeople(true)}
+                        onMouseOut={() => setIsHoverPeople(false)}
+                     >
                         <div className='people__round'>
                            <span className='people__round-container'>
                               <img
@@ -102,18 +145,42 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                               {participantsCount}
                            </div>
                         </div>
+                        <HoverIcon
+                           isHover={isHoverPeople}
+                           marginArrowLeft={'135px'}
+                           marginBlockTop={'12px'}
+                           marginBlockLeft={'-135px'}
+                        >
+                           <div className='people__hint'>
+                              <div>
+                                 <span>View all members of this</span>
+                                 <span>Channel</span>
+                              </div>
+                              <div>Includes you</div>
+                           </div>
+                        </HoverIcon>
                      </button>
                   </div>
                </div>
                <div className='bookmark'>
-                  <div
-                     className='bookmark__container'
-                     onClick={handleBookmarkClick}
-                  >
-                     <button className='bookmark__button'>
+                  <div className='bookmark__container'>
+                     <button
+                        className='bookmark__button'
+                        onClick={handleBookmarkClick}
+                        onMouseOver={() => setIsHoverBookmark(true)}
+                        onMouseOut={() => setIsHoverBookmark(false)}
+                     >
                         <i />
                         Add a bookmark
                      </button>
+                     <HoverIcon
+                        isHover={isHoverBookmark}
+                        marginButtonArrowLeft={'35px'}
+                        marginBlockTop={'-37px'}
+                        marginBlockLeft={'7px'}
+                     >
+                        <div>Add a bookmark</div>
+                     </HoverIcon>
                   </div>
                </div>
                <ReactModal
@@ -130,19 +197,16 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                      <BookmarkMenu />
                   </div>
                </ReactModal>
-               <Tooltip
-                  users={participantsArray}
-                  show={showHint}
-                  currentChannelId={currentChannelId}
-               />
             </div>
             <ReactModal
-               isModalOpen={isModalChanelName}
-               onClose={() => setIsModalChanelName(false)}
+               isModalOpen={isModalChanelNameOpen}
+               onClose={() => setIsModalChanelNameOpen(false)}
                modalPosition={'add-chanel-position'}
                onBlur={true}
             >
-               <CurrentChannel setIsModalChanelName={setIsModalChanelName} />
+               <CurrentChannel
+                  setIsModalChanelName={setIsModalChanelNameOpen}
+               />
             </ReactModal>
          </>
       );

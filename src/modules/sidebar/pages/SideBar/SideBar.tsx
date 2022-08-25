@@ -4,6 +4,7 @@ import { ChatList } from '../../components/ChatList';
 import { Logo } from '../../components/Logo';
 import { SideBarType } from './SideBarType';
 import { ReactModal, RoomMenu, SidebarMoreMenu } from '../../../modal';
+import { HoverIcon } from '../../../common/HoverIcon';
 
 export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
    const roomMenuPosition = 'room-menu-position';
@@ -13,26 +14,15 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
    const [isModalSidebarMoreOpen, setIsModalSidebarMoreOpen] =
       useState<boolean>(false);
 
-   const handleRoomClick = () => {
-      setIsModalRoomOpen(true);
-   };
-
-   const handleRoomClose = () => {
-      setIsModalRoomOpen(false);
-   };
-
-   const handleSidebarMoreClick = () => {
-      setIsModalSidebarMoreOpen(true);
-   };
-
-   const handleSidebarMoreClose = () => {
-      setIsModalSidebarMoreOpen(false);
-   };
+   const [isHoverMessage, setIsHoverMessage] = useState<boolean>(false);
 
    return (
       <div className='containerSideBar'>
          <div className='upAndDownSideBar'>
-            <div className='headSideBar' onClick={handleRoomClick}>
+            <div
+               className='headSideBar'
+               onClick={() => setIsModalRoomOpen(true)}
+            >
                <Logo />
                <div className='brandSideBar'>
                   <span>Company Name</span>
@@ -40,7 +30,6 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                      data-0v2='true'
                      aria-hidden='true'
                      viewBox='0 0 20 20'
-                     className=''
                   >
                      <path
                         fill='none'
@@ -52,12 +41,16 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                      ></path>
                   </svg>
                </div>
-               <div onClick={(e) => e.stopPropagation()}>
+               <div
+                  className='createMessageSideBar'
+                  onClick={(e) => e.stopPropagation()}
+                  onMouseOver={() => setIsHoverMessage(true)}
+                  onMouseOut={() => setIsHoverMessage(false)}
+               >
                   <svg
                      data-0v2='true'
                      aria-hidden='true'
                      viewBox='0 0 20 20'
-                     className=''
                   >
                      <g fill='none'>
                         <path
@@ -73,6 +66,13 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                         ></path>
                      </g>
                   </svg>
+                  <HoverIcon
+                     isHover={isHoverMessage}
+                     marginArrowLeft={'30px'}
+                     marginBlockTop={'86px'}
+                  >
+                     <div>New message</div>
+                  </HoverIcon>
                </div>
             </div>
             <div className='pagesSideBar'>
@@ -171,7 +171,7 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                   </svg>
                   <div>Slack Connect</div>
                </div>
-               <div onClick={handleSidebarMoreClick}>
+               <div onClick={() => setIsModalSidebarMoreOpen(true)}>
                   <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                      <g fill='currentColor'>
                         <circle
@@ -224,14 +224,14 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
          </div>
          <ReactModal
             isModalOpen={isModalRoomOpen}
-            onClose={handleRoomClose}
+            onClose={() => setIsModalRoomOpen(false)}
             modalPosition={roomMenuPosition}
          >
             <RoomMenu />
          </ReactModal>
          <ReactModal
             isModalOpen={isModalSidebarMoreOpen}
-            onClose={handleSidebarMoreClose}
+            onClose={() => setIsModalSidebarMoreOpen(false)}
             modalPosition={sidebarMoreMenuPosition}
          >
             <SidebarMoreMenu />

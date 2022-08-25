@@ -11,7 +11,7 @@ export const MessageList: React.FC<MessageListType> = ({
    setNewMessage,
 }) => {
    const newsMessages = messages.filter(
-      (el) => el.chatChannelId === activeChatService.getActiveChatId()
+      (el) => el.chatChannelId === activeChatService.getActiveChatId(),
    );
    useEffect(() => {
       setNewMessage(newsMessages);
@@ -20,7 +20,7 @@ export const MessageList: React.FC<MessageListType> = ({
    // if(newsMessages[0])setCurrentTimeStamp(`${new Date(newsMessages[0].timeStamp).getDay().toString()}   ${new Date(newsMessages[0].timeStamp).getFullYear().toString()}`)
    const mess = newsMessages.map((e) => {
       const participant = participants.find(
-         (elem) => elem.id === e.chatParticipantId
+         (elem) => elem.id === e.chatParticipantId,
       );
       return (
          <div className='container-message-list'>

@@ -75,7 +75,7 @@ export const Search: React.FC<SearchType> = ({
             </div>
             <HoverIcon
                isHover={isHoverSearch}
-               marginArrowLeft={'53px'}
+               marginArrowLeft={'45px'}
                marginBlockTop={'30px'}
                marginBlockLeft={'18%'}
             >
