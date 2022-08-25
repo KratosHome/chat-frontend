@@ -36,6 +36,16 @@
    font-weight: 400;
    line-height: 1.46668;
    font-variant-ligatures: common-ligatures;
+   cursor: pointer;
+   position: relative;
+
+   & div {
+      white-space: nowrap;
+   }
+
+   &:hover {
+      text-decoration: underline;
+   }
 }
 
 .container-mini-message {
@@ -60,3 +70,6 @@
    }
 }
 
+.message-info {
+   display: flex;
+}

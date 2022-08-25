@@ -65,9 +65,8 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          </div>
          <HoverIcon
             isHover={isHoverName}
-            marginArrowLeft={'73px'}
+            marginArrowLeft={'86px'}
             marginBlockTop={'80px'}
-            marginBlockRight={'-18px'}
          >
             <div>{currentUserName}</div>
          </HoverIcon>
