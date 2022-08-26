@@ -1,7 +1,7 @@
 import React, { FC, memo, useState } from 'react';
 import './InputUpperBlock.scss';
 import { InputUpperBlockType } from './InputUpperBlockType';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 
 export const InputUpperBlock: FC<InputUpperBlockType> = memo(
    ({ focusInput }) => {

@@ -7,7 +7,7 @@ import { Integrations } from '../components/Integrations/Integrations';
 import { Settings } from '../components/Settings';
 import { CurrentChannelType } from './CurrentChannelType';
 import ChannelState from '../../../../../store/channel';
-import { HoverIcon } from '../../../../common/HoverIcon';
+import { HoverIcon } from '../../../../UI/HoverIcon';
 
 export const CurrentChannel: FC<CurrentChannelType> = memo(
    ({ setIsModalChanelName }) => {

@@ -1,7 +1,7 @@
 import React, { FC, memo, useState } from 'react';
 import './InputLowerBlock.scss';
 import { InputLowerBlockType } from './InputLowerBlockType';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 
 export const InputLowerBlock: FC<InputLowerBlockType> = memo(
    ({

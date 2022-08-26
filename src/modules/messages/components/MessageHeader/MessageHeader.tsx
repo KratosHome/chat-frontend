@@ -1,7 +1,7 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
 import { channelParticipants } from '../../../../services/channelParticipants.service';
 import { participants } from '../../../../services/participant.service';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 import { ReactModal } from '../../../modal';
 import { BookmarkMenu } from '../../../modal/components/BookmarkMenu';
 import { CurrentChannel } from '../../../modal/components/CurrentChannel/pages';

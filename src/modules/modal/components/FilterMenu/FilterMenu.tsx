@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 import { FilterMenuCheckbox } from '../FilterMenuCheckbox';
 import { FilterMenuItem } from '../FilterMenuItem';
 import './FilterMenu.scss';

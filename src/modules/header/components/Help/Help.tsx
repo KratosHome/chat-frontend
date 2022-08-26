@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 import { AvatarMenu } from '../../../modal';
 import { ReactModal } from '../../../modal';
 import './Help.scss';

@@ -22,11 +22,18 @@
    width: 36px;
    margin-right: 5px;
    border-radius: 5px;
+   &:hover{
+      cursor: pointer;
+   }
 }
 
 .participant-indicator {
    font-size: 15px;
    font-weight: 900;
+   &:hover{
+      text-decoration: underline;
+      cursor: pointer;
+   }
 }
 
 .date-indicator {
@@ -36,14 +43,14 @@
    font-weight: 400;
    line-height: 1.46668;
    font-variant-ligatures: common-ligatures;
-   cursor: pointer;
    position: relative;
 
    & div {
       white-space: nowrap;
    }
 
-   &:hover {
+   &:hover{
+      cursor: pointer;
       text-decoration: underline;
    }
 }
