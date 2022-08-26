@@ -3,7 +3,7 @@ import {format} from 'date-fns';
 import {MessageType} from './MessageType';
 import './Message.scss';
 import {HoverModal} from "../../../UI/HoverModal";
-import {NameModal} from "./component/NameModal/NameModal/NameModal";
+import {NameModal} from "./component/NameModal/NameModal";
 
 export const Message: React.FC<MessageType> = ({
                                                    participant,
@@ -32,7 +32,6 @@ export const Message: React.FC<MessageType> = ({
 
     };
 
-
     useEffect(() => {
         let timerIn: any
         if (timerName === false) {
@@ -46,6 +45,7 @@ export const Message: React.FC<MessageType> = ({
         }
         return () => clearTimeout(timerIn);
     }, [timerName]);
+
     return (
         <>
             <div className={`message-wrapper ${messageLayout}`}>

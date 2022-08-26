@@ -33,6 +33,10 @@
       margin-top: -5px;
       margin-left: 15px;
       font-weight: 700;
+      &:hover{
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
 
     span:last-child {
