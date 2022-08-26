@@ -4,7 +4,7 @@ import { ChatList } from '../../components/ChatList';
 import { Logo } from '../../components/Logo';
 import { SideBarType } from './SideBarType';
 import { ReactModal, RoomMenu, SidebarMoreMenu } from '../../../modal';
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 
 export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
    const roomMenuPosition = 'room-menu-position';

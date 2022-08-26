@@ -4,7 +4,7 @@ import { MessageType } from './MessageType';
 import './Message.scss';
 import {HoverModal} from "../../../UI/HoverModal";
 import {NameModal} from "./component/NameModal/NameModal";
-import { HoverIcon } from '../../../common/HoverIcon';
+import { HoverIcon } from '../../../UI/HoverIcon';
 
 export const Message: React.FC<MessageType> = ({
                                                    participant,
