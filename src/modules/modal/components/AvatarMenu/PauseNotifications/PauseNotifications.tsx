@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HoverIcon } from '../../../../common/HoverIcon';
+import { HoverIcon } from '../../../../UI/HoverIcon';
 import { MenuItem } from '../../MenuItem';
 import { PauseNotificationsPropsType } from './PauseNotificationsType';
 import "./PauseNotifications.scss"
