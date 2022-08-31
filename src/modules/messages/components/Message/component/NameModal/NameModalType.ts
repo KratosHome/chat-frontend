@@ -1,4 +1,4 @@
 export type NameModalType = {
-    participant: string | undefined
-    time: number
-}
+   participant: string | undefined;
+   time: number;
+};

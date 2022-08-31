@@ -1,1 +1,1 @@
-export * from "./HoverModal"
+export * from './HoverModal';

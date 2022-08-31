@@ -26,11 +26,7 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                <Logo />
                <div className='brandSideBar'>
                   <span>Company Name</span>
-                  <svg
-                     data-0v2='true'
-                     aria-hidden='true'
-                     viewBox='0 0 20 20'
-                  >
+                  <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                      <path
                         fill='none'
                         stroke='currentColor'
@@ -47,11 +43,7 @@ export const SideBar: FC<SideBarType> = memo(({ setCurrentChannel }) => {
                   onMouseOver={() => setIsHoverMessage(true)}
                   onMouseOut={() => setIsHoverMessage(false)}
                >
-                  <svg
-                     data-0v2='true'
-                     aria-hidden='true'
-                     viewBox='0 0 20 20'
-                  >
+                  <svg data-0v2='true' aria-hidden='true' viewBox='0 0 20 20'>
                      <g fill='none'>
                         <path
                            fill='currentColor'

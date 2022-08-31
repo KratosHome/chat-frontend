@@ -5,11 +5,12 @@ import { MenuUserItem } from '../MenuUserItem';
 import { MenuUserStatusItem } from '../MenuUserStatusItem';
 import { PauseNotifications } from './PauseNotifications';
 import { AvatarMenuPropsType } from './AvatarMenuType';
-import "./AvatarMenu.scss"
+import './AvatarMenu.scss';
 export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
    currentUserName,
 }) => {
-   const [isModalPauseNotifications, setIsModalPauseNotifications] = useState(false);
+   const [isModalPauseNotifications, setIsModalPauseNotifications] =
+      useState(false);
    return (
       <>
          <div className='container-menu'>
@@ -17,10 +18,15 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
                <MenuUserItem currentUserName={currentUserName} />
                <MenuUserStatusItem />
                <MenuItem itemText={'Set yourself as away'} />
-               <div 
-                  className={`container-menu__submenu ${isModalPauseNotifications?"avatar-menu__popup-active":""}` }
-                  onMouseOver={()=>setIsModalPauseNotifications(true)} 
-                  onMouseOut={()=>setIsModalPauseNotifications(false)}>
+               <div
+                  className={`container-menu__submenu ${
+                     isModalPauseNotifications
+                        ? 'avatar-menu__popup-active'
+                        : ''
+                  }`}
+                  onMouseOver={() => setIsModalPauseNotifications(true)}
+                  onMouseOut={() => setIsModalPauseNotifications(false)}
+               >
                   <MenuItem isSubmenu={true} itemText={'Pause notifications'} />
                </div>
                <MenuSeparatorItem />
@@ -30,9 +36,12 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
                <MenuItem itemText={'Sign out of Company Name'} />
             </div>
          </div>
-         {isModalPauseNotifications?
-            <PauseNotifications onMouseOver={()=>setIsModalPauseNotifications(true)} onMouseOut={()=>setIsModalPauseNotifications(false)} />:null}
-         
+         {isModalPauseNotifications ? (
+            <PauseNotifications
+               onMouseOver={() => setIsModalPauseNotifications(true)}
+               onMouseOut={() => setIsModalPauseNotifications(false)}
+            />
+         ) : null}
       </>
    );
 };
