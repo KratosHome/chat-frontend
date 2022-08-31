@@ -1,6 +1,4 @@
 export interface PauseNotificationsPropsType {
-   onMouseOver:()=>void;
-   onMouseOut:()=>void;
- }
-
- 
+   onMouseOver: () => void;
+   onMouseOut: () => void;
+}

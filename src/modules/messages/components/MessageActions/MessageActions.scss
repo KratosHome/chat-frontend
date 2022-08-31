@@ -1,0 +1,146 @@
+@mixin iconStyle() {
+   align-items: center;
+   display: inline-flex;
+   justify-content: center;
+   position: absolute;
+   right: 0;
+   @content;
+   transition: opacity 80ms ease-out;
+   width: 16px;
+   color: rgba(97, 96, 97, 1);
+   opacity: 1;
+   font-family: inherit;
+   font-size: inherit;
+   line-height: inherit;
+}
+
+.message-actions {
+   display: inline-flex;
+   position: absolute;
+   right: 17px;
+   top: -16px;
+   z-index: 1;
+
+   &__own-message {
+      left: 12px;
+      top: -12px;
+   }
+
+   &__group {
+      background: rgba(255, 255, 255, 1);
+      border: unset;
+      border-radius: 0.375em;
+      box-shadow: 0 0 0 1px rgba(29, 28, 29, 0.13), 0 1px 3px 0 #00000014;
+      display: flex;
+      line-height: 1;
+      margin-left: 8px;
+      padding: 2px;
+   }
+
+   &__button {
+      border-radius: 4px;
+      color: rgba(97, 96, 97, 1);
+      height: 32px;
+
+      &:hover {
+         background-color: var(--line);
+         color: rgb(0, 0, 0);
+
+         & i::before {
+            color: rgb(0, 0, 0);
+            background-color: rgb(238, 238, 238);
+         }
+
+         & .message-actions__icon-comment {
+            border-radius: 8px / 8px;
+            background-color: #007a5a80;
+         }
+
+         & svg {
+            color: rgb(0, 0, 0);
+         }
+      }
+   }
+
+   &__button--emoji {
+      padding: 3px 7px;
+
+      & img {
+         height: 16px;
+         width: 16px;
+         align-items: center;
+         display: inline-flex;
+         object-fit: contain;
+         overflow: hidden;
+         vertical-align: top;
+      }
+   }
+
+   &__button--label {
+      align-items: baseline;
+      white-space: nowrap;
+   }
+
+   &__text {
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.50001;
+      margin: 0 8px 0 1.6px;
+      white-space: nowrap;
+   }
+
+   &__icon {
+      margin: 0 20px 0 6px;
+      position: relative;
+      top: -3px;
+   }
+
+   &__icon-smile {
+      @include iconStyle() {
+         left: 0;
+         top: 2px;
+         height: 16;
+      }
+
+      &::before {
+         display: inline-block;
+         font-size: 10px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 1;
+         position: relative;
+         z-index: 1;
+         border-radius: 50%;
+         padding: 1px;
+         background-color: rgba(255, 255, 255, 1);
+         content: '\271A';
+         height: 1em;
+         left: 50%;
+         margin-left: 0.2em;
+         margin-top: -1.1em;
+         position: absolute;
+         top: 50%;
+         width: 1em;
+      }
+   }
+
+   &__icon-comment {
+      @include iconStyle() {
+         left: 0;
+         top: 4px;
+         height: 13px;
+      }
+   }
+
+   &__icon-dots {
+      @include iconStyle() {
+         left: 5px;
+         top: 4px;
+         height: 13px;
+      }
+   }
+
+   &__icon-smile--back {
+      opacity: 0;
+   }
+}
