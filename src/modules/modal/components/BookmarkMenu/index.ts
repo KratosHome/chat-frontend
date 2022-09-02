@@ -1,1 +1,2 @@
-export * from './BookmarkMenu';
+export * from './pages/BookmarkMenu';
+export * from './components/MenuBookmarkItem';

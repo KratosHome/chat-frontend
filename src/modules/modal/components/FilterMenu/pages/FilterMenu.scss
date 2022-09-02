@@ -1,0 +1,42 @@
+.filter {
+   &__button-clear {
+      margin-right: 33px;
+   }
+
+   &__button-help {
+      font-size: 15px;
+      color: rgba(18, 100, 163, 1);
+
+      &:hover {
+         color: rgba(11, 76, 140, 1);
+         text-decoration: underline;
+      }
+   }
+
+   &__icon {
+      width: 1em;
+      font-family: inherit;
+      font-size: inherit;
+      height: auto;
+      line-height: inherit;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      position: relative;
+
+      & svg {
+         font-size: inherit;
+         height: 1em;
+         left: 50%;
+         margin-left: -0.7em;
+         margin-top: -0.9em;
+         position: absolute;
+         top: 50%;
+         width: 1em;
+         display: inline-block;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 1;
+      }
+   }
+}

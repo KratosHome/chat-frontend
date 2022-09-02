@@ -4,17 +4,15 @@ import { AvatarMenu } from '../../../modal';
 import { ReactModal } from '../../../modal';
 import './Help.scss';
 import { HelpPropsType } from './HelpType';
+import { SetStatus } from '../../../modal/components/SetStatus';
 
 export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
-   const avatarMenuPosition = 'avatar-menu-position';
-
    const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
+   const [isModalSetStatusOpen, setIsModalSetStatusOpen] =
+      useState<boolean>(false);
+
    const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
    const [isHoverName, setIsHoverName] = useState<boolean>(false);
-
-   const handleAvatarClose = () => {
-      setIsModalAvatarOpen(!isModalAvatarOpen);
-   };
 
    return (
       <div className='header__help'>
@@ -50,7 +48,7 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          </HoverIcon>
          <div
             className='header__avatar'
-            onClick={() => setIsModalAvatarOpen(!isModalAvatarOpen)}
+            onClick={() => setIsModalAvatarOpen(true)}
             onMouseOver={() => setIsHoverName(true)}
             onMouseOut={() => setIsHoverName(false)}
          >
@@ -72,10 +70,22 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
          </HoverIcon>
          <ReactModal
             isModalOpen={isModalAvatarOpen}
-            onClose={handleAvatarClose}
-            modalPosition={avatarMenuPosition}
+            onClose={() => setIsModalAvatarOpen(false)}
+            modalPosition={'avatar-menu-position'}
          >
-            <AvatarMenu currentUserName={currentUserName} />
+            <AvatarMenu
+               currentUserName={currentUserName}
+               setIsModalAvatarOpen={setIsModalAvatarOpen}
+               setIsModalSetStatusOpen={setIsModalSetStatusOpen}
+            />
+         </ReactModal>
+         <ReactModal
+            isModalOpen={isModalSetStatusOpen}
+            onClose={() => setIsModalSetStatusOpen(false)}
+            modalPosition={'set-status-popup-position'}
+            onBlur={true}
+         >
+            <SetStatus onClose={() => setIsModalSetStatusOpen(false)} />
          </ReactModal>
       </div>
    );

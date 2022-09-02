@@ -1,0 +1,57 @@
+.status-modal {
+   &__preset-container {
+      align-items: center;
+      display: flex;
+      height: 28px;
+      padding: 0 36px;
+
+      &:hover {
+         background: #1264a3;
+         color: #fff;
+
+         & .status-modal__preset-duration,
+         .status-modal__preset-text {
+            color: #fff;
+         }
+      }
+   }
+
+   &__preset-button {
+      align-items: center;
+      display: flex;
+      flex: 1;
+      min-width: 0;
+   }
+
+   &__preset-emoji {
+      flex-shrink: 0;
+      margin-right: 10px;
+      height: 22px;
+      width: 22px;
+      align-items: center;
+      display: inline-flex;
+      object-fit: contain;
+      overflow: hidden;
+      vertical-align: top;
+   }
+
+   &__preset-text {
+      display: block;
+      font-weight: 700;
+      margin-right: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+   }
+
+   &__preset-duration {
+      color: rgba(29, 28, 29, 0.7);
+      flex-shrink: 0;
+
+      &::before {
+         content: '—';
+         display: inline-block;
+         margin-right: 4px;
+      }
+   }
+}

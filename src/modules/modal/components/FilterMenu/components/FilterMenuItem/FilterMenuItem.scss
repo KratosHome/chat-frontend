@@ -1,0 +1,105 @@
+.label {
+   cursor: pointer;
+   display: block;
+   margin: 0;
+   font-size: 15px;
+   font-weight: 700;
+   line-height: 1.46666667;
+
+   &__text {
+      display: block;
+      padding-bottom: 8px;
+   }
+
+   &__input {
+      font-weight: 500;
+      margin-bottom: 12px;
+      background-color: rgba(255, 255, 255, 1);
+      border: 1px solid rgba(29, 28, 29, 0.3);
+      border-radius: 4px;
+      box-sizing: border-box;
+      color: rgba(29, 28, 29, 1);
+      font-size: 15px;
+      height: 36px;
+      line-height: normal;
+      margin: 0 0 20px;
+      padding: 3px 12px 5px;
+      transition: border 80ms ease-out, box-shadow 80ms ease-out;
+      width: 100%;
+
+      &:focus {
+         -webkit-appearance: none;
+         border-color: #0000;
+         border-radius: 4px;
+         box-shadow: 0 0 0 1px rgba(18, 100, 163, 1), 0 0 0 5px #1d9bd14d;
+         outline: none;
+      }
+   }
+
+   &__button {
+      font-weight: 500;
+      margin-bottom: 12px;
+      justify-content: space-between;
+      width: 100%;
+
+      &:hover {
+         background: rgba(248, 248, 248, 1);
+         box-shadow: 0 1px 3px 0 #00000014;
+      }
+   }
+
+   &__icon {
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.36365;
+      width: 1em;
+      font-family: inherit;
+      height: auto;
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      position: relative;
+
+      & svg {
+         font-size: inherit;
+         height: 1em;
+         left: 50%;
+         margin-left: -0.5em;
+         margin-top: -0.4em;
+         position: absolute;
+         top: 50%;
+         width: 1em;
+         display: inline-block;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 1;
+      }
+   }
+
+   &__checkbox {
+      margin-bottom: 8px;
+      margin-top: 8px;
+      align-items: baseline;
+      display: flex;
+      vertical-align: middle;
+   }
+
+   &__text-checkbox {
+      font-weight: 400;
+      order: 1;
+      padding-bottom: 0;
+      position: relative;
+      top: -1px;
+   }
+
+   &__checkbox-input {
+      box-sizing: border-box;
+      cursor: pointer;
+      display: block;
+      flex: none;
+      font-size: 18px;
+      margin: 0 12px 0 0;
+      padding: 0 12px;
+      font-family: inherit;
+   }
+}

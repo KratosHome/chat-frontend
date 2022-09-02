@@ -8,16 +8,10 @@ export const Search: React.FC<SearchType> = ({
    oenModal,
    modalFilterOpenFunction,
 }) => {
-   const filterPopupPosition = 'filter-popup-position';
-
    const [isModalFilterOpen, setIsModalFilterOpen] = useState<boolean>(false);
 
    const [isHoverSearch, setIsHoverSearch] = useState<boolean>(false);
    const [isHoverFilter, setIsHoverFilter] = useState<boolean>(false);
-
-   const handleFilterClose = () => {
-      setIsModalFilterOpen(false);
-   };
 
    const handleFilterOpen = (e: React.MouseEvent<HTMLDivElement>) => {
       e.stopPropagation();
@@ -90,11 +84,11 @@ export const Search: React.FC<SearchType> = ({
          </div>
          <ReactModal
             isModalOpen={isModalFilterOpen}
-            onClose={handleFilterClose}
-            modalPosition={filterPopupPosition}
+            onClose={() => setIsModalFilterOpen(false)}
+            modalPosition={'filter-popup-position'}
             onBlur={true}
          >
-            <FilterMenu onClose={handleFilterClose} />
+            <FilterMenu onClose={() => setIsModalFilterOpen(false)} />
          </ReactModal>
       </>
    );

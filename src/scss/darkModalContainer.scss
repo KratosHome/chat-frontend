@@ -1,0 +1,110 @@
+.dark-modal-container {
+   background-color: rgba(255, 255, 255, 1);
+   border-radius: 8px;
+   display: flex;
+   flex-direction: column;
+   max-height: 650px;
+   position: relative;
+   height: 100%;
+   max-width: 520px;
+   min-width: 515px;
+   width: 100%;
+
+   &__header {
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 8px 8px 0 0;
+      flex-shrink: 0;
+      min-height: 70px;
+      width: 100%;
+   }
+
+   &__title {
+      justify-content: space-between;
+      align-items: center;
+      display: flex;
+      min-height: 70px;
+      padding: 20px 28px;
+      width: 100%;
+   }
+
+   &__title-text {
+      & h1 {
+         font-size: 22px;
+         font-weight: 700;
+         line-height: 1.36365;
+         margin: 0;
+      }
+   }
+
+   &__content {
+      background: rgba(255, 255, 255, 1);
+      display: flex;
+      flex-shrink: 1;
+      min-height: 50px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      margin-right: 5px;
+      position: relative;
+
+      &::-webkit-scrollbar {
+         width: 8px; /* ширина scrollbar */
+      }
+
+      &::-webkit-scrollbar-track {
+         background: transparent; /* цвет дорожки */
+         padding-right: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+         background-color: rgba(29, 28, 29, 0.52); /* цвет плашки */
+         border-radius: 4px; /* закругления плашки */
+      }
+   }
+
+   &__content-container {
+      width: 100%;
+      padding: 0 28px;
+   }
+
+   &__footer {
+      align-items: center;
+      background-color: rgba(255, 255, 255, 1);
+      border-radius: 0 0 8px 8px;
+      display: flex;
+      flex-shrink: 0;
+      height: 84px;
+      justify-content: flex-end;
+      margin-top: auto;
+      overflow: hidden;
+      padding: 24px 28px;
+      width: 100%;
+   }
+
+   &__footer-actions {
+      margin-left: 38px;
+
+      & :first-child {
+         margin-right: 12px;
+
+         &:hover {
+            background: rgba(248, 248, 248, 1);
+            box-shadow: 0 1px 3px 0 #00000014;
+         }
+      }
+
+      & :last-child {
+         &:hover {
+            background: #148567;
+            box-shadow: 0 1px 4px #0000004d;
+            color: #fff;
+         }
+      }
+   }
+
+   &__close-button {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      z-index: 1;
+   }
+}

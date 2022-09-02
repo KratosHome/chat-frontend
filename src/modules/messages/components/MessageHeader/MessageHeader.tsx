@@ -3,7 +3,7 @@ import { channelParticipants } from '../../../../services/channelParticipants.se
 import { participants } from '../../../../services/participant.service';
 import { HoverIcon } from '../../../UI/HoverIcon';
 import { ReactModal } from '../../../modal';
-import { BookmarkMenu } from '../../../modal/components/BookmarkMenu';
+import { BookmarkMenu } from '../../../modal/components/BookmarkMenu/pages';
 import { CurrentChannel } from '../../../modal/components/CurrentChannel/pages';
 import './MessageHeader.scss';
 import { iMessageHeaderProps } from './MessageHeaderType';

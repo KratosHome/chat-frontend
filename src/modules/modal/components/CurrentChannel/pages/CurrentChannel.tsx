@@ -8,6 +8,7 @@ import { Settings } from '../components/Settings';
 import { CurrentChannelType } from './CurrentChannelType';
 import ChannelState from '../../../../../store/channel';
 import { HoverIcon } from '../../../../UI/HoverIcon';
+import { PopupIconButton } from '../../../../UI/PopupIconButton';
 
 export const CurrentChannel: FC<CurrentChannelType> = memo(
    ({ setIsModalChanelName }) => {
@@ -37,7 +38,12 @@ export const CurrentChannel: FC<CurrentChannelType> = memo(
                         </svg>
                         {ChannelState.initialState.name}
                      </h1>
-                     <button onClick={() => setIsModalChanelName(false)}>
+                     <PopupIconButton
+                        buttonAriaLabel={'Close'}
+                        buttonClass={'dark-modal-container__close-button'}
+                        buttonData={'close_modal_button'}
+                        buttonClick={() => setIsModalChanelName(false)}
+                     >
                         <svg
                            data-aqc='true'
                            aria-hidden='true'
@@ -46,12 +52,12 @@ export const CurrentChannel: FC<CurrentChannelType> = memo(
                            <path
                               fill='none'
                               stroke='currentColor'
-                              stroke-linecap='round'
-                              stroke-width='1.5'
-                              d='m5.227 5.227 9.546 9.546m0-9.546-9.546 9.546'
+                              strokeLinecap='round'
+                              strokeWidth='1.5'
+                              d='m 5.227 5.227 l 9.546 9.546 m 0 -9.546 l -9.546 9.546'
                            ></path>
                         </svg>
-                     </button>
+                     </PopupIconButton>
                   </div>
                   <div className='buttonCurrentChannel'>
                      <HoverIcon

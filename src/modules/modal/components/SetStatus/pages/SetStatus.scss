@@ -1,0 +1,54 @@
+.status-modal {
+   &__link {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 1.38463;
+      margin-right: 16px;
+      color: rgba(18, 100, 163, 1);
+
+      &:hover {
+         color: rgba(11, 76, 140, 1);
+         text-decoration: underline;
+      }
+   }
+
+   &__keyboard-hint {
+      bottom: -50px;
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      width: 100%;
+   }
+
+   &__keyboard-hint-container {
+      word-wrap: break-word;
+      background-color: #000000b3;
+      border-radius: 1000px;
+      color: #fff;
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.46668;
+      padding: 6px 16px;
+      text-align: center;
+      max-width: 100%;
+   }
+
+   &__presets {
+      margin: 0;
+      min-inline-size: auto;
+      border: none;
+      padding: 0;
+   }
+
+   &__preset-title {
+      color: rgba(29, 28, 29, 0.7);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.38463;
+      padding: 24px 0 4px 36px;
+      display: block;
+      margin: 0 0 4px;
+   }
+}
