@@ -1,0 +1,15 @@
+.help-title{
+        display:flex;
+        color: #1d1c1d;
+        opacity: 0.7; 
+
+    & p{
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    & svg{
+        align-self: center;
+        margin-right: 5px;
+    }
+}

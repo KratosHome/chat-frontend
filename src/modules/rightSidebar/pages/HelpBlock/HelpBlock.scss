@@ -1,0 +1,12 @@
+.help-block{
+    &__container{
+        height: calc(100vh - 45px);
+        display:grid;
+        grid-template-rows: 146.94px 1fr 77px ;
+    }
+    
+    &__main{
+        overflow-y: scroll;
+    }
+ 
+}

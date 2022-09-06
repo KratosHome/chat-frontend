@@ -1,0 +1,46 @@
+.help-block-footer{
+    &__container{
+        display: flex;
+        width: 100%;
+        height: 77px;
+        padding: 20px 16px;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border-top: 1px solid rgba(29, 28, 29, 0.13);
+    }
+    &__help-request{
+        display: flex;
+        color: rgb(18, 100, 163);
+        cursor: pointer;
+
+        &:hover{
+            color: rgb(60, 100, 163) ;
+        }
+        & p{
+            margin-right: 5px;
+        }
+
+        & svg{
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    &__button{
+        display: flex;
+        width: 132px;
+        font-size: 15px;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        justify-content: center;
+        border: 1px solid rgba(29, 28, 29, 0.3);
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover{
+            border: 1px solid rgba(29, 28, 29, 0.9);
+        }
+    }
+}

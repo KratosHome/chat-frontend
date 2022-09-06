@@ -9,12 +9,15 @@ import { SideBar } from '../../../sidebar';
 import './Main.scss';
 import ChannelState from '../../../../store/channel';
 import { observer } from 'mobx-react-lite';
+import {  RightSidebar } from '../../../rightSidebar';
 
 export const Main: React.FC = observer(() => {
    const [visibleMessageField, setVisibleMessageField] = useState(true);
 
    const [currentChannelId, setCurrentChannelId] = useState<number>(1);
    const [currentUserId, setCurrentUserId] = useState<number>(1); // The rule is the 1st participant should be user, 0st - moderator
+
+   const [visibleHelpBlock, setVisibleHelpBlock]= useState(false);
 
    let active = activeChatService.getActiveChatId();
    let channel = channels.find((x) => x.id === active);
@@ -59,6 +62,8 @@ export const Main: React.FC = observer(() => {
             <Header
                currentUserName={currentUserName}
                chanelName={channel?.name}
+               setVisibleHelpBlock={(value)=>setVisibleHelpBlock(value)}
+               visibleHelpBlock={visibleHelpBlock}
             />
          </div>
          <div className='content-wrapper'>
@@ -71,6 +76,7 @@ export const Main: React.FC = observer(() => {
                   visibleMessageField={visibleMessageField}
                   currentUserId={currentUserId}
                />
+               {visibleHelpBlock && <RightSidebar onClose={()=>setVisibleHelpBlock(false)}/>}
             </div>
          </div>
       </div>

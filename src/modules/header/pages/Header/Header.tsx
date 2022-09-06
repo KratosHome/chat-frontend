@@ -7,7 +7,7 @@ import { HeaderType } from './HeaderType';
 import { ReactModal, SearchModal } from '../../../modal';
 
 export const Header: React.FC<HeaderType> = memo(
-   ({ currentUserName, chanelName }) => {
+   ({ currentUserName, chanelName, setVisibleHelpBlock, visibleHelpBlock }) => {
       const searchHeaderPosition = 'search-header-position';
 
       const [modalFilterOpen, setModalFilterOpen] =
@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderType> = memo(
                      oenModal={setIsModalSearchOpen}
                      modalFilterOpenFunction={modalFilterOpenFunction}
                   />
-                  <Help currentUserName={currentUserName} />
+                  <Help currentUserName={currentUserName} setVisibleHelpBlock={setVisibleHelpBlock}    visibleHelpBlock={visibleHelpBlock}/>
                </div>
             </header>
             <ReactModal

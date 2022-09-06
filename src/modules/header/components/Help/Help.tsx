@@ -6,7 +6,8 @@ import './Help.scss';
 import { HelpPropsType } from './HelpType';
 import { SetStatus } from '../../../modal/components/SetStatus';
 
-export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
+export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpBlock, visibleHelpBlock }) => {
+
    const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
    const [isModalSetStatusOpen, setIsModalSetStatusOpen] =
       useState<boolean>(false);
@@ -14,12 +15,21 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName }) => {
    const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
    const [isHoverName, setIsHoverName] = useState<boolean>(false);
 
+   const handleClickHelpIcon = () =>{
+      if(visibleHelpBlock){
+         setVisibleHelpBlock(false);
+      }else{
+         setVisibleHelpBlock(true);
+      }
+   }
+
    return (
       <div className='header__help'>
          <a
             className='header__help-button'
             onMouseOver={() => setIsHoverHelp(true)}
             onMouseOut={() => setIsHoverHelp(false)}
+            onClick={handleClickHelpIcon}
          >
             <svg data-0v2='true' arial-hidden='true' viewBox='0 0 20 20'>
                <g fill='none'>

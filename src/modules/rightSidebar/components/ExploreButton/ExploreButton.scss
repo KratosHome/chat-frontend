@@ -1,0 +1,34 @@
+.explore{
+    &__button{
+        display: flex;
+        padding: 12px;
+        margin-top: 8px;
+        cursor: pointer;
+        border: 1px solid rgba( 29, 28 , 29, 0.13);
+        border-radius: 5px;
+    }
+
+    &__button p{
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 1.46668;
+        align-self: center;
+    }
+
+    &__icon-container{
+        min-width: 36px;
+        min-height: 36px;
+        width: 36px;
+        height: 36px;
+        padding: 6px;
+        margin-right: 10px;
+        border-radius: 5px;
+        background-color: rgb(74, 21, 75, 0.1);
+  
+    }
+
+    &__icon-container img{
+        width: 100%;
+        height: 100%;
+    }   
+}

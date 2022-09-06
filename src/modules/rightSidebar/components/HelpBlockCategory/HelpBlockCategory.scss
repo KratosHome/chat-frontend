@@ -1,0 +1,18 @@
+.help-block-category{
+    display: flex;
+    color: rgb(18, 100, 163);
+    align-items: center;
+    height: 26px;
+    cursor: pointer;
+    & p{
+        font-size: 13px;
+        font-weight: 300;
+        line-height: 1.38463;
+        margin-right: 5px;
+        white-space: nowrap;
+    }
+    &:hover{
+        color:rgb(60, 100, 163);
+    }
+
+}
