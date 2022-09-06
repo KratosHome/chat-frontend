@@ -1,0 +1,38 @@
+.help-block{
+    &__header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 56px;
+        padding: 0 12px 0 16px;
+        border-bottom: 1px solid rgba(29, 28, 29, 0.13);
+    }
+
+    &__header{
+        font-size: 18px;
+        line-height: 1.33334;
+        font-weight: 900;
+    }
+
+    &__icons{
+        display: flex;
+        align-items: center;
+    }
+
+
+    &__icon svg{
+        width: 20px;
+        opacity: 0.7;
+        align-self: center;
+    }
+
+    &__icon{  
+        display: flex;
+        padding: 8px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: #1d1c1d21;
+        }
+    }
+}
