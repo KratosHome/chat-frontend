@@ -13,4 +13,6 @@ export interface MessageActionsButtonPropsType {
    marginTop: string;
    marginLeft: string;
    marginArrow: string;
+   buttonClick?: React.Dispatch<React.SetStateAction<boolean>>;
+   buttonCoordFunction?: (callback: DOMRect | undefined) => void;
 }

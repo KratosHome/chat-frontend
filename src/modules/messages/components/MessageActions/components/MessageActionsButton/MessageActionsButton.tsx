@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useRef, useState } from 'react';
-import { HoverIcon } from '../../../UI/HoverIcon';
+import { HoverIcon } from '../../../../../UI/HoverIcon';
 import { MessageActionsButtonPropsType } from './MessageActionsButtonType';
 
 export const MessageActionsButton: React.FC<MessageActionsButtonPropsType> =
@@ -18,8 +18,14 @@ export const MessageActionsButton: React.FC<MessageActionsButtonPropsType> =
          marginTop,
          marginArrow,
          marginLeft,
+         buttonClick,
+         buttonCoordFunction,
       }) => {
          const buttonRef = useRef<HTMLButtonElement>(null);
+
+         const [timerId, setTimerId] = useState<NodeJS.Timeout>();
+
+         const [buttonRect, setButtonRect] = useState<DOMRect | undefined>();
 
          const [isHoverHint, setIsHoverHint] = useState<boolean>(false);
 
@@ -32,6 +38,19 @@ export const MessageActionsButton: React.FC<MessageActionsButtonPropsType> =
          const handleMouseOut = () => {
             if (setFocus) {
                setFocus(false);
+            }
+         };
+
+         const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+            if (buttonClick) {
+               let timer = setTimeout(() => {
+                  buttonClick(true);
+               }, 100);
+
+               setTimerId(timer);
+
+               let rect = (e.target as Element).getBoundingClientRect();
+               setButtonRect(rect);
             }
          };
 
@@ -56,6 +75,16 @@ export const MessageActionsButton: React.FC<MessageActionsButtonPropsType> =
             }
          }, []);
 
+         useEffect(() => {
+            if (buttonCoordFunction) {
+               buttonCoordFunction(buttonRect);
+            }
+
+            return () => {
+               clearTimeout(timerId);
+            };
+         }, [buttonRect]);
+
          return (
             <button
                className={`button-unstyled message-actions__button message-actions__button--${buttonClass}`}
@@ -67,6 +96,7 @@ export const MessageActionsButton: React.FC<MessageActionsButtonPropsType> =
                ref={buttonRef}
                onMouseOver={() => setIsHoverHint(true)}
                onMouseOut={() => setIsHoverHint(false)}
+               onClick={handleClick}
             >
                {children ? (
                   children

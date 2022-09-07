@@ -129,7 +129,10 @@ export const Message: React.FC<MessageType> = ({
                ))}
             </div>
             {isHoverMessageAction && (
-               <MessageActions isMyMessage={isMyMessage} />
+               <MessageActions
+                  isMyMessage={isMyMessage}
+                  setIsHoverMessageAction={setIsHoverMessageAction}
+               />
             )}
          </div>
          <HoverModal

@@ -1,13 +1,38 @@
 import React, { useState } from 'react';
-import { MessageActionsButton } from '../MessageActionsButton';
+import { ReactModal } from '../../../../modal';
+import { MessageActionsMoreMenu } from '../../../../modal';
+import { MessageActionsButton } from '../components/MessageActionsButton';
 import './MessageActions.scss';
 import { MessageActionsPropsType } from './MessageActionsType';
 
 export const MessageActions: React.FC<MessageActionsPropsType> = ({
    isMyMessage,
+   setIsHoverMessageAction,
 }) => {
+   const [buttonCoord, setButtonCoord] = useState<{
+      left: number;
+      top: number;
+   }>();
+
+   const [isMessageActionsMoreMenuOpen, setIsMessageActionsMoreMenuOpen] =
+      useState<boolean>(false);
+
    const [focusMessageActionsButton, setFocusMessageActionsButton] =
       useState<boolean>(false);
+
+   const buttonCoordFunction = (callback: DOMRect | undefined) => {
+      if (callback) {
+         if (callback.top < 385) {
+            let left = callback.left - 303;
+            let top = callback.top - 20;
+            setButtonCoord({ left: left, top: top });
+         } else {
+            let left = callback.left - 303;
+            let top = callback.top - 130;
+            setButtonCoord({ left: left, top: top });
+         }
+      }
+   };
 
    return (
       <div
@@ -187,6 +212,8 @@ export const MessageActions: React.FC<MessageActionsPropsType> = ({
                marginTop={'-52px'}
                marginLeft={'-68px'}
                marginArrow={'58px'}
+               buttonClick={setIsMessageActionsMoreMenuOpen}
+               buttonCoordFunction={buttonCoordFunction}
             >
                <span className='message-actions__icon'>
                   <i className='message-actions__icon-dots'>
@@ -201,6 +228,23 @@ export const MessageActions: React.FC<MessageActionsPropsType> = ({
                </span>
             </MessageActionsButton>
          </div>
+         <ReactModal
+            isModalOpen={isMessageActionsMoreMenuOpen}
+            onClose={() => {
+               setIsMessageActionsMoreMenuOpen(false);
+               setIsHoverMessageAction(false);
+            }}
+         >
+            <div
+               style={{
+                  left: `${buttonCoord?.left}px`,
+                  top: `${buttonCoord?.top}px`,
+                  position: 'absolute',
+               }}
+            >
+               <MessageActionsMoreMenu />
+            </div>
+         </ReactModal>
       </div>
    );
 };

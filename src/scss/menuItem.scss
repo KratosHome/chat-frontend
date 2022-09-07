@@ -4,10 +4,6 @@
    margin: 0;
    padding: 0;
 
-   &:hover {
-      background-color: #1164a3;
-   }
-
    &__button {
       line-height: 28px;
       font-size: 15px;
@@ -30,6 +26,10 @@
       white-space: nowrap;
       width: 100%;
 
+      &:hover {
+         background-color: #1164a3;
+      }
+
       &:hover div {
          color: #ffffff;
       }
@@ -44,12 +44,32 @@
       }
    }
 
+   &__button--delete {
+      &:hover {
+         background-color: #e01e5a;
+      }
+   }
+
+   &__link-icon {
+      font-size: 16px;
+      color: rgba(29, 28, 29, 0.7);
+
+      & svg {
+         width: 16px;
+         height: 16px;
+      }
+   }
+
    &__label {
       flex: 1 1 auto;
       overflow: hidden;
       text-overflow: ellipsis;
       top: -1px;
       font-size: 15px;
+   }
+
+   &__label--delete {
+      color: #e01e5a;
    }
 
    &__icon-container {
