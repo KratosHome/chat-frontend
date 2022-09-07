@@ -1,1 +1,2 @@
-export * from './MessageActions';
+export * from './pages/MessageActions';
+export * from './components/MessageActionsButton';

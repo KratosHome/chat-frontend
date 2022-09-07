@@ -12,3 +12,4 @@ export * from './components/BookmarkMenu';
 export * from './components/FilterMenu';
 export * from './components/SearchModal';
 export * from './components/AddDescription';
+export * from './components/MessageActionsMoreMenu';

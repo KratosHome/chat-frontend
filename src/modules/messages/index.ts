@@ -8,4 +8,3 @@ export * from './components/InputUpperBlock';
 export * from './components/ChannelDescription';
 export * from './pages/MessagesContent';
 export * from './components/MessageActions';
-export * from './components/MessageActionsButton';
