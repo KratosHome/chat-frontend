@@ -1,4 +1,6 @@
 export type RightSidebarType = {
-    onClose:()=>void;
- };
- 
+   onClose: () => void;
+   isHelpBlock?: boolean;
+   isProfileBlock?: boolean;
+   currentUserName?: string;
+};

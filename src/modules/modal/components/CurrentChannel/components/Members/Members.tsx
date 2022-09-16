@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { participants } from '../../../../../../services/participant.service';
 import { MyInput } from '../../../../../UI/MyInput';
 import { MembersType } from './MembersType';
-import imgMembers from './ImgMembers.png';
 import './Members.scss';
 
 export const Members: FC<MembersType> = ({ tab, setTab }) => {
@@ -29,7 +28,10 @@ export const Members: FC<MembersType> = ({ tab, setTab }) => {
          {participants.map((item: any) => (
             <div key={item.id} className='listMembers'>
                <div>
-                  <img src={imgMembers} alt={item.name} />
+                  <img
+                     src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-72'
+                     alt={item.name}
+                  />
                </div>
                <div className='nameListMembers'>{item.name}</div>
                <div className='onlineListMembers' />

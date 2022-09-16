@@ -18,8 +18,8 @@ export const Settings: FC<SettingsType> = ({ tab, setTab }) => {
                   <path
                      fill='none'
                      stroke='currentColor'
-                     stroke-linecap='round'
-                     stroke-width='1.5'
+                     strokeLinecap='round'
+                     strokeWidth='1.5'
                      d='m9 3.75-2.5 14.5m7.25-14.5-2.5 14.5m-7.5-10.5h13.5m-14.5 7h13.5'
                   ></path>
                </svg>
