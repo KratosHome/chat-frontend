@@ -2,9 +2,21 @@ import React from 'react';
 import { MenuItemType } from './MenuItemType';
 import './MenuItem.scss';
 
-export const MenuItem: React.FC<MenuItemType> = ({ isSubmenu, itemText }) => {
+export const MenuItem: React.FC<MenuItemType> = ({
+   isSubmenu,
+   itemText,
+   onClick,
+   setIsModalAvatarOpen,
+}) => {
+   const handleClick = () => {
+      if (onClick && setIsModalAvatarOpen) {
+         onClick(true);
+         setIsModalAvatarOpen(false);
+      }
+   };
+
    return (
-      <div className='container-menu__item item'>
+      <div className='container-menu__item item' onClick={handleClick}>
          <button
             className={`item__button ${
                isSubmenu ? 'item__button--submenu' : ''

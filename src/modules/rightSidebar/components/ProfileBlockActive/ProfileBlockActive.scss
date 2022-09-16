@@ -1,0 +1,64 @@
+.profile {
+   &__active {
+      margin-top: 12px;
+   }
+
+   &__active-container {
+      margin-bottom: 8px;
+   }
+
+   &__active-text {
+      padding-left: 8px;
+   }
+
+   &__icon-active {
+      align-items: center;
+      display: inline-flex;
+      justify-content: center;
+      position: relative;
+      color: #007a5a;
+      font-family: inherit;
+      font-size: inherit;
+      height: auto;
+      line-height: inherit;
+      width: 20px;
+
+      & svg {
+         display: inline-block;
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 1;
+         height: 1em;
+         left: 50%;
+         margin-left: -0.2em;
+         margin-top: -0.5em;
+         position: absolute;
+         top: 50%;
+         width: 1em;
+      }
+   }
+
+   &__time {
+      margin-bottom: 8px;
+   }
+
+   &__icon-time {
+      align-items: center;
+      display: inline-flex;
+      height: 20px;
+      justify-content: center;
+      position: relative;
+      width: 20px;
+      margin-right: 8px;
+      top: 3px;
+
+      & svg {
+         display: inline-block;
+         font-size: 20px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: 1;
+      }
+   }
+}

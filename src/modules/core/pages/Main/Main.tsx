@@ -7,9 +7,11 @@ import { participants } from '../../../../services/participant.service';
 import { useHotkeys } from 'react-hotkeys-hook';
 import { SideBar } from '../../../sidebar';
 import './Main.scss';
-import ChannelState from '../../../../store/channel';
 import { observer } from 'mobx-react-lite';
-import {  RightSidebar } from '../../../rightSidebar';
+import { RightSidebar } from '../../../rightSidebar';
+import { runInAction } from 'mobx';
+import ChannelState from '../../../../store/channel';
+import PopupState from '../../../../store/popup';
 
 export const Main: React.FC = observer(() => {
    const [visibleMessageField, setVisibleMessageField] = useState(true);
@@ -17,14 +19,26 @@ export const Main: React.FC = observer(() => {
    const [currentChannelId, setCurrentChannelId] = useState<number>(1);
    const [currentUserId, setCurrentUserId] = useState<number>(1); // The rule is the 1st participant should be user, 0st - moderator
 
-   const [visibleHelpBlock, setVisibleHelpBlock]= useState(false);
+   const [visibleHelpBlock, setVisibleHelpBlock] = useState(false);
+   const [visibleProfileBlock, setVisibleProfileBlock] = useState(false);
 
    let active = activeChatService.getActiveChatId();
    let channel = channels.find((x) => x.id === active);
 
    useEffect(() => {
-      ChannelState.chanel(channel);
+      runInAction(() => {
+         ChannelState.chanel(channel);
+      });
    }, [channel]);
+
+   useEffect(() => {
+      runInAction(() => {
+         PopupState.modal({
+            isPopupOpen: visibleProfileBlock,
+            setIsPopupOpen: setVisibleProfileBlock,
+         });
+      });
+   }, [visibleProfileBlock]);
 
    let isInternal = channel ? channel.isInternal : true;
 
@@ -62,7 +76,7 @@ export const Main: React.FC = observer(() => {
             <Header
                currentUserName={currentUserName}
                chanelName={channel?.name}
-               setVisibleHelpBlock={(value)=>setVisibleHelpBlock(value)}
+               setVisibleHelpBlock={(value) => setVisibleHelpBlock(value)}
                visibleHelpBlock={visibleHelpBlock}
             />
          </div>
@@ -76,7 +90,19 @@ export const Main: React.FC = observer(() => {
                   visibleMessageField={visibleMessageField}
                   currentUserId={currentUserId}
                />
-               {visibleHelpBlock && <RightSidebar onClose={()=>setVisibleHelpBlock(false)}/>}
+               {visibleHelpBlock && (
+                  <RightSidebar
+                     isHelpBlock={true}
+                     onClose={() => setVisibleHelpBlock(false)}
+                  />
+               )}
+               {visibleProfileBlock && (
+                  <RightSidebar
+                     isProfileBlock={true}
+                     onClose={() => setVisibleProfileBlock(false)}
+                     currentUserName={currentUserName}
+                  />
+               )}
             </div>
          </div>
       </div>

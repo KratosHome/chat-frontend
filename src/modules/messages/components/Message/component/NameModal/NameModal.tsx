@@ -9,7 +9,7 @@ export const NameModal: FC<NameModalType> = ({ participant, time }) => {
          <div>Workspace Owner</div>
          <div>
             <img
-               src='https://ca.slack-edge.com/TL7BX11D5-UKZ6123ED-ge711963dfb8-72'
+               src='https://ca.slack-edge.com/T03RPA22YCQ-U03QWJY04MB-gf1efec52742-72'
                alt='user'
                className='avatar-message'
             />

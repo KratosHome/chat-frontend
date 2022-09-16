@@ -1,0 +1,31 @@
+.profile {
+   &__contact-info-body {
+      display: flex;
+      position: relative;
+      padding: 0;
+   }
+
+   &__contact-info-wrapper {
+      flex: 1;
+      min-width: 0;
+   }
+
+   &__contact-info-title {
+      color: rgba(29, 28, 29, 0.7);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.38463;
+   }
+
+   &__contact-info-field {
+      display: block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: inherit;
+   }
+
+   &__contact-info-last-item {
+      padding: 8px 16px 8px 0;
+   }
+}

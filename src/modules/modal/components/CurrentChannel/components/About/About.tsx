@@ -20,8 +20,8 @@ export const About: FC<AboutType> = ({ tab, setTab }) => {
                      <path
                         fill='none'
                         stroke='currentColor'
-                        stroke-linecap='round'
-                        stroke-width='2'
+                        strokeLinecap='round'
+                        strokeWidth='2'
                         d='M9 4 6.5 18m7.25-14-2.5 14M4 8h13M3 14.5h13'
                      ></path>
                   </svg>

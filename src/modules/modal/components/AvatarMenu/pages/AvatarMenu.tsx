@@ -6,6 +6,7 @@ import { MenuUserStatusItem } from '../components/MenuUserStatusItem';
 import { PauseNotifications } from '../components/PauseNotifications';
 import { AvatarMenuPropsType } from './AvatarMenuType';
 import './AvatarMenu.scss';
+import PopupState from '../../../../../store/popup';
 
 export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
    currentUserName,
@@ -37,7 +38,11 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
                   <MenuItem isSubmenu={true} itemText={'Pause notifications'} />
                </div>
                <MenuSeparatorItem />
-               <MenuItem itemText={'Profile'} />
+               <MenuItem
+                  itemText={'Profile'}
+                  onClick={PopupState.setIsPopupOpen}
+                  setIsModalAvatarOpen={setIsModalAvatarOpen}
+               />
                <MenuItem itemText={'Preferences'} />
                <MenuSeparatorItem />
                <MenuItem itemText={'Sign out of Company Name'} />
