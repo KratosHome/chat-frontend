@@ -44,7 +44,10 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
                   onClick={PopupState.setIsPopupOpen}
                   setIsModalAvatarOpen={setIsModalAvatarOpen}
                />
-               <MenuItem itemText={'Preferences'} />
+               <MenuItem 
+                  itemText={'Preferences'} 
+                  onClick={()=>setIsModalPreferencesOpen(true)} 
+                  setIsModalAvatarOpen={setIsModalAvatarOpen} />
                <MenuSeparatorItem />
                <MenuItem itemText={'Sign out of Company Name'} />
             </div>
