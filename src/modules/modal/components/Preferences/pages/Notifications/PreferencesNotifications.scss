@@ -1,0 +1,183 @@
+.preferences-notifications{
+ 
+    &__container{
+        height: 100%;
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 5px;
+        background-color: #007a5a;
+        font-size: 15px;
+        height: 36px;
+        width: 245px;
+        padding: 0 10px 1px 10px;
+        cursor: pointer;
+        transition: all 80ms linear;
+        & p{
+            white-space: nowrap;
+            margin-left: 8px;
+        }
+        & svg{
+            width: 15px;
+            min-width: 15px;
+            height: 15px;
+            min-height: 15px;
+        }
+        &:hover{
+            background: #148567;
+            box-shadow: 0 1px 4px rgb(0 0 0 / 30%);
+            color: #fff;
+        }
+    }
+
+    &__description{
+        line-height: 1.4;
+        margin-bottom: 18px;
+    }
+
+
+    &__link-button{
+        display: flex;
+        color: #1164a3;
+        cursor: pointer;
+
+        &:hover{
+            text-decoration: underline;
+            color: rgb(11, 76, 140);
+        }
+
+        & svg{
+            margin-left: 4px;
+            width: 20px;
+            min-width: 20px;
+            height: 20px;
+            min-height: 20px;
+        }
+    }
+    &__title{                          
+        font-size: 15px;
+        font-weight: 700;
+        line-height: 1.46666667;
+        margin-bottom: 10px;
+    }
+
+    &__notify-me-about{
+        display: flex;
+        flex-direction: column;
+        margin: 16px 0 20px;
+
+        &__radio-list{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 2px;
+        }
+    }
+
+
+    &__mobile-devices-dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 345px;
+        width: 345px;
+        height: 36px;
+        min-height: 36px;
+        border: 1.5px solid rgba( 29, 28 , 29, 0.3);
+        border-radius: 5px;
+        padding: 0 12px;
+        color: #1d1c1d;
+        cursor: pointer;
+
+        & svg{
+            width: 15px;
+            min-width: 15px;
+            height: 15px;
+        }
+    }
+
+    &__mobile-devices-options{
+        position: absolute;
+        display: flex;
+    
+        flex-direction: column;
+        border: 1.5px solid rgba( 29, 28 , 29, 0.3);
+        border-radius: 5px;
+        padding: 12px 0;
+        background-color: #fff;
+        width: 519px;
+        top: 375px;
+        left: 247px;
+        
+    }
+    &__mobile-devices-option{
+        padding: 0 24px;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.46668;
+        height: 28px;
+        cursor: pointer;
+    }
+
+    &__badge{
+        background: #616061;
+        color: #fff;
+        border-radius: 16px;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        height: 18px;
+        line-height: 18px;
+        padding: 0 9px;
+    }
+
+    &__textarea{
+        border: 1px solid rgba(29,28,29,0.3);
+        border-radius: 4px;
+        box-sizing: border-box;
+        color: rgba(29,28,29,1);
+        font-size: 15px;
+        height: 104px;
+        line-height: 1.46666667;
+        margin: 0;
+        min-height: 36px;
+        padding: 8px 12px 4px;
+        resize: vertical;
+        transition: border 80ms ease-out,box-shadow 80ms ease-out;
+        vertical-align: top;
+        width: 100%;
+    }
+    &__textarea:hover{
+        border: 1px solid rgba(29,28,29,0.7);
+    }
+
+    &__textarea:focus{
+        border-color: rgb(29,155,209);
+        outline:  rgba(29, 155, 209, 0.5) solid 3px;
+    }
+
+    &__under-title{
+        margin-top: 4px;
+        color: rgba(29,28,29,0.7);
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.38461538;
+    }
+
+    &__link{
+        color:rgba(18,100,163,1);
+        cursor: pointer;
+    }
+
+    &__link:hover{
+        text-decoration: underline;
+        color: rgb(11, 76, 140);
+    }
+
+    &__to{
+        margin: 0 10px;
+    }
+}
+

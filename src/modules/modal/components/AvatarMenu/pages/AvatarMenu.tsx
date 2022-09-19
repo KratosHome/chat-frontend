@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MenuItem } from '../../MenuItem';
 import { MenuSeparatorItem } from '../../MenuSeparatorItem';
 import { MenuUserItem } from '../components/MenuUserItem';
@@ -12,6 +12,7 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
    currentUserName,
    setIsModalAvatarOpen,
    setIsModalSetStatusOpen,
+   setIsModalPreferencesOpen
 }) => {
    const [isModalPauseNotifications, setIsModalPauseNotifications] =
       useState<boolean>(false);
@@ -57,3 +58,4 @@ export const AvatarMenu: React.FC<AvatarMenuPropsType> = ({
       </>
    );
 };
+
