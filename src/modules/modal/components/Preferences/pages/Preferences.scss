@@ -1,0 +1,27 @@
+.preferences{
+    &__container{
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        min-width: 300px;
+        width: 90vw;
+        max-width: 800px;
+        height: 80vh;
+        max-height: 700px;
+        border-radius: 8px;
+        box-shadow: 0 0 0 1px rgba(29,28,29,0.13),0 18px 48px 0 #00000059;
+        overflow: hidden;
+    }
+
+    &__main{
+        display: flex;
+        height: calc(100% - 77px);
+        padding-left: 16px;
+
+    }
+
+    &__section{
+        padding: 20px 28px;
+        overflow: auto;
+    }
+}

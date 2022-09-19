@@ -5,15 +5,20 @@ import { ReactModal } from '../../../modal';
 import './Help.scss';
 import { HelpPropsType } from './HelpType';
 import { SetStatus } from '../../../modal/components/SetStatus';
+import { Preferences } from '../../../modal/components/Preferences/pages';
 
 export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpBlock, visibleHelpBlock }) => {
 
    const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
    const [isModalSetStatusOpen, setIsModalSetStatusOpen] =
       useState<boolean>(false);
+   const [isModalPreferencesOpen, setIsModalPreferencesOpen] = useState<boolean>(false);
+
 
    const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
    const [isHoverName, setIsHoverName] = useState<boolean>(false);
+
+   
 
    const handleClickHelpIcon = () =>{
       if(visibleHelpBlock){
@@ -87,6 +92,7 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpB
                currentUserName={currentUserName}
                setIsModalAvatarOpen={setIsModalAvatarOpen}
                setIsModalSetStatusOpen={setIsModalSetStatusOpen}
+               setIsModalPreferencesOpen={setIsModalPreferencesOpen}
             />
          </ReactModal>
          <ReactModal
@@ -96,6 +102,14 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpB
             onBlur={true}
          >
             <SetStatus onClose={() => setIsModalSetStatusOpen(false)} />
+         </ReactModal>
+         <ReactModal 
+            isModalOpen={isModalPreferencesOpen}
+            onClose={()=>setIsModalPreferencesOpen(false)}
+            modalPosition={'preferences-modal-position'}
+            onBlur={true}
+         >
+            <Preferences onClose={()=>setIsModalPreferencesOpen(false)}/>
          </ReactModal>
       </div>
    );

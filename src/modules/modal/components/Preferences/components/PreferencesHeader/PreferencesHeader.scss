@@ -1,0 +1,33 @@
+.preferences-header{
+    &__container{
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 28px;
+        box-shadow: 0 1px 0 0 rgb(29, 28, 29 ,0.2);
+        height: 77px;
+
+        & p{
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 36px;
+        }
+    }
+    &__icon-close{
+        display: flex;
+        min-width: 36px;
+        width: 36px;
+        height: 36px;
+        padding: 8px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: #1d1c1d21;
+        }
+    }
+    
+    &__icon-close svg{
+        width: 20px;
+        opacity: 0.7;
+        align-self: center;
+    }
+}
