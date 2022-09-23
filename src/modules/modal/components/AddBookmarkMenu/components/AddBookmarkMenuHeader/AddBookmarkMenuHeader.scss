@@ -1,0 +1,33 @@
+.add-bookmark-menu{
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 28px;
+
+        & p{
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1.36365;
+        }
+    }
+    &__icon-close{
+        display: flex;
+        min-width: 36px;
+        width: 36px;
+        height: 36px;
+        padding: 8px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+        &:hover{
+            background-color: #1d1c1d21;
+        }
+    }
+    
+    &__icon-close svg{
+        width: 20px;
+        opacity: 0.7;
+        align-self: center;
+    }
+}

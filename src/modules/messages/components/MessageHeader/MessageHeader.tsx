@@ -7,6 +7,7 @@ import { BookmarkMenu } from '../../../modal/components/BookmarkMenu/pages';
 import { CurrentChannel } from '../../../modal/components/CurrentChannel/pages';
 import './MessageHeader.scss';
 import { iMessageHeaderProps } from './MessageHeaderType';
+import { AddBookmarkMenu } from '../../../modal/components/AddBookmarkMenu';
 
 export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
    ({ currentChannel, currentChannelId }) => {
@@ -16,6 +17,8 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
       const [channelHintCoords, setChannelHintCoords] = useState<number>(0);
 
       const [isModalBookmarkOpen, setIsModalBookmarkOpen] =
+         useState<boolean>(false);
+      const [isModalAddBookmarkOpen, setIsModalAddBookmarkOpen] =
          useState<boolean>(false);
       const [isModalChanelNameOpen, setIsModalChanelNameOpen] =
          useState<boolean>(false);
@@ -194,7 +197,10 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                         position: 'absolute',
                      }}
                   >
-                     <BookmarkMenu />
+                     <BookmarkMenu  
+                        onClose={() => setIsModalBookmarkOpen(false)} 
+                        openAddBookmark={() => setIsModalAddBookmarkOpen(true)}
+                     />
                   </div>
                </ReactModal>
             </div>
@@ -208,6 +214,15 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                   setIsModalChanelName={setIsModalChanelNameOpen}
                />
             </ReactModal>
+
+            <ReactModal
+                  isModalOpen={isModalAddBookmarkOpen}
+                  onClose={() => setIsModalAddBookmarkOpen(false)}
+                  modalPosition={'add-bookmark-menu-position'}
+                  onBlur={true}
+               >
+                     <AddBookmarkMenu onClose={() => setIsModalAddBookmarkOpen(false)}/>
+               </ReactModal>
          </>
       );
    },

@@ -1,12 +1,18 @@
 import React from 'react';
 import { MenuBookmarkItem } from '../components/MenuBookmarkItem';
 import { MenuSeparatorItem } from '../../MenuSeparatorItem';
+import { BookmarkMenuType } from './BookmarkMenuType';
 
-export const BookmarkMenu: React.FC = () => {
+export const BookmarkMenu: React.FC<BookmarkMenuType> = ({onClose, openAddBookmark}) => {
+   const handleClickAddBookmark = () =>{
+      onClose();
+      openAddBookmark();
+   }
    return (
       <div className='container-menu'>
          <div className='container-menu__items'>
             <MenuBookmarkItem
+               onClick={handleClickAddBookmark}
                itemText={'Add a bookmark to this channel'}
                itemDescriptionText={"Easily find your team's important links"}
             >
