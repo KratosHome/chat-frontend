@@ -8,6 +8,7 @@ import { CurrentChannel } from '../../../modal/components/CurrentChannel/pages';
 import './MessageHeader.scss';
 import { iMessageHeaderProps } from './MessageHeaderType';
 import { AddBookmarkMenu } from '../../../modal/components/AddBookmarkMenu';
+import { CreateFolder } from '../../../modal/components/CreateFolder';
 
 export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
    ({ currentChannel, currentChannelId }) => {
@@ -19,6 +20,8 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
       const [isModalBookmarkOpen, setIsModalBookmarkOpen] =
          useState<boolean>(false);
       const [isModalAddBookmarkOpen, setIsModalAddBookmarkOpen] =
+         useState<boolean>(false);
+         const [isModalCreateFolderOpen, setIsModalCreateFolderOpen] =
          useState<boolean>(false);
       const [isModalChanelNameOpen, setIsModalChanelNameOpen] =
          useState<boolean>(false);
@@ -200,6 +203,7 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                      <BookmarkMenu  
                         onClose={() => setIsModalBookmarkOpen(false)} 
                         openAddBookmark={() => setIsModalAddBookmarkOpen(true)}
+                        openCreateFolder={()=> setIsModalCreateFolderOpen(true)}
                      />
                   </div>
                </ReactModal>
@@ -222,6 +226,16 @@ export const MessageHeader: React.FC<iMessageHeaderProps> = memo(
                   onBlur={true}
                >
                      <AddBookmarkMenu onClose={() => setIsModalAddBookmarkOpen(false)}/>
+               </ReactModal>
+            
+            
+               <ReactModal
+                  isModalOpen={isModalCreateFolderOpen}
+                  onClose={() => setIsModalCreateFolderOpen(false)}
+                  modalPosition={'add-bookmark-menu-position'}
+                  onBlur={true}
+               >
+                     <CreateFolder  onClose={() => setIsModalCreateFolderOpen(false)}/> 
                </ReactModal>
          </>
       );

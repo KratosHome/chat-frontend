@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { participants } from '../../../../../../services/participant.service';
-import { MyInput } from '../../../../../UI/MyInput';
 import { MembersType } from './MembersType';
 import './Members.scss';
+import { BasicInput } from '../../../../../UI/BasicInput';
 
 export const Members: FC<MembersType> = ({ tab, setTab }) => {
+   const [inputFindMemberValue, setInputFindMemberValue] = useState("")
    const img = (
       <svg data-aqc='true' aria-hidden='true' viewBox='0 0 20 20'>
          <path
@@ -19,7 +20,14 @@ export const Members: FC<MembersType> = ({ tab, setTab }) => {
          onClick={() => setTab(2)}
       >
          <div className='inputMembers'>
-            <MyInput placeholder={'Find members'} svgImg={img} />
+            <BasicInput 
+               placeholder={'Find members'} 
+               svgIcon={img} 
+               value={inputFindMemberValue} 
+               setValue={setInputFindMemberValue}
+               iconPosition="left"
+               margin='16px 0 0 0'
+            />
          </div>
          <div className='addUserMembers'>
             <div />
