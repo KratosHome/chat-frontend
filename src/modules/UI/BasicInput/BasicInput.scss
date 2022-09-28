@@ -1,0 +1,35 @@
+.basic-input{
+    display: flex;
+    padding: 12px 8px;
+    border: 1.5px solid rgba( 29, 28 , 29, 0.3);
+    border-radius: 5px;
+
+    &__focused{
+        border-color: rgb(29,155,209);
+        outline:  rgba(29, 155, 209, 0.5) solid 3px;
+    }
+
+    &__hovered{
+        border-color: rgba( 29, 28 , 29, 0.9); 
+    }
+
+    & svg{
+        cursor: pointer;
+        margin: 0 8px 0 4px;
+        opacity: 0.7;
+        width: 20px;
+        max-width: 20px;
+        height: 20px;
+        max-height: 20px;
+    }
+
+    & input{
+        width: 100%;
+        outline: none;
+        border: none;
+        background-color: transparent;
+        padding: 0 8px;
+    }
+
+
+}

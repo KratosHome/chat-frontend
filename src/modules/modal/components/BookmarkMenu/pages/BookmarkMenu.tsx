@@ -3,16 +3,16 @@ import { MenuBookmarkItem } from '../components/MenuBookmarkItem';
 import { MenuSeparatorItem } from '../../MenuSeparatorItem';
 import { BookmarkMenuType } from './BookmarkMenuType';
 
-export const BookmarkMenu: React.FC<BookmarkMenuType> = ({onClose, openAddBookmark}) => {
-   const handleClickAddBookmark = () =>{
+export const BookmarkMenu: React.FC<BookmarkMenuType> = ({onClose, openAddBookmark, openCreateFolder}) => {
+   const handleClickMenuBookmarkItem = (func:()=>void) =>{
       onClose();
-      openAddBookmark();
+      func();
    }
    return (
       <div className='container-menu'>
          <div className='container-menu__items'>
             <MenuBookmarkItem
-               onClick={handleClickAddBookmark}
+               onClick={()=>handleClickMenuBookmarkItem(openAddBookmark)}
                itemText={'Add a bookmark to this channel'}
                itemDescriptionText={"Easily find your team's important links"}
             >
@@ -34,6 +34,7 @@ export const BookmarkMenu: React.FC<BookmarkMenuType> = ({onClose, openAddBookma
                </span>
             </MenuBookmarkItem>
             <MenuBookmarkItem
+               onClick={()=>handleClickMenuBookmarkItem(openCreateFolder)}
                itemText={'Create a folder'}
                itemDescriptionText={'Organize your bookmarks'}
             >

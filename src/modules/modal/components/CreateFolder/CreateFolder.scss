@@ -1,16 +1,17 @@
-.add-bookmark-menu{
+.create-folder{
     &__container{
         display: flex;
         flex-direction: column;
         background-color: #fff;
-        width: 520px;
+        width: 60vw;
+        min-width: 290px;
+        max-width: 520px;
         border-radius: 8px;
         box-shadow: 0 0 0 1px rgba(29,28,29,0.13),0 18px 48px 0 #00000059;
         overflow: hidden;
     }
-
     &__main{
-        padding: 0 28px;
+        margin: 0 28px;
     }
 
     &__input-title{
@@ -18,5 +19,14 @@
         font-weight: 700;
         line-height: 1.46666667;
         padding-bottom: 8px ;
+    }
+    &__footer{
+        display: flex;
+        flex-direction: row-reverse;
+        margin: 24px 28px;
+    }
+
+    &__cancel-btn{
+        margin-right: 12px;
     }
 }

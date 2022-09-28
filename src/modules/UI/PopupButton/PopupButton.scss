@@ -25,6 +25,11 @@
       font-weight: 700;
       transition: all 80ms linear;
    }
+   
+   &--outline:hover{
+      background: rgba(248,248,248, 1);
+      box-shadow: 0 1px 3px 0 #00000014;
+   }
 
    &--medium {
       font-size: 15px;
@@ -39,6 +44,12 @@
       color: #fff;
       font-weight: 700;
       transition: all 80ms linear;
+   }
+
+   &--primary:hover {
+      background: #148567;
+      box-shadow: 0 1px 4px #0000004d;
+      color: #fff;
    }
 
    &--disabled {

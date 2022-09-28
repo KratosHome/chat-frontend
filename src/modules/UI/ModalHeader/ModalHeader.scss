@@ -1,6 +1,6 @@
-.add-bookmark-menu{
+.modal-header{
 
-    &__header{
+    &__container{
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -20,14 +20,5 @@
         padding: 8px 8px;
         border-radius: 5px;
         cursor: pointer;
-        &:hover{
-            background-color: #1d1c1d21;
-        }
-    }
-    
-    &__icon-close svg{
-        width: 20px;
-        opacity: 0.7;
-        align-self: center;
     }
 }
