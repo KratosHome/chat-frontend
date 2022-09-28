@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useCookies } from 'react-cookie';
 import { HoverIcon } from '../../../UI/HoverIcon';
 import { AvatarMenu } from '../../../modal';
 import { ReactModal } from '../../../modal';
@@ -7,26 +8,29 @@ import { HelpPropsType } from './HelpType';
 import { SetStatus } from '../../../modal/components/SetStatus';
 import { Preferences } from '../../../modal/components/Preferences/pages';
 
-export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpBlock, visibleHelpBlock }) => {
+export const Help: React.FC<HelpPropsType> = ({
+   currentUserName,
+   setVisibleHelpBlock,
+   visibleHelpBlock,
+}) => {
+   const [cookies] = useCookies(['pause']);
 
    const [isModalAvatarOpen, setIsModalAvatarOpen] = useState<boolean>(false);
    const [isModalSetStatusOpen, setIsModalSetStatusOpen] =
       useState<boolean>(false);
-   const [isModalPreferencesOpen, setIsModalPreferencesOpen] = useState<boolean>(false);
-
+   const [isModalPreferencesOpen, setIsModalPreferencesOpen] =
+      useState<boolean>(false);
 
    const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
    const [isHoverName, setIsHoverName] = useState<boolean>(false);
 
-   
-
-   const handleClickHelpIcon = () =>{
-      if(visibleHelpBlock){
+   const handleClickHelpIcon = () => {
+      if (visibleHelpBlock) {
          setVisibleHelpBlock(false);
-      }else{
+      } else {
          setVisibleHelpBlock(true);
       }
-   }
+   };
 
    return (
       <div className='header__help'>
@@ -73,7 +77,13 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpB
                   alt='user'
                   className='header__avatar-image'
                />
-               <div className='header__presence-sign'></div>
+               <div
+                  className={`${
+                     cookies.pause === 'true'
+                        ? 'header__presence-sign-pause'
+                        : 'header__presence-sign'
+                  }`}
+               ></div>
             </a>
          </div>
          <HoverIcon
@@ -103,13 +113,13 @@ export const Help: React.FC<HelpPropsType> = ({ currentUserName, setVisibleHelpB
          >
             <SetStatus onClose={() => setIsModalSetStatusOpen(false)} />
          </ReactModal>
-         <ReactModal 
+         <ReactModal
             isModalOpen={isModalPreferencesOpen}
-            onClose={()=>setIsModalPreferencesOpen(false)}
+            onClose={() => setIsModalPreferencesOpen(false)}
             modalPosition={'preferences-modal-position'}
             onBlur={true}
          >
-            <Preferences onClose={()=>setIsModalPreferencesOpen(false)}/>
+            <Preferences onClose={() => setIsModalPreferencesOpen(false)} />
          </ReactModal>
       </div>
    );

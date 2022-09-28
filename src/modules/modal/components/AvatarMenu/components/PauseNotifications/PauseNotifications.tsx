@@ -8,8 +8,10 @@ import { MenuSeparatorItem } from '../../../MenuSeparatorItem';
 export const PauseNotifications: React.FC<PauseNotificationsPropsType> = ({
    onMouseOut,
    onMouseOver,
+   setIsModalAvatarOpen,
 }) => {
    const [isHoverHelp, setIsHoverHelp] = useState<boolean>(false);
+
    return (
       <div
          className='pause-notifications container-menu'
@@ -64,10 +66,26 @@ export const PauseNotifications: React.FC<PauseNotificationsPropsType> = ({
                </div>
             </div>
             <div className='pause-notifications__menu'>
-               <MenuItem itemText='For 30 minutes' />
-               <MenuItem itemText='For 1 hour' />
-               <MenuItem itemText='For 2 hours' />
-               <MenuItem itemText='Until tomorrow' />
+               <MenuItem
+                  itemText='For 30 minutes'
+                  setIsModalOpen={setIsModalAvatarOpen}
+                  timeValue={30}
+               />
+               <MenuItem
+                  itemText='For 1 hour'
+                  setIsModalOpen={setIsModalAvatarOpen}
+                  timeValue={1}
+               />
+               <MenuItem
+                  itemText='For 2 hours'
+                  setIsModalOpen={setIsModalAvatarOpen}
+                  timeValue={2}
+               />
+               <MenuItem
+                  itemText='Until tomorrow'
+                  setIsModalOpen={setIsModalAvatarOpen}
+                  timeValue={24}
+               />
                <MenuItem itemText='Custom...' />
             </div>
             <MenuSeparatorItem />

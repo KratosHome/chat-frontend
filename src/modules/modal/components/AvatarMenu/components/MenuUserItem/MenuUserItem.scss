@@ -1,3 +1,31 @@
+@mixin presence-icon() {
+   line-height: inherit;
+   align-items: center;
+   display: inline-flex;
+   height: 20px;
+   justify-content: center;
+   position: relative;
+   width: 20px;
+
+   &::before {
+      content: '';
+      height: 9px;
+      width: 9px;
+      margin-left: -0.5em;
+      margin-top: -0.5em;
+      position: absolute;
+      left: 12px;
+      top: 13px;
+      background: #007a5a;
+      display: inline-block;
+      border-radius: 50%;
+   }
+
+   &::after {
+      @content;
+   }
+}
+
 .user {
    &__container {
       align-items: center;
@@ -71,26 +99,29 @@
    }
 
    &__presence-icon {
-      line-height: inherit;
-      align-items: center;
-      display: inline-flex;
-      height: 20px;
-      justify-content: center;
-      position: relative;
-      width: 20px;
-
-      &::before {
+      @include presence-icon() {
          content: '';
+      }
+   }
+
+   &__presence-icon-pause {
+      @include presence-icon() {
+         content: 'z';
          height: 9px;
-         left: 12px;
+         width: 9px;
          margin-left: -0.5em;
          margin-top: -0.5em;
          position: absolute;
-         top: 13px;
-         width: 9px;
-         border-radius: 50%;
-         background: #007a5a;
-         display: inline-block;
+         left: 15px;
+         top: 7px;
+         background: rgba(248, 248, 248, 1);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: #007a5a;
+         font-weight: 900;
+         font-size: 10px;
+         font-style: normal;
       }
    }
 }
