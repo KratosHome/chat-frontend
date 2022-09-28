@@ -1,3 +1,20 @@
+@mixin presence-sign() {
+   position: absolute;
+   bottom: -4px;
+   right: -6px;
+   z-index: 2;
+   height: 14px;
+   width: 14px;
+   border-radius: 50%;
+   border: 3px solid var(--header);
+   background-color: #2bac76;
+   cursor: pointer;
+
+   &::before {
+      @content;
+   }
+}
+
 .header {
    &__help {
       display: flex;
@@ -70,15 +87,31 @@
    }
 
    &__presence-sign {
-      position: absolute;
-      bottom: -4px;
-      right: -6px;
-      z-index: 2;
-      height: 14px;
-      width: 14px;
-      border-radius: 50%;
-      border: 3px solid var(--header);
-      background-color: #2bac76;
-      cursor: pointer;
+      @include presence-sign() {
+         content: '';
+      }
+   }
+
+   &__presence-sign-pause {
+      @include presence-sign() {
+         content: 'z';
+         height: 7px;
+         width: 7px;
+         margin-left: -0.5em;
+         margin-top: -0.5em;
+         position: absolute;
+         left: 9.5px;
+         top: 2px;
+         background: var(--header);
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color: #2bac76;
+         font-weight: 900;
+         font-size: 10px;
+         font-style: normal;
+         padding-bottom: 4px;
+         padding-left: 4px;
+      }
    }
 }

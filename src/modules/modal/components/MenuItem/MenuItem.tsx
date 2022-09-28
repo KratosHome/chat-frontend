@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCookies } from 'react-cookie';
 import { MenuItemType } from './MenuItemType';
 import './MenuItem.scss';
 
@@ -6,12 +7,44 @@ export const MenuItem: React.FC<MenuItemType> = ({
    isSubmenu,
    itemText,
    onClick,
-   setIsModalAvatarOpen,
+   setIsModalOpen,
+   timeValue,
+   isDelete,
 }) => {
+   const timeValueObject: { [key: number]: Date } = {
+      1: new Date(new Date().getTime() + 1 * 60 * 60 * 1000),
+      2: new Date(new Date().getTime() + 2 * 60 * 60 * 1000),
+      24: new Date(new Date().getTime() + 24 * 60 * 60 * 1000),
+      30: new Date(new Date().getTime() + 30 * 60 * 1000),
+   };
+
+   const [cookies, setCookie, removeCookie] = useCookies(['pause']);
+   const [timeCookies, setTimeCookie, removeTimeCookie] = useCookies([
+      'pauseTime',
+   ]);
+
    const handleClick = () => {
-      if (onClick && setIsModalAvatarOpen) {
+      if (onClick && setIsModalOpen) {
          onClick(true);
-         setIsModalAvatarOpen(false);
+         setIsModalOpen(false);
+      }
+
+      if (timeValue && setIsModalOpen) {
+         setCookie('pause', 'true', {
+            path: '/',
+            expires: timeValueObject[timeValue],
+         });
+         setTimeCookie('pauseTime', timeValueObject[timeValue].toUTCString(), {
+            path: '/',
+            expires: timeValueObject[timeValue],
+         });
+         setIsModalOpen(false);
+      }
+
+      if (isDelete && setIsModalOpen) {
+         removeCookie('pause');
+         removeTimeCookie('pauseTime');
+         setIsModalOpen(false);
       }
    };
 
@@ -20,14 +53,25 @@ export const MenuItem: React.FC<MenuItemType> = ({
          <button
             className={`item__button ${
                isSubmenu ? 'item__button--submenu' : ''
-            }`}
+            } ${isDelete ? 'item__button--delete' : ''}`}
          >
             {itemText === 'Set yourself as away' ? (
                <div className='item__label'>
                   Set yourself as <strong>away</strong>
                </div>
             ) : (
-               <div className='item__label'>{itemText}</div>
+               <div
+                  className={`item__label ${
+                     isDelete ? 'item__label--delete' : ''
+                  }`}
+               >
+                  {itemText}
+               </div>
+            )}
+            {cookies.pause === 'true' && isSubmenu ? (
+               <div style={{ fontSize: 15, marginRight: 10 }}>On</div>
+            ) : (
+               ''
             )}
             {isSubmenu ? (
                <div className='item__submenu-indicator'>

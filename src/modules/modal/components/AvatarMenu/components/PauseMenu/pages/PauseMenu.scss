@@ -1,0 +1,43 @@
+.pause-menu {
+   position: relative;
+   left: -298px;
+   top: -170px;
+   overflow: visible;
+
+   &__header {
+      align-items: flex-end;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+      display: flex;
+      justify-content: flex-start;
+      max-width: 300px;
+      background-image: linear-gradient(#2d4b9b, #226cc3);
+      margin-bottom: 12px;
+
+      &::before {
+         background-repeat: no-repeat;
+         content: '';
+         height: 101px;
+         position: absolute;
+         top: 0;
+         width: 300px;
+         background-image: url(https://a.slack-edge.com/bv1-9/dnd_snooze-a095040.svg);
+      }
+   }
+
+   &__status {
+      color: #fff;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.46668;
+      margin: 48px 24px 16px;
+   }
+
+   &__popup-active {
+      background-color: #1164a3;
+   }
+
+   &__popup-active .item div {
+      color: #fff;
+   }
+}
