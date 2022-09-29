@@ -8,10 +8,10 @@
    margin-left: 5px;
 
    &:hover {
-      background-color: rgb(53, 12, 54);
+      background-color: var(--header);
 
       svg {
-         background-color: rgb(53, 12, 54);
+         background-color: var(--header);
       }
    }
 
@@ -35,8 +35,8 @@
       }
 
       .spanChatList {
-         position: absolute;
-         margin-top: 4px;
+         position: relative;
+         top: -4px;
       }
    }
 }
@@ -47,5 +47,4 @@
 
 .chatList {
    height: 53vh;
-   overflow: auto;
 }
